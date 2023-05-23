@@ -1,0 +1,13 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?entity ?p ?rinfIndex  
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
+  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  ?entity a era:Tunnel .
+  ?entity era:inCountry ?inCountry.
+  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .
+  FILTER NOT EXISTS {?entity ?p ?propertyValue }
+  }
+} ORDER BY ?entity LIMIT 1000 

@@ -1,0 +1,13 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?inCountry ?sectionOfLine ?trackWithoutLoadCapability
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
+  ?trackWithoutLoadCapability a era:Track .  
+  ?sectionOfLine era:track ?trackWithoutLoadCapability .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+  FILTER NOT EXISTS {?trackWithoutLoadCapability era:trackLoadCapability ?loadcapability .}
+  }
+}

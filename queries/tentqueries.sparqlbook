@@ -1,0 +1,142 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 1 - Determine the compliance of tracks with the High Speed Load Model (HSLM)"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\n    GRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    OPTIONAL {?track era:highSpeedLoadModelCompliance ?highSpeedLoadModelCompliance} .\n}\n}\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 2 - Classification of a line according to the INF TSI"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\n    GRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:lineNationalId ?x .\n    ?sol era:track ?track .\n    ?track era:lineCategory ?lineCategory .\n    }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 3 - Number of tracks for a sectin of line."
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT (COUNT(DISTINCT ?track) AS ?tracks)\n{\n    GRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n}\n}\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 4 - Type of contact line systems of the tracks in a section of line"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:contactLineSystem ?cls .\n    ?cls era:contactLineSystemType ?clstype .\n}\n}\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 5 - Wheel set gauge of the tracks of a section of line"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:wheelSetGauge ?wheelSetGauge .\n}\n}\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 6 - Energy supply system associated to the tracks of a section of line"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:contactLineSystem ?cls .\n    ?cls era:energySupplySystem ?energySupplySystem .\n    }\n}\n\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 7 - ERTMS / ETCS application level of a track, which expresses the possible operating relationships between track and train"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\r\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \r\n# \r\nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.\n    ?op_start era:opName ?op_startName .\n    ?sol era:opEnd ?op_end.\n    ?op_end era:opName ?op_endName .\n    FILTER (regex(?op_startName,"Dendermonde")) .\n    FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:etcsLevel ?etcsLevel .\n    ?etcsLevelURI era:etcsLevelType ?etcsLevelType .\n    FILTER(uri(?etcsLevel)=?etcsLevelURI)\n    }\n}\n\n\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 8 - ETCS baseline installed in the track"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:etcsLevel ?etcsLevel .\n    OPTIONAL{?etcsLevelURI era:etcsBaseline ?etcsBaseline .\n    FILTER(uri(?etcsLevel)=?etcsLevelURI)} .\n    }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 9 - Location of particular points requiring specific checks due to deviations from gauging"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    OPTIONAL {?track era:gaugingCheckLocation ?location .}\n    }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 10 - Combined transport profile for semi-trailers"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:profileNumberSemiTrailers ?profileNumberSemiTrailers .\n    }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 11 - If ETCS in operation, fill in parameters ETCS Baseline and ETCS Level for tracks"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    OPTIONAL {?track era:highSpeedLoadModelCompliance "true"^^xsd:boolean} .\n\n    OPTIONAL {?track era:etcsLevel ?etcsLevel} .\n    OPTIONAL {?etcsLevelURI era:etcsBaseline ?etcsBaseline .\n      FILTER(uri(?etcsLevel)=?etcsLevelURI) .}\n\n    OPTIONAL{?etcsLevelURI era:etcsLevelType ?etcsLevelType .\n    FILTER(uri(?etcsLevel)=?etcsLevelURI) }\n\n}\n\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 12 - GSM-R version installed in the tracks of a section of line"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:gsmRVersion ?gsmRVersion .\n}\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 13 - Maximum Axle Load (note that this parameter does not exist and we use minAxleLoad instead, which returns currently no values)"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:trainDetectionSystem ?trainDetSyst .\n    ?trainDetSyst era:tdsMinAxleLoadVehicleCategory ?tdsMinAxleLoadVehCat .\n    OPTIONAL{ ?tdsMinAxleLoadVehCat era:minAxleLoad ?minAxleLoad} \n   OPTIONAL{ ?tdsMinAxleLoadVehCat era:minAxleLoadVehicleCategory ?minAxleVehicleCategory} \n  }\n\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# TEN-T 14 - Nominal maximum operational speed on the line as a result of INF, ENE and CCS subsystem characteristics expressed in kilometres/hour"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT *\n{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n    ?sol a era:SectionOfLine. \n    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .\n    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).\n    ?sol era:track ?track .\n    ?track era:trackId ?trackId .\n    ?track era:maximumPermittedSpeed ?maximumPermittedSpeed \n    }\n\n}"
+  }
+]

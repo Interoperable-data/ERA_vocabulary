@@ -1,0 +1,41 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:trainDetectionSystemType}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
+WHERE {
+  ?track a era:Track .  
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:trainDetectionSystemType}
+  ?track a era:Track .  
+  ?track era:trainDetectionSystem ?tds .
+  ?tds ?p ?propertyValue .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:trainDetectionSystemType}
+  ?track a era:Track .  
+  ?track era:trainDetectionSystem ?tds .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+  FILTER NOT EXISTS {?tds ?p ?propertyValue .}
+} 
+}
+}
+} ORDER BY ?p ?inCountry 

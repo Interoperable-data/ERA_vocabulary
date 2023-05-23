@@ -1,0 +1,29 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?inCountry ?numTotalTracks ?numTracksWithLoadCapability ?numTracksWithoutLoadCapability
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
+WHERE {
+  ?track a era:Track .  
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+} 
+}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithoutLoadCapability)
+WHERE {
+  ?track a era:Track .  
+  FILTER NOT EXISTS {?track era:trackLoadCapability ?loadcapability} .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+} 
+}
+BIND(0 AS ?numTracksWithLoadCapability)
+}
+}
+
+

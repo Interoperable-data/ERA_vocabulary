@@ -1,0 +1,42 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:energySupplySystem era:contactLineSystemType}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
+WHERE {
+  ?track a era:Track .  
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry .
+  FILTER NOT EXISTS {?track era:notApplicable ?p}.
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:energySupplySystem era:contactLineSystemType}
+  ?track a era:Track .  
+  ?track era:contactLineSystem ?cls .
+  ?cls ?p ?propertyValue .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:energySupplySystem era:contactLineSystemType}
+  ?track a era:Track .  
+  ?track era:contactLineSystem ?cls .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
+  FILTER NOT EXISTS {?cls ?p ?propertyValue .}
+} 
+}
+}
+} ORDER BY ?p ?inCountry 

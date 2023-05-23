@@ -1,0 +1,17 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?id ?inCountry ?count
+WHERE{
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+{SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?SL) AS ?count)
+WHERE {
+      ?SL a era:SectionOfLine.
+      ?SL era:canonicalURI ?SL .
+      ?SL era:inCountry ?inCountry.
+}}
+SERVICE <http://publications.europa.eu/webapi/rdf/sparql>{
+      ?inCountry dc:identifier ?id
+}
+}
+}

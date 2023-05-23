@@ -1,0 +1,32 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX country: <http://publications.europa.eu/resource/authority/country/>
+
+SELECT DISTINCT *
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?country {country:HUN country:ROU country:SVK country:POL}
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?country .
+  ?sectionOfLine era:track ?track .
+  ?track a era:Track . 
+  #Brakes
+  OPTIONAL{?track era:maximumTrainDeceleration ?maximumTrainDeceleration .} # RINF 1.1.1.1.6.1
+  OPTIONAL{?track era:eddyCurrentBraking ?eddyCurrentBraking .} # RINF 1.1.1.1.6.2
+  OPTIONAL{?track era:magneticBraking ?magneticBraking .} # RINF 1.1.1.1.6.3
+  #Energy supply
+  OPTIONAL {?track era:contactLineSystem ?contactLineSystem . # RINF 1.1.1.2.2
+    OPTIONAL {?contactLineSystem era:contactLineSystemType ?contactLineSystemType .} # RINF 1.1.1.2.2.1.1
+    OPTIONAL {?contactLineSystem era:energySupplySystem ?energySupplySystem .} # RINF 1.1.1.2.2.1.2
+    OPTIONAL {?contactLineSystem era:energySupplySystemTSICompliant ?energySupplySystemTSICompliant .} # RINF 1.1.1.2.2.1.2.1
+    OPTIONAL {?contactLineSystem era:umax2 ?umax2 .} # RINF 1.1.1.2.2.1.3
+    OPTIONAL {?contactLineSystem era:maxTrainCurrent ?maxTrainCurrent .} # RINF 1.1.1.2.2.2
+    OPTIONAL {?contactLineSystem era:maxCurrentStandstillPantograph ?maxCurrentStandstillPantograph .} # RINF 1.1.1.2.2.3
+    OPTIONAL {?contactLineSystem era:hasRegenerativeBrake ?hasRegenerativeBrake .} # RINF 1.1.1.2.2.4
+    OPTIONAL {?contactLineSystem era:maximumContactWireHeight ?maximumContactWireHeight .} # RINF 1.1.1.2.2.5
+    OPTIONAL {?contactLineSystem era:minimumContactWireHeight ?minimumContactWireHeight .}} # RINF 1.1.1.2.2.6
+  #Gauging profile
+  OPTIONAL {?track era:gaugingProfile ?gaugingProfile .} # RINF 1.1.1.1.3.1.1., 1.2.1.0.3.4
+
+  OPTIONAL {?track era:passesThroughTunnel ?tunnel .}
+ }
+}  LIMIT 1000

@@ -1,0 +1,42 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Number of tracks, per country, that are not TSI compliant"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?country (COUNT(DISTINCT ?track) AS ?countTracks)\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track .  \n  ?track era:hasTSITrainDetection "false"^^xsd:boolean \n}\n}  ORDER BY ?country\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Number of tracks, per country, whose associated train detection systems are not TSI compliant."
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?country ?p (COUNT(DISTINCT ?track) AS ?numberTracks)\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track .  \n  ?track era:trainDetectionSystem ?tds .\n  ?tds a era:TrainDetectionSystem .\n  VALUES ?p {era:tsiCompliantCompositeBrakeBlocks era:tsiCompliantFerromagneticWheel era:tsiCompliantMaxImpedanceWheelset era:tsiCompliantMetalConstruction era:tsiCompliantMetalFreeSpace era:tsiCompliantRSTShuntImpedance era:tsiCompliantSandCharacteristics era:tsiCompliantSanding era:tsiCompliantShuntDevices } \n  ?tds ?p <http://data.europa.eu/949/concepts/tsi-compliances/rinf/not_TSI_compliant>\n  }\n}  ORDER BY ?country ?p"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Types of gauging profiles of tracks in neighbouring countries to Ukraine."
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX country: <http://publications.europa.eu/resource/authority/country/>\n\nSELECT DISTINCT ?country ?gprofile\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?country {country:HUN country:ROU country:SVK country:POL}\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track . \n  ?track era:gaugingProfile ?gprofile .\n }\n}  ORDER BY ?country"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# INSPIRE data generation. Example of link generation from tracks"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX inspire: <http://inspire.ec.europa.eu/ont/net#> \nCONSTRUCT { \n?track a inspire:Link; \ninspire:Link.startNode ?startOP; \ninspire:Link.endNode ?endOP. \n?startOP a inspire:Node. \n ?endOP a inspire:Node.\n} WHERE {\n?track a era:Track;\n^era:track [\nera:opStart ?startOP;\nera:opEnd ?endOP;\nera:inCountry <http://publications.europa.eu/resource/authority/country/BEL>\n].\n}" 
+  }
+]

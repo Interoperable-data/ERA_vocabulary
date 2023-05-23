@@ -1,0 +1,295 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Auxiliar query to retrieve core parameters elements"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?Class ?p \n
+    FROM <http://data.europa.eu/949/graph/rinf> \n
+    FROM <http://data.europa.eu/949/graph/eratv> 
+    \nWHERE  \n{VALUES ?p {era:trackLoadCapability era:loadCapabilityLineCategory era:loadCapabilitySpeed era:maximumPermittedSpeed era:hasSevereWeatherConditions era:gaugingProfile era:gradientProfile era:minimumHorizontalRadius era:wheelSetGauge era:railInclination era:minimumWheelDiameter era:maximumTrainDeceleration era:eddyCurrentBraking era:magneticBraking era:hasHotAxleBoxDetector era:cantDeficiency era:contactLineSystemType era:energySupplySystem era:rollingStockFireCategory era:protectionLegacySystem era:legacyRadioSystem era:trainDetectionSystemType era:maximumBrakingDistance era:hasAdditionalBrakingInformation era:lineReference era:gaugingProfile era:length era:platformHeight era:temperatureRange geosparql:hasGeometry} \n  ?xx a ?Class .  \n  ?xx ?p ?value\n  }\n ORDER BY ?Class"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Contact line system details in Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?track ?cls ?p #?rinfIndex  \nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:energySupplySystem era:contactLineSystemType}\n  ?track a era:Track .  \n  ?track era:contactLineSystem ?cls .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?cls ?p ?propertyValue .}\n  }\n} ORDER BY ?track ?cls LIMIT 1000 "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Contact line system details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:energySupplySystem era:contactLineSystemType}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:energySupplySystem era:contactLineSystemType}\n  ?track a era:Track .  \n  ?track era:contactLineSystem ?cls .\n  ?cls ?p ?propertyValue .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:energySupplySystem era:contactLineSystemType}\n  ?track a era:Track .  \n  ?track era:contactLineSystem ?cls .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?cls ?p ?propertyValue .}\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Operational point details in Spain (no results)"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?entity ?p ?rinfIndex  \nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:lineReference}\n  ?entity a era:OperationalPoint .\n  ?entity era:inCountry ?inCountry .\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?entity ?p ?propertyValue}\n  }\n} ORDER BY ?entity LIMIT 1000 \n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Operational point details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:lineReference}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)\nWHERE {\n  ?entity a era:OperationalPoint .\n  ?entity era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:lineReference}\n  ?entity a era:OperationalPoint .\n  ?entity era:inCountry ?inCountry .\n  ?entity ?p ?propertyValue .\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:lineReference}\n  ?entity a era:OperationalPoint .\n  ?entity era:inCountry ?inCountry .\n  FILTER NOT EXISTS {?entity ?p ?propertyValue }\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Platform details in Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?entity ?p ?rinfIndex  \nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:platformId era:length era:platformHeight}\n  ?entity a era:Platform .\n  ?track a era:Track.\n  ?track era:platform ?entity .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine era:inCountry ?inCountry .\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?entity ?p ?propertyValue}\n  }\n} ORDER BY ?entity LIMIT 1000 \n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Platform details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nSELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:platformId era:length era:platformHeight}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?entity a era:Platform .\n  ?track a era:Track.\n  ?track era:platform ?entity .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine era:inCountry ?inCountry  \n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:platformId era:length era:platformHeight}\n  ?entity a era:Platform .\n  ?track a era:Track.\n  ?track era:platform ?entity .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine era:inCountry ?inCountry  .\n  ?entity ?p ?propertyValue .\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:platformId era:length era:platformHeight}\n  ?entity a era:Platform .\n  ?track a era:Track.\n  ?track era:platform ?entity .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine era:inCountry ?inCountry  \n  FILTER NOT EXISTS {?entity ?p ?propertyValue .}\n} \n}\n}\n} ORDER BY ?p ?inCountry"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Siding details for Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?entity ?p ?rinfIndex  \nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:length era:minimumHorizontalRadius}\n  ?entity a era:Siding .\n  ?op a era:OperationalPoint .\n  ?op era:siding ?entity .\n  ?op era:inCountry ?inCountry .\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?entity ?p ?propertyValue}\n  }\n} ORDER BY ?entity LIMIT 1000 \n "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Siding details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:length era:minimumHorizontalRadius}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)\nWHERE {\n  ?entity a era:Siding .\n  ?op a era:OperationalPoint .\n  ?op era:siding ?entity .\n  ?op era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:length era:minimumHorizontalRadius}\n  ?entity a era:Siding .\n  ?entity ?p ?propertyValue .\n  ?op a era:OperationalPoint .\n  ?op era:siding ?entity .\n  ?op era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:length era:minimumHorizontalRadius}\n  ?entity a era:Siding .\n  ?op a era:OperationalPoint .\n  ?op era:siding ?entity .\n  ?op era:inCountry ?inCountry\n  FILTER NOT EXISTS {?entity ?p ?propertyValue }\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Section of line details for Spain (no results)"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?sectionOfLine ?p ?rinfIndex  \nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:length}\n  ?sectionOfLine a era:SectionOfLine .  \n  ?sectionOfLine era:inCountry ?inCountry.\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex}\n  FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue }\n  }\n} ORDER BY ?sectionOfLine LIMIT 1000 "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Section of line details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalSOLs ?numSOLsWithPropertyAsCoreParameter ?numSOLsWithoutPropertyAsCoreParameter\nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:length}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?sectionOfLine) AS ?numTotalSOLs)\nWHERE {\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?sectionOfLine) AS ?numSOLsWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:length}\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine ?p ?propertyValue .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?sectionOfLine) AS ?numSOLsWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:length}\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue . VALUES ?p {era:length}}\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Tracks details for Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?track ?p #?rinfIndex  \nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?track ?p ?propertyValue .}\n  }\n} ORDER BY ?track LIMIT 1000 "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Tracks details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}\n  ?track a era:Track .  \n  ?track ?p ?propertyValue .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?track ?p ?propertyValue .}\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Train detection system details for Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?track ?tds ?p #?rinfIndex  \nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:trainDetectionSystemType}\n  ?track a era:Track .  \n  ?track era:trainDetectionSystem ?tds .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?tds ?p ?propertyValue .}\n  }\n} ORDER BY ?track ?tds LIMIT 1000 "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Train detection system details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter\nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:trainDetectionSystemType}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:trainDetectionSystemType}\n  ?track a era:Track .  \n  ?track era:trainDetectionSystem ?tds .\n  ?tds ?p ?propertyValue .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:trainDetectionSystemType}\n  ?track a era:Track .  \n  ?track era:trainDetectionSystem ?tds .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?tds ?p ?propertyValue .}\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Tunnels details for Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?entity ?p ?rinfIndex  \nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}\n  ?entity a era:Tunnel .\n  ?entity era:inCountry ?inCountry.\n  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .\n  FILTER NOT EXISTS {?entity ?p ?propertyValue }\n  }\n} ORDER BY ?entity LIMIT 1000 "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness core parameters - Tunnels details in general"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter\nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)\nWHERE {\n  ?entity a era:Tunnel .\n  ?entity era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)\nWHERE {\n  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}\n  ?entity a era:Tunnel .\n  ?entity ?p ?propertyValue .\n  ?entity era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) \nWHERE {\n  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}\n  ?entity a era:Tunnel .\n  ?entity era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?entity ?p ?propertyValue }\n} \n}\n}\n} ORDER BY ?p ?inCountry "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness load capabilities - Query 1"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?inCountry ?numTotalTracks ?numTracksWithLoadCapability ?numTracksWithoutLoadCapability\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithLoadCapability)\nWHERE {\n  ?track a era:Track .  \n  ?track era:trackLoadCapability ?loadCapability .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n} OPTIONAL\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithoutLoadCapability) \nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?track era:trackLoadCapability ?loadCapability .}\n} \n}\n}\n}\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness load capabilities - Query 2 all completed"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?inCountry ?numTotalTracks ?numTracksWithLoadCapability ?numTracksWithoutLoadCapability\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithLoadCapability)\nWHERE {\n  ?track a era:Track .  \n  ?track era:trackLoadCapability ?loadCapability .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n}\nFILTER (?numTotalTracks = ?numTracksWithLoadCapability)\nBIND(0 AS ?numTracksWithoutLoadCapability)\n}\n}\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness load capabilities - Query 2 all missing"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?inCountry ?numTotalTracks ?numTracksWithLoadCapability ?numTracksWithoutLoadCapability\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)\nWHERE {\n  ?track a era:Track .  \n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n}\n{\nSELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithoutLoadCapability)\nWHERE {\n  ?track a era:Track .  \n  FILTER NOT EXISTS {?track era:trackLoadCapability ?loadcapability} .\n  ?sectionOfLine era:track ?track .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n} \n}\nBIND(0 AS ?numTracksWithLoadCapability)\n}\n}\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Completeness load capabilities - Details for Spain"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?inCountry ?sectionOfLine ?trackWithoutLoadCapability\nWHERE {\n  GRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .\n  ?trackWithoutLoadCapability a era:Track .  \n  ?sectionOfLine era:track ?trackWithoutLoadCapability .\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?inCountry.\n  FILTER NOT EXISTS {?trackWithoutLoadCapability era:trackLoadCapability ?loadcapability .}\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Length of lines per member state and type"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?id ?inCountry ?y ?totalLengthKm WHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{SELECT DISTINCT ?inCountry ?y (round(xsd:decimal(SUM(?length)/1000)) AS ?totalLengthKm)\nWHERE {\n  ?element a ?y .\n  ?element era:length ?length .\n  ?element era:inCountry ?inCountry.\n}}\nSERVICE <http://publications.europa.eu/webapi/rdf/sparql>{\n      ?inCountry dc:identifier ?id}\n      }\n}\n\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Length of lines per member state - Only sections of line"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX era: <http://data.europa.eu/949/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?id ?inCountry ?totalLengthKm {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{SELECT DISTINCT ?inCountry (round(xsd:decimal(SUM(?length)/1000)) AS ?totalLengthKm)\nWHERE {\n  ?element a era:SectionOfLine .\n  ?element era:length ?length .\n  ?element era:inCountry ?inCountry.\n}}\nSERVICE <http://publications.europa.eu/webapi/rdf/sparql>{\n      ?inCountry dc:identifier ?id}\n      }\n}\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Length of lines per member state"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX era: <http://data.europa.eu/949/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX xsd:<http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?id ?inCountry ?totalLengthKm {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{SELECT DISTINCT ?inCountry (round(xsd:decimal(SUM(?length)/1000)) AS ?totalLengthKm)\nWHERE {\n  ?element a ?y .  # currently includes sections of line and tunnels\n  ?element era:length ?length .\n  ?element era:inCountry ?inCountry.\n}}\nSERVICE <http://publications.europa.eu/webapi/rdf/sparql>{\n      ?inCountry dc:identifier ?id}\n      }\n}\n\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Operational points per member state"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX era: <http://data.europa.eu/949/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\n\nSELECT DISTINCT ?id ?inCountry ?count\nWHERE{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?OP) AS ?count)\nFROM <http://data.europa.eu/949/graph/rinf>\nWHERE {\n      ?OP a era:OperationalPoint.\n      ?OP era:canonicalURI ?OP .\n      ?OP era:inCountry ?inCountry.\n}}\nSERVICE <http://publications.europa.eu/webapi/rdf/sparql>{\n      ?inCountry dc:identifier ?id\n}\n}\n} "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Sections of line per member state"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\n\nSELECT DISTINCT ?id ?inCountry ?count\nWHERE{\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n{SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?SL) AS ?count)\nWHERE {\n      ?SL a era:SectionOfLine.\n      ?SL era:canonicalURI ?SL .\n      ?SL era:inCountry ?inCountry.\n}}\nSERVICE <http://publications.europa.eu/webapi/rdf/sparql>{\n      ?inCountry dc:identifier ?id\n}\n}\n}\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Tracks from neighboring countries to Ukraine"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX era: <http://data.europa.eu/949/>\nPREFIX country: <http://publications.europa.eu/resource/authority/country/>\n\nSELECT DISTINCT ?country ?gprofile\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  VALUES ?country {country:HUN country:ROU country:SVK country:POL}\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track . \n  ?track era:gaugingProfile ?gprofile .\n }\n}  ORDER BY ?country"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Tracks non TSI compliant per country"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?country (COUNT(DISTINCT ?track) AS ?countTracks)\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track .  \n  ?track era:hasTSITrainDetection "false"^^xsd:boolean \n}\n}  ORDER BY ?country\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Tracks with train detection system non TSI compliant per country"
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "#\n# Query [endpoint=https://linked.ec-dataplatform.eu/sparql] Query \n# \nPREFIX era: <http://data.europa.eu/949/>\n\nSELECT DISTINCT ?country ?p (COUNT(DISTINCT ?track) AS ?numberTracks)\nWHERE {\nGRAPH <http://data.europa.eu/949/graph/rinf> {\n  ?sectionOfLine a era:SectionOfLine .\n  ?sectionOfLine era:inCountry ?country .\n  ?sectionOfLine era:track ?track .\n  ?track a era:Track .  \n  ?track era:trainDetectionSystem ?tds .\n  ?tds a era:TrainDetectionSystem .\n  VALUES ?p {era:tsiCompliantCompositeBrakeBlocks era:tsiCompliantFerromagneticWheel era:tsiCompliantMaxImpedanceWheelset era:tsiCompliantMetalConstruction era:tsiCompliantMetalFreeSpace era:tsiCompliantRSTShuntImpedance era:tsiCompliantSandCharacteristics era:tsiCompliantSanding era:tsiCompliantShuntDevices } \n  ?tds ?p <http://data.europa.eu/949/concepts/tsi-compliances/rinf/not_TSI_compliant>\n  }\n}  ORDER BY ?country ?p"
+  }
+]

@@ -1,0 +1,33 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:lineReference}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)
+WHERE {
+  ?entity a era:OperationalPoint .
+  ?entity era:inCountry ?inCountry
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:lineReference}
+  ?entity a era:OperationalPoint .
+  ?entity era:inCountry ?inCountry .
+  ?entity ?p ?propertyValue .
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:lineReference}
+  ?entity a era:OperationalPoint .
+  ?entity era:inCountry ?inCountry .
+  FILTER NOT EXISTS {?entity ?p ?propertyValue }
+} 
+}
+}
+} ORDER BY ?p ?inCountry 

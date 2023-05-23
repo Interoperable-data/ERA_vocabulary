@@ -1,0 +1,16 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX inspire: <http://inspire.ec.europa.eu/ont/net#> 
+CONSTRUCT {
+  ?track a inspire:Link;
+    inspire:Link.startNode ?startOP;     
+    inspire:Link.endNode ?endOP.   
+  ?startOP a inspire:Node.  
+  ?endOP a inspire:Node.
+} WHERE {
+  ?track a era:Track;
+     ^era:track [
+        era:opStart ?startOP;
+        era:opEnd ?endOP;
+        era:inCountry <http://publications.europa.eu/resource/authority/country/BEL>
+     ].
+} 

@@ -1,0 +1,13 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?sectionOfLine ?p ?rinfIndex  
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
+  VALUES ?p {era:length}
+  ?sectionOfLine a era:SectionOfLine .  
+  ?sectionOfLine era:inCountry ?inCountry.
+  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex}
+  FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue }
+  }
+} ORDER BY ?sectionOfLine LIMIT 1000 

@@ -1,0 +1,13 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?country (COUNT(DISTINCT ?track) AS ?countTracks)
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?country .
+  ?sectionOfLine era:track ?track .
+  ?track a era:Track .  
+  ?track era:hasTSITrainDetection "false"^^xsd:boolean 
+}
+}  ORDER BY ?country

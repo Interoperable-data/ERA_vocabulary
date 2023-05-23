@@ -1,0 +1,42 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:platformId era:length era:platformHeight}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
+WHERE {
+  ?entity a era:Platform .
+  ?track a era:Track.
+  ?track era:platform ?entity .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine era:inCountry ?inCountry  
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:platformId era:length era:platformHeight}
+  ?entity a era:Platform .
+  ?track a era:Track.
+  ?track era:platform ?entity .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine era:inCountry ?inCountry  .
+  ?entity ?p ?propertyValue .
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:platformId era:length era:platformHeight}
+  ?entity a era:Platform .
+  ?track a era:Track.
+  ?track era:platform ?entity .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine era:inCountry ?inCountry  
+  FILTER NOT EXISTS {?entity ?p ?propertyValue .}
+} 
+}
+}
+} ORDER BY ?p ?inCountry 

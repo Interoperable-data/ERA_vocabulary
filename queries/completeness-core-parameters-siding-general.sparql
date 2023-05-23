@@ -1,0 +1,39 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:length era:minimumHorizontalRadius}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)
+WHERE {
+  ?entity a era:Siding .
+  ?op a era:OperationalPoint .
+  ?op era:siding ?entity .
+  ?op era:inCountry ?inCountry
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:length era:minimumHorizontalRadius}
+  ?entity a era:Siding .
+  ?entity ?p ?propertyValue .
+  ?op a era:OperationalPoint .
+  ?op era:siding ?entity .
+  ?op era:inCountry ?inCountry
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:length era:minimumHorizontalRadius}
+  ?entity a era:Siding .
+  ?op a era:OperationalPoint .
+  ?op era:siding ?entity .
+  ?op era:inCountry ?inCountry
+  FILTER NOT EXISTS {?entity ?p ?propertyValue }
+} 
+}
+}
+} ORDER BY ?p ?inCountry 

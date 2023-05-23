@@ -1,0 +1,16 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?id ?inCountry ?totalLengthKm {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+{SELECT DISTINCT ?inCountry (round(xsd:decimal(SUM(?length)/1000)) AS ?totalLengthKm)
+WHERE {
+  ?element a era:SectionOfLine .
+  ?element era:length ?length .
+  ?element era:inCountry ?inCountry.
+}}
+SERVICE <http://publications.europa.eu/webapi/rdf/sparql>{
+      ?inCountry dc:identifier ?id}
+      }
+}

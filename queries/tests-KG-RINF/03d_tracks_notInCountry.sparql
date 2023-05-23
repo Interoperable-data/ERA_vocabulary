@@ -1,0 +1,8 @@
+PREFIX era: <http://data.europa.eu/949/> 
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT COUNT(DISTINCT ?track) AS ?count WHERE {  
+       {?x a era:SectionOfLine} UNION {?x a era:OperationalPoint}.
+       ?x era:track ?track .
+       FILTER NOT EXISTS {?x era:inCountry ?inCountry}
+}

@@ -1,0 +1,17 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?entity ?p ?rinfIndex  
+WHERE {
+GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
+  VALUES ?p {era:platformId era:length era:platformHeight}
+  ?entity a era:Platform .
+  ?track a era:Track.
+  ?track era:platform ?entity .
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine era:inCountry ?inCountry .
+  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .
+  FILTER NOT EXISTS {?entity ?p ?propertyValue}
+  }
+} ORDER BY ?entity LIMIT 1000 
+

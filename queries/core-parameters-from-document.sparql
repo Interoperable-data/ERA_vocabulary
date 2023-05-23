@@ -1,0 +1,4 @@
+  VALUES ?p {era:temperatureRange era:trackLoadCapability era:maximumPermittedSpeed era:hasSevereWeatherConditions era:gaugingProfile era:gradientProfile era:minimumHorizontalRadius era:wheelSetGauge era:cantDeficiency era:railInclination era:minimumWheelDiameter era:maximumTrainDeceleration era:eddyCurrentBraking era:magneticBraking era:hasHotAxleBoxDetector era:rollingStockFireCategory era:contactLineSystemType era:energySupplySystem}
+# To be added to other things that are not tracks: era:protectionLegacySystem era:legacyRadioSystem era:trainDetectionSystemType era:maximumBrakingDistance era:hasAdditionalBrakingInformation era:lineReference era:gaugingProfile era:length era:platformHeight}
+#missing (not in the ontology) era:geographicalLocationOperationalPoint (1.2.0.0.0.5), 
+# Check two appearances of the gaugingProfile (1.1.1.1.3.1.1 and 1.2.1.0.3.4), wheelSetGauge, 

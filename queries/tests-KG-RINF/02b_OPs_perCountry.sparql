@@ -1,0 +1,9 @@
+PREFIX era: <http://data.europa.eu/949/> 
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?inCountry COUNT(DISTINCT ?x) AS ?count
+FROM <http://data.europa.eu/949/graph/rinf>
+WHERE {  
+       ?x a era:OperationalPoint.
+       ?x era:inCountry ?inCountry
+}

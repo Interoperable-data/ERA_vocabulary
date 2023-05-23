@@ -1,0 +1,33 @@
+PREFIX era: <http://data.europa.eu/949/>
+
+SELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter
+WHERE {
+  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)
+WHERE {
+  ?entity a era:Tunnel .
+  ?entity era:inCountry ?inCountry
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)
+WHERE {
+  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  ?entity a era:Tunnel .
+  ?entity ?p ?propertyValue .
+  ?entity era:inCountry ?inCountry.
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) 
+WHERE {
+  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  ?entity a era:Tunnel .
+  ?entity era:inCountry ?inCountry.
+  FILTER NOT EXISTS {?entity ?p ?propertyValue }
+} 
+}
+}
+} ORDER BY ?p ?inCountry 
