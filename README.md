@@ -2,6 +2,13 @@
 
 This is the repository where the vocabulary (ontology) for the European Union Agency for Railways is being developed and released. The online documentation for this vocabulary is available at https://data-interop.era.europa.eu/era-vocabulary/, and its URI is http://data.europa.eu/949/. All ontology components (classes, properties) use this base URI and are dereferenceable (e.g., http://data.europa.eu/949/Track).
 
+The repository is organised as in the following folders:
+* requirements. This folder contains several spreadsheets with requirements written as competency questions, which were originally created for the initial versions of the ERA vocabulary. Currently this list of requirements may be considered incomplete, and it is possible that it will not be maintained in the future.
+* governance. This folder contains a description of the main principles that have been followed for the development of the ERA vocabulary, including decisions on URIs, design patterns, update mechanisms, etc.
+* era-skos. This folder contains all the SKOS concept schemes (authority tables) that are used as values for some properties in the ERA vocabulary.
+* era-shacl. This folder contains all the SHACL shapes derived from the ERA vocabulary and from the validation rules described in the RINF application guide, which allow validating the ERA Knowledge Graph.
+* queries. This folder contains several SPARQL queries that can be used to query the ERA knowledge graph.
+* public. This folder contains the HTML version of the ERA vocabulary, which is published in the following URL: ttps://data-interop.era.europa.eu/era-vocabulary/
 
 ## Issues
 
