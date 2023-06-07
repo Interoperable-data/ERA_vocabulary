@@ -30,3 +30,11 @@ For contributions we follow the "fork-and-pull" Git workflow:
 5. Submit a **Pull request** to the [**dev**](https://github.com/Interoperable-data/ERA_vocabulary/tree/dev) branch so we can review your changes.
 
 NOTE: Make sure to merge the latest "upstream" version before submitting a pull request.
+
+## Validation procedure for user requests
+1. Any actor can request improvements to the ERA Vocabulary.
+2. The Vocabulary team evaluates if the request is technically sound and its impact in the current deployment of the Vocabulary itself and on the RINF System.
+3. ERA evaluates its impact from the business and project management point of view and ultimately approves (or not) the request. 
+4. The actor who requested the improvements is informed on when the request will be attended, including an indication of the Vocabulary release number that will include the request.
+5. The request, if approved, is implemented by the Vocabulary team.
+
