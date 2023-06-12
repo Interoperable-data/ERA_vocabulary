@@ -870,17 +870,18 @@ Set up a SPARQL endpoint:
 
    Ensure you have access to a SPARQL endpoint that you want to query. This can be a public SPARQL endpoint or your own SPARQL server.
 1. Create a new request in Postman: Open Postman and create a new HTTP request by clicking on the "New" button in the top left corner. Choose the request method as "GET": 
-(images-documentation/picture1.png)
+![New request](/queries/images-documentation/picture1.png)
 
 1. Set the GET request URL: In the URL field, enter the URL of your SPARQL endpoint. For example, if your SPARQL endpoint is https://linked.ec-dataplatform.eu/sparql, enter that URL.
 1. Set the GET request headers: Click on the "Headers" tab below the request URL field:
    * Content-Type: application/x-www-form-urlencoded
-   * Accept: application/sparql-results+json (This header specifies that you want to receive JSON-formatted SPARQL results. Adjust this header if you prefer a different format.) (images-documentation/picture2.png)
+   * Accept: application/sparql-results+json (This header specifies that you want to receive JSON-formatted SPARQL results. Adjust this header if you prefer a different format.) 
+   ![Set request headers](/queries/images-documentation/picture2.png)
 
 1. Configure the request parameters: Click on the "Params" tab below the URL field.  Add a key-value pair where the key is "query" and the value is your SPARQL query. For example:
- (images-documentation/picture6.png)
+![Add the parameters](/queries/images-documentation/picture6.png)
 1. Send the request: Click the "Send" button to send the SPARQL query to the endpoint.
 1. View the response: Postman will display the response received from the SPARQL endpoint. The response will contain the results of your query in the specified format (JSON in our example). You can analyze and process the results as needed.
-(images-documentation/picture8.png)
+![View the response](/queries/images-documentation/picture8.png)
 
 That's it! You have successfully used Postman to send a SPARQL query to a SPARQL endpoint and received the results. You can modify the query, headers, and other settings as per your requirements.
