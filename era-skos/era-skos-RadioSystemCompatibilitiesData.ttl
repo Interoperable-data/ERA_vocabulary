@@ -32,6 +32,7 @@
 era-rscd:RadioSystemCompatibilitiesData a skos:ConceptScheme ; 
     dct:issued "2020-09-01"^^xsd:date ;
     dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Radio System Compatibilities Data"@en ;
@@ -76,10 +77,13 @@ era-rscd-rinf:10 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Not Defined" .
 
-
 era-rscd-rinf:90 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-AT-01-D" .
+
+era-rscd-rinf:160 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-CH-01-D" .
 
 era-rscd-rinf:80 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
@@ -173,6 +177,10 @@ era-rscd-rinf:63 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-04.ARAVIL-D" .
 
+era-rscd-rinf:64 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-ES-04.GENERAL-D" .
+
 era-rscd-rinf:111 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-05.LEOPOL-D" .
@@ -180,6 +188,10 @@ era-rscd-rinf:111 a skos:Concept;
 era-rscd-rinf:112 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-05.PEDORE-D" .
+
+era-rscd-rinf:113 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-ES-05.GENERAL-D" .
 
 era-rscd-rinf:30 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
@@ -193,6 +205,14 @@ era-rscd-rinf:50 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-03-D" .
 
+era-rscd-rinf:517 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-ES-03.GENERAL-D" .
+
+era-rscd-rinf:518 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-ES-03.SPECIFIC-D" .
+
 era-rscd-rinf:60 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-04-D" .
@@ -200,10 +220,3 @@ era-rscd-rinf:60 a skos:Concept;
 era-rscd-rinf:20 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-EU-0" .
-
-
-
-
-
-
-

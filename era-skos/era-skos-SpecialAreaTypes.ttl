@@ -8,13 +8,8 @@
 @prefix era: <http://data.europa.eu/949/> .
 @prefix era-skos: <http://data.europa.eu/949/concepts/> .
 
-
-
-@prefix era-tsi: <http://data.europa.eu/949/concepts/tsi-compliances/> .
-@prefix era-tsi-rinf: <http://data.europa.eu/949/concepts/tsi-compliances/rinf/> .
-
-
-
+@prefix era-specialareatypes: <http://data.europa.eu/949/concepts/special-area-types/> .
+@prefix era-specialareatypes-rinf: <http://data.europa.eu/949/concepts/special-area-types/rinf/> .
 
 
 #################################################################
@@ -24,15 +19,12 @@
 #################################################################
 
 
-era-tsi:TSICompliances a skos:ConceptScheme ;
-    dct:issued "2020-09-01"^^xsd:date ;
-    dct:modified "2022-09-09"^^xsd:date ;
-    dct:modified "2024-04-18"^^xsd:date ;
+era-specialareatypes:SpecialAreaTypes a skos:ConceptScheme ; 
+    dct:issued "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
-    rdfs:label "TSI compliances"@en ;
-    owl:deprecated "true"^^xsd:boolean ;
-    dct:title "Concept scheme grouping TSI compliance status. Deprecated as the value is a boolean."@en .
+    rdfs:label "Types of Special Areas"@en ;
+    dct:title "Concept scheme grouping the types of Special Areas"@en .
 
 
 
@@ -43,19 +35,9 @@ era-tsi:TSICompliances a skos:ConceptScheme ;
 #################################################################
 
 
+########## Types Of Special Areas ##########
 
-
-########## TSI compliances ##########
-
-era-tsi-rinf:TSI_compliant a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "TSI compliant" .
-
-era-tsi-rinf:not_TSI_compliant a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "not TSI compliant" .
-
-era-tsi-rinf:none a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "none" .
-
+era-specialareatypes-rinf:NonStoppingArea a skos:Concept;
+  skos:inScheme era-specialareatypes:SpecialAreaTypes; skos:note "Value added for RINF-parameter 1.1.1.3.14.5";
+  rdfs:comment "Non-stopping Area" ;
+  skos:prefLabel "NSA" .

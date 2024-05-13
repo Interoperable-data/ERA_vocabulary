@@ -25,6 +25,7 @@
 era-rscv:RadioSystemCompatibilitiesVoice a skos:ConceptScheme ; 
     dct:issued "2020-09-01"^^xsd:date ;
     dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Radio System Compatibilities Voice"@en ;
@@ -107,6 +108,26 @@ era-rscv-rinf:140 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-DE-01-V" .
+
+era-rscv-rinf:150 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-LU-01-V" .
+
+era-rscv-rinf:160 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-CH-01-V" .
+
+era-rscv-rinf:170 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-PT-01-V" .
+
+era-rscv-rinf:171 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-PT-02-V" .
 
 # values from ERATV #
 

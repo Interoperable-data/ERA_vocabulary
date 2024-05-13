@@ -47,6 +47,7 @@ era-tds:FrequencyBandsForDetectionWithAxleCounters a skos:Collection ;
 era-tds:FrequencyBandsForDetectionWithTrackCircuits a skos:Collection ;
     dct:issued "2024-04-18"^^xsd:date ;
   skos:prefLabel "Frequency Bands for Track Circuits" ;
+  skos:member era-tds-rinf:A0_TC ;
   skos:member era-tds-rinf:A1_TC ;
   skos:member era-tds-rinf:A2_TC ;
   skos:member era-tds-rinf:A3_TC ;
@@ -81,6 +82,11 @@ era-tds-rinf:A3_AC a skos:Concept;
   era:tsiCompliant true;
   skos:inScheme era-tds:FrequencyBandsForDetection; skos:note "Value decided in TWG CCS 2024";
   skos:prefLabel "Band A3 for Axle Counters" .
+
+era-tds-rinf:A0_TC a skos:Concept;
+  era:tsiCompliant true;
+  skos:inScheme era-tds:FrequencyBandsForDetection; skos:note "Value decided in TWG CCS 2024";
+  skos:prefLabel "DC-operated Track Circuits" .
 
 era-tds-rinf:A1_TC a skos:Concept;
   era:tsiCompliant true;
