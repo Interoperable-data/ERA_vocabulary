@@ -26,7 +26,7 @@ era-tds:FrequencyBandsForDetection a skos:ConceptScheme ;
     dct:issued "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
-    rdfs:label "Frequency bands for detection"@en ;
+    rdfs:label "Frequency bands for detection, one collection for axle counters, one for track circuits."@en ;
     dct:title "Concept scheme grouping frequency bands for detection"@en .
 
 
@@ -39,23 +39,23 @@ era-tds:FrequencyBandsForDetection a skos:ConceptScheme ;
 
 era-tds:FrequencyBandsForDetectionWithAxleCounters a skos:Collection ;
     dct:issued "2024-04-18"^^xsd:date ;
-  skos:prefLabel "Frequency Bands for Axle Counters" ;
-  skos:member era-tds-rinf:A1_AC ;
-  skos:member era-tds-rinf:A2_AC ;
-  skos:member era-tds-rinf:A3_AC .
+    skos:prefLabel "Frequency Bands for Axle Counters" ;
+    skos:member era-tds-rinf:A1_AC ;
+    skos:member era-tds-rinf:A2_AC ;
+    skos:member era-tds-rinf:A3_AC .
 
 era-tds:FrequencyBandsForDetectionWithTrackCircuits a skos:Collection ;
     dct:issued "2024-04-18"^^xsd:date ;
-  skos:prefLabel "Frequency Bands for Track Circuits" ;
-  skos:member era-tds-rinf:A0_TC ;
-  skos:member era-tds-rinf:A1_TC ;
-  skos:member era-tds-rinf:A2_TC ;
-  skos:member era-tds-rinf:A3_TC ;
-  skos:member era-tds-rinf:A4_TC ;
-  skos:member era-tds-rinf:A5_TC ;
-  skos:member era-tds-rinf:A6_TC ;
-  skos:member era-tds-rinf:A7_TC ;
-  skos:member era-tds-rinf:A8_TC .
+    skos:prefLabel "Frequency Bands for Track Circuits" ;
+    skos:member era-tds-rinf:A0_TC ;
+    skos:member era-tds-rinf:A1_TC ;
+    skos:member era-tds-rinf:A2_TC ;
+    skos:member era-tds-rinf:A3_TC ;
+    skos:member era-tds-rinf:A4_TC ;
+    skos:member era-tds-rinf:A5_TC ;
+    skos:member era-tds-rinf:A6_TC ;
+    skos:member era-tds-rinf:A7_TC ;
+    skos:member era-tds-rinf:A8_TC .
 
 
 #################################################################
