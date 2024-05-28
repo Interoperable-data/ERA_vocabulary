@@ -10,9 +10,7 @@
 
 
 @prefix era-rscd: <http://data.europa.eu/949/concepts/radio-system-compatibilities-data/> .
-
 @prefix era-rscd-rinf: <http://data.europa.eu/949/concepts/radio-system-compatibilities-data/rinf/> .
-
 @prefix era-rscd-eratv: <http://data.europa.eu/949/concepts/radio-system-compatibilities-data/eratv/> .
 
 
@@ -47,8 +45,7 @@ era-rscd:RadioSystemCompatibilitiesData a skos:ConceptScheme ;
 #################################################################
 
 ########## Radio System Compatibilities Data ##########
-## ERATV concepts ##
-
+## Special values
 era-rscd-eratv:not-applicable a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Not applicable" .
@@ -58,6 +55,13 @@ era-rscd-eratv:RSC-EU-0 a skos:Concept;
   skos:exactMatch era-rscd-rinf:20;
   skos:prefLabel "RSC-EU-0" .
 
+era-rscd-rinf:20 a skos:Concept;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
+  skos:exactMatch era-rscd-eratv:RSC-EU-0 ;
+  skos:prefLabel "RSC-EU-0" .
+
+
+## ERATV concepts ##
 era-rscd-eratv:RSC-FR-01-D a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the ERATV database";
   skos:exactMatch era-rscd-rinf:80;
@@ -216,7 +220,3 @@ era-rscd-rinf:518 a skos:Concept;
 era-rscd-rinf:60 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-04-D" .
-
-era-rscd-rinf:20 a skos:Concept;
-  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "RSC-EU-0" .

@@ -40,20 +40,20 @@ era-rbc-react:ETCSRBCRejectionReasons a skos:ConceptScheme ;
 
 
 
-########## ETCS T_NVCONTACT Reactions ##########
+########## ETCS RBC Reasons of rejection ##########
 
 era-rbc-react-rinf:00 a skos:Concept;
   skos:inScheme era-rbc-react:ETCSRBCRejectionReasons;  skos:note "Value added by TWG RINF CCS";
-  skos:prefLabel "00 - Train Trip" .
+  skos:prefLabel "N/A - no usage of Message 40 (Train rejected)" .
 
 era-rbc-react-rinf:01 a skos:Concept;
   skos:inScheme era-rbc-react:ETCSRBCRejectionReasons;  skos:note "Value added by TWG RINF CCS";
-  skos:prefLabel "01 - Apply Service Brake" .
+  skos:prefLabel "Invalid ETCS-key" .
 
-era-rbc-react-rinf:10 a skos:Concept;
+era-rbc-react-rinf:02 a skos:Concept;
   skos:inScheme era-rbc-react:ETCSRBCRejectionReasons;  skos:note "Value added by TWG RINF CCS";
-  skos:prefLabel "10 - No reaction" .
+  skos:prefLabel "Non-matching ETCS-ID" .
 
-era-rbc-react-rinf:11 a skos:Concept;
+era-rbc-react-rinf:03 a skos:Concept;
   skos:inScheme era-rbc-react:ETCSRBCRejectionReasons;  skos:note "Value added by TWG RINF CCS";
-  skos:prefLabel "11 - Reserved spare" .
+  skos:prefLabel "Incompatible baseline" .

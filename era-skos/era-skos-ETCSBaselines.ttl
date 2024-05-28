@@ -82,7 +82,7 @@ era-etcsbaseline-rinf:30 a skos:Concept;
 
 era-etcsbaseline-rinf:40 a skos:Concept;
   skos:inScheme era-etcsbaseline:ETCSBaselines;
- skos:note "Value retrieved from the RINF database";
+  skos:note "Value retrieved from the RINF database";
   skos:prefLabel "baseline 3 maintenance release 1" .
 
 era-etcsbaseline-rinf:50 a skos:Concept;

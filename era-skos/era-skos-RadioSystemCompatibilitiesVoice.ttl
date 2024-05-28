@@ -42,11 +42,26 @@ era-rscv:RadioSystemCompatibilitiesVoice a skos:ConceptScheme ;
 
 
 ########## Radio System Compatibilities Voice ##########
-#Values from RINF
+
+# Special Values
+
 era-rscv-rinf:10 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Not Defined" .
+
+era-rscv-rinf:20 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "RSC-EU-0" .
+
+era-rscv-eratv:rsc-eu-0 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value retrieved from the ERATV database";
+  skos:exactMatch era-rscv-rinf:20;
+  skos:prefLabel "RSC-EU-0" .
+
+# Values from RINF
 
 era-rscv-rinf:100 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
@@ -58,17 +73,13 @@ era-rscv-rinf:110 a skos:Concept;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-BE-01-V" .
 
-era-rscv-rinf:20 a skos:Concept;
-  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
-  skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "RSC-EU-0" .
-
 era-rscv-rinf:80 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-FR-01-V" .
 
 # added concepts in lookup table ##
+
 era-rscv-rinf:30 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
@@ -152,12 +163,6 @@ era-rscv-eratv:rsc-fr-01-v a skos:Concept;
   skos:exactMatch era-rscv-rinf:80;
   skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "RSC-FR-01-V" .
-
-era-rscv-eratv:rsc-eu-0 a skos:Concept;
-  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
-  skos:note "Value retrieved from the ERATV database";
-  skos:exactMatch era-rscv-rinf:20;
-  skos:prefLabel "RSC-EU-0" .
 
 era-rscv-eratv:rsc-be-01-v a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;

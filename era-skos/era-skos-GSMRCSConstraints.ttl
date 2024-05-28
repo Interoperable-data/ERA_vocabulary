@@ -8,10 +8,10 @@
 @prefix era: <http://data.europa.eu/949/> .
 @prefix era-skos: <http://data.europa.eu/949/concepts/> .
 
+@prefix era-gsmrc: <http://data.europa.eu/949/concepts/gsmr-cs-constraints/> .
+@prefix era-gsmrc-rinf: <http://data.europa.eu/949/concepts/gsmr-cs-constraints/rinf/> .
 
-# The SKOS Concept is only used when more options than Allowed / Non-allowed are needed.
-@prefix era-adhf-qualifier: <http://data.europa.eu/949/concepts/adhf-qualifier/> .
-@prefix era-adhf-qualifier-rinf: <http://data.europa.eu/949/concepts/adhf-qualifier/rinf/> .
+
 
 
 
@@ -24,12 +24,13 @@
 
 
 
-era-adhf-qualifier:AdhesionFactorChange a skos:ConceptScheme ; 
+era-gsmrc:GSMRConstraints a skos:ConceptScheme ; 
     dct:issued "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
-    rdfs:label "Driver allowed to change adhesion factor Qualifiers"@en ;
-    dct:title "Concept scheme grouping the Qualifiers for Driver being allowed to change adhesion factor"@en .
+    rdfs:label "GSM-R Constraints on CS-equiped trains"@en ;
+    dct:title "Concept scheme grouping GSM-R constraints"@en .
+
 
 
 #################################################################
@@ -40,12 +41,21 @@ era-adhf-qualifier:AdhesionFactorChange a skos:ConceptScheme ;
 
 
 
-########## Driver may change Adhesion factor - Qualifiers ##########
 
-era-adhf-qualifier-rinf:0 a skos:Concept;
-  skos:inScheme era-adhf-qualifier:AdhesionFactorChange;  skos:note "Value introduced in TWG RINF 2024";
-  skos:prefLabel "0: Not allowed" .
 
-era-adhf-qualifier-rinf:1 a skos:Concept;
-  skos:inScheme era-adhf-qualifier:AdhesionFactorChange;  skos:note "Value introduced in TWG RINF 2024";
-  skos:prefLabel "1: Allowed" .
+########## GSM-R Constraints ##########
+
+era-gsmrc-rinf:00 a skos:Concept;
+  skos:inScheme era-gsmrc:GSMRConstraints; 
+  skos:note "Value collected from TWG RINF CCS 2024 members";
+  skos:prefLabel "Placeholder" ;
+  rdfs:comment "Placeholder" ;
+  owl:deprecated "false"^^xsd:boolean .
+
+
+
+
+
+
+
+
