@@ -10,6 +10,7 @@
 
 @prefix era-safeconsistlength: <http://data.europa.eu/949/concepts/safe-consist-length/> .
 @prefix era-safeconsistlength-rinf: <http://data.europa.eu/949/concepts/safe-consist-length/rinf/> .
+@prefix era-safeconsistlength-eratv: <http://data.europa.eu/949/concepts/safe-consist-length/eratv/> .
 
 
 #################################################################
@@ -51,4 +52,21 @@ era-safeconsistlength-rinf:02 a skos:Concept;
 era-safeconsistlength-rinf:04 a skos:Concept;
   skos:inScheme era-safeconsistlength:SafeConsistLengthNecessary; skos:note "Value proposed by the CCS ERTMS WG";
   rdfs:comment "Required, with SIL 4" ;
+  skos:prefLabel "Y+4" .
+
+########## VehicleType - Safe Consist Length + SIL ##########
+
+era-safeconsistlength-eratv:00 a skos:Concept;
+  skos:inScheme era-safeconsistlength:SafeConsistLengthNecessary; skos:note "Value added in line with the CCS ERTMS WG";
+  rdfs:comment "Not provided by Onboard" ;
+  skos:prefLabel "N" .
+
+era-safeconsistlength-eratv:02 a skos:Concept;
+  skos:inScheme era-safeconsistlength:SafeConsistLengthNecessary; skos:note "Value added in line with the CCS ERTMS WG";
+  rdfs:comment "Provided by Onboard, with SIL 2" ;
+  skos:prefLabel "Y+2" .
+
+era-safeconsistlength-eratv:04 a skos:Concept;
+  skos:inScheme era-safeconsistlength:SafeConsistLengthNecessary; skos:note "Value added in line with the CCS ERTMS WG";
+  rdfs:comment "Provided by Onboard, with SIL 4" ;
   skos:prefLabel "Y+4" .

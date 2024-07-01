@@ -5,6 +5,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix era: <http://data.europa.eu/949/> .
 @prefix era-skos: <http://data.europa.eu/949/concepts/> .
 @prefix era-op-types: <http://data.europa.eu/949/concepts/op-types/> .
@@ -44,13 +45,13 @@ era-ess:EnergySupplySystems a skos:ConceptScheme ;
 ########## Energy supply systems ##########
 ## ERATV values ##
 
-era-ess-eratv:others
-    skos:inScheme era-ess:EnergySupplySystems ;
-    skos:note "Value retrieved from the ERATV database";
-    skos:altLabel "Others (specify nominal voltage and frequency and ranges)";
-    skos:altLabel "Others (The User must also specify nominal voltage, frequency, ranges and current type AC or DC)" ;
-    skos:altLabel "others";
-    skos:prefLabel "Others".
+# era-ess-eratv:others
+#     skos:inScheme era-ess:EnergySupplySystems ;
+#     skos:note "Value retrieved from the ERATV database";
+#     skos:altLabel "Others (specify nominal voltage and frequency and ranges)";
+#     skos:altLabel "Others (The User must also specify nominal voltage, frequency, ranges and current type AC or DC)" ;
+#     skos:altLabel "others";
+#     skos:prefLabel "Others".
      
 era-ess-eratv:1-2kv a skos:Concept;
   skos:inScheme era-ess:EnergySupplySystems;
@@ -205,6 +206,8 @@ era-ess-eratv:dc-3kv a skos:Concept;
   skos:inScheme era-ess:EnergySupplySystems;
   skos:note "Value retrieved from the ERATV database";
   skos:exactMatch era-ess-rinf:DC30;
+  era:unitOfMeasure unit:KiloV ;
+  # ??? "3.0"^^xsd:float
   skos:prefLabel "DC 3kV" .
 
 ## RINF values ##
