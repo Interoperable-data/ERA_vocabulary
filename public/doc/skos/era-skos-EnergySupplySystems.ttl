@@ -31,6 +31,7 @@ era-ess:EnergySupplySystems a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Energy Supply Systems"@en ;
+    skos:prefLabel "Energy Supply Systems"@en ;
     dct:title "Concept scheme grouping energy supply systems"@en .
 
 
@@ -45,7 +46,7 @@ era-ess:EnergySupplySystems a skos:ConceptScheme ;
 ## ERATV values ##
 
 era-ess-eratv:others
-    skos:inScheme era-ess:EnergySupplySystems ;
+    skos:inScheme era-ess:EnergySupplySystems ; skos:topConceptOf era-ess:EnergySupplySystems ;
     skos:note "Value retrieved from the ERATV database";
     skos:altLabel "Others (specify nominal voltage and frequency and ranges)";
     skos:altLabel "Others (The User must also specify nominal voltage, frequency, ranges and current type AC or DC)" ;
@@ -209,7 +210,7 @@ era-ess-eratv:dc-3kv a skos:Concept;
 
 ## RINF values ##
 era-ess-rinf:DC80 a skos:Concept ; 
-    skos:inScheme era-ess:EnergySupplySystems ;
+    skos:inScheme era-ess:EnergySupplySystems ; skos:topConceptOf era-ess:EnergySupplySystems ;
     skos:note "Value retrieved from the RINF database";
     skos:prefLabel "DC 600 V" .
 
@@ -247,7 +248,7 @@ era-ess-rinf:90 a skos:Concept;
   skos:prefLabel "other" .
 
 #added from value in RINF lookup table
-era-ess:DC90 a skos:Concept;
+era-ess-rinf:DC90 a skos:Concept;
   skos:inScheme era-ess:EnergySupplySystems;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "DC 850V" .

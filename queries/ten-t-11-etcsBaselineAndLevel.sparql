@@ -3,7 +3,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT *
-FROM <http://data.europa.eu/949/graph/rinf>
+FROM <${{NAMED_KG_RINF}}>
 FROM <http://data.europa.eu/949/graph/skos>
 {
 

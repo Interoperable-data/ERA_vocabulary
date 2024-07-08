@@ -2,7 +2,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?country ?p (COUNT(DISTINCT ?track) AS ?numberTracks)
 WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?country .
   ?sectionOfLine era:track ?track .

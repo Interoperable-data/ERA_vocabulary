@@ -27,6 +27,7 @@ era-pos:RelationPositions a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Relation Positions"@en ;
+    skos:prefLabel "Relation Positions"@en ;
     dct:title "Concept scheme grouping relation positions of topological objects"@en .
 
 
@@ -41,12 +42,12 @@ era-pos:RelationPositions a skos:ConceptScheme ;
 ########## Relation Positions ##########
 
 era-pos-rinf:Start a skos:Concept;
-  skos:inScheme era-pos:RelationPositions;
+  skos:inScheme era-pos:RelationPositions; skos:topConceptOf era-pos:RelationPositions;
   skos:prefLabel "Start"@en;skos:note "Value retrieved from the RINF database";
   skos:definition "The topological object starts from where the relation takes place"@en.
 
 era-pos-rinf:End a skos:Concept;
-  skos:inScheme era-pos:RelationPositions;
+  skos:inScheme era-pos:RelationPositions; skos:topConceptOf era-pos:RelationPositions;
   skos:prefLabel "End"@en;skos:note "Value retrieved from the RINF database";
   skos:definition "The topological object ends where the relation takes place"@en.
 

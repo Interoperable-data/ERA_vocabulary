@@ -2,7 +2,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?p ?inCountry ?numTotalSOLs ?numSOLsWithPropertyAsCoreParameter ?numSOLsWithoutPropertyAsCoreParameter
 WHERE {
-  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?p {era:length}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?sectionOfLine) AS ?numTotalSOLs)

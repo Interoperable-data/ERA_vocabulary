@@ -3,7 +3,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT *
 {
- GRAPH <http://data.europa.eu/949/graph/rinf> {
+ GRAPH <${{NAMED_KG_RINF}}> {
     ?sol a era:SectionOfLine. 
     ?sol era:opStart ?op_start.
     ?op_start era:opName ?op_startName .

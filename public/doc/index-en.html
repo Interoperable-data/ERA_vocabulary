@@ -7,11 +7,11 @@
  <script src="resources/matchbrackets.js"></script>
  <script src="resources/turtle.js"></script>
 
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>ERA vocabulary</title>
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>ERA Ontology</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.europa.eu/949/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.europa.eu/949/","name":"ERA vocabulary", "headline":"This is the human and machine readable Vocabulary/Ontology governed by the European Union Agency for Railways. It represents the concepts and relationships linked to the sectorial legal framework and the use cases under the Agency´s remit. Currently, this vocabulary covers the European railway infrastructure and the vehicles authorized to operate over it. It is a semantic/browsable representation of the RINF (https://www.era.europa.eu/sites/default/files/registers/docs/rinf_application_guide_for_register_en.pdf) and ERATV (https://www.era.europa.eu/sites/default/files/registers/docs/iu-eratv_application_guide_for_register_2016-797_en.pdf) application guides that were built by domain experts in the RINF and ERATV working parties.", "datePublished":"2023-04-26", "version":"v3.0.1", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Oscar Corcho"}], "contributor":[{"@type":"Person","name":"Julián Rojas","url":"https://julianrojas.org/#me"},{"@type":"Person","name":"Dylan Van Assche","url":"https://dylanvanassche.be/#me"},{"@type":"Person","name":"Ivo Velitchkov"},{"@type":"Person","name":"Marina Aguado"},{"@type":"Person","name":"Pieter Colpaert","url":"https://pietercolpaert.be/#me"},{"@type":"Person","name":"Polymnia Vasilopoulou"},{"@type":"Person","name":"Wouter Beek"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://data.europa.eu/949/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://data.europa.eu/949/","name":"ERA Ontology", "headline":"This is the human and machine readable ontology governed by the European Union Agency for Railways. It represents the concepts and relationships linked to the sectorial legal framework and the use cases under the Agency´s remit. Currently, this ontology covers the European railway infrastructure and the vehicles authorized to operate over it. It is a semantic/browsable representation of the RINF (https://www.era.europa.eu/system/files/2023-02/RINF%20Application%20guide%20V1.6.1.pdf) and ERATV (https://www.era.europa.eu/sites/default/files/registers/docs/iu-eratv_application_guide_for_register_2016-797_en.pdf) application guides that were built by domain experts in the RINF and ERATV working parties.", "datePublished":"2024-06-18", "version":"v3.0.1", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Oscar Corcho"}], "contributor":[{"@type":"Person","name":"Julián Rojas","url":"https://julianrojas.org/#me"},{"@type":"Person","name":"Dylan Van Assche","url":"https://dylanvanassche.be/#me"},{"@type":"Person","name":"Ivo Velitchkov"},{"@type":"Person","name":"Marina Aguado"},{"@type":"Person","name":"Pieter Colpaert","url":"https://pietercolpaert.be/#me"},{"@type":"Person","name":"Polymnia Vasilopoulou"},{"@type":"Person","name":"Wouter Beek"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -65,17 +65,17 @@ function loadTOC(){
 <div class="head">
 <img src="resources/images/era-logo.png"/>
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>ERA vocabulary. Version 3.0.1</h1>
+<h1>ERA Ontology. Version 3.0.1</h1>
 
 <dl>
 <dt>This version:</dt>
 <dd><a href="https://data-interop.era.europa.eu/era-vocabulary/">https://data-interop.era.europa.eu/era-vocabulary/</a></dd>
-<!--<dt>Latest version:</dt>
-<dd><a href="https://git.fpfis.eu/datateam/ERA/era-vocabulary/-/releases/v2.6.2">https://git.fpfis.eu/datateam/ERA/era-vocabulary/-/releases/v2.6.2</a></dd>-->
-<dt>Previous version:</dt>
-<dd><a href="https://zenodo.org/record/7775344">https://zenodo.org/record/7775344</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.0">https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.0</a></dd>
+<!-- <dt>Previous version:</dt>
+<dd><a href="https://zenodo.org/record/7775344">https://zenodo.org/record/7775344</a></dd> -->
 <dt>Version:</dt>
-<dd>v3.0.1 (released on 2023-04-26)</dd>
+<dd>v3.0.1 (released on 2024-06-18)</dd>
 <!--<dt>Authors:</dt>
 <dd>Edna Ruckhaus, (<a href="https://oeg.fi.upm.es/">UPM</a>)</dd><dd>Oscar Corcho, (<a href="https://oeg.fi.upm.es/">UPM</a>)</dd>
 
@@ -93,7 +93,7 @@ function loadTOC(){
 <dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
 <dt>Cite as:</dt>
-<dd>European Union Agency for Railways (2023) ERA vocabulary. Version v3.0.1. Retrieved from <a href="https://data-interop.era.europa.eu/era-vocabulary/">https://data-interop.era.europa.eu/era-vocabulary/</a></dd>
+<dd>European Union Agency for Railways (2024) ERA Ontology. Version v3.0.1. Retrieved from <a href="https://data-interop.era.europa.eu/era-vocabulary/">https://data-interop.era.europa.eu/era-vocabulary/</a></dd>
 </dl>
 
 <!--<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>-->

@@ -1,7 +1,9 @@
 PREFIX era: <http://data.europa.eu/949/> 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-SELECT ?inCountry COUNT(DISTINCT ?x) AS ?count WHERE {  
+SELECT ?inCountry COUNT(DISTINCT ?x) AS ?count 
+FROM <http://data.europa.eu/949/graph/prod/rinf>
+WHERE {  
        ?x a era:SectionOfLine.
        FILTER NOT EXISTS {?x era:inCountry ?inCountry}
 }

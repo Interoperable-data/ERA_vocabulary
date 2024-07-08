@@ -3,7 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
 <https://data-interop.era.europa.eu/era-vocabulary/> a prov:Entity;
-	 dc:title "ERA vocabulary";
+	 dc:title "ERA Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
 	 prov:wasAttributedTo <https://julianrojas.org/#me>;
@@ -17,9 +17,8 @@
 	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo :agent5;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <https://git.fpfis.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.1>;
-	 prov:wasRevisionOf <https://zenodo.org/record/7775344>;
-	 prov:wasGeneratedAt "2023-04-26";
+	 prov:specializationOf <https:https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.1>;
+	 prov:wasGeneratedAt "2024--6-18";
 .
 :agent0 a prov:Agent; foaf:name "Edna Ruckhaus".
 :agent1 a prov:Agent; foaf:name "Oscar Corcho".

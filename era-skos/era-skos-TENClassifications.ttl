@@ -30,6 +30,7 @@ era-tenclass:TENClassifications a skos:ConceptScheme ; dct:issued "2020-09-01"^^
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:isDefinedBy era-skos: ;
     rdfs:label "TEN Classifications"@en ;
+    skos:prefLabel "TEN Classifications"@en ;
     dct:title "Concept scheme grouping TEN (trans-European Network) classifications"@en .
 
 
@@ -45,17 +46,17 @@ era-tenclass:TENClassifications a skos:ConceptScheme ; dct:issued "2020-09-01"^^
 ########## TEN Classifications ##########
 
 era-tenclass-rinf:40 a skos:Concept;
-  skos:inScheme era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Off TEN" .
 
 era-tenclass-rinf:10 a skos:Concept;
-  skos:inScheme era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Part of the TEN-T Comprehensive Network" .
 
 era-tenclass-rinf:20 a skos:Concept;
-  skos:inScheme era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Part of the TEN-T Core Freight Network" .
 
 era-tenclass-rinf:30 a skos:Concept;
-  skos:inScheme era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Part of the TEN-T Core Passenger Network" .

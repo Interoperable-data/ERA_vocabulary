@@ -30,6 +30,7 @@ era-rsf:Categories a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Rolling Stock Fire Categories"@en ;
+    skos:prefLabel "Rolling Stock Fire Categories"@en ;
     dct:title "Concept scheme grouping fire categories of rolling stock. Rolling stock admitted in tunnels shall belong to either of the fire safety categories A and B"@en .
 
 
@@ -47,32 +48,33 @@ era-rsf:Categories a skos:ConceptScheme ;
 # RINF values
 
 era-rsf-rinf:10 a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:prefLabel "A" ;
     skos:note "Value retrieved from the RINF database";
-    skos:definition "Rolling stock which is designed and built to operate on underground sections and tunnels of not more than 5 km in length, with side evacuation available is defined as category A"@en .
+    skos:definition "Rolling stock which is designed and built to operate on underground sections and tunnels of not more than 5 km in length, with side evacuation available is defined as category A".
 
 era-rsf-rinf:20 a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:prefLabel "B" ;
     skos:note "Value retrieved from the RINF database";
-    skos:definition "Rolling stock which is designed and built to operate in all tunnels of the trans-European Network is defined as category B"@en .
+    skos:definition "Rolling stock which is designed and built to operate in all tunnels of the trans-European Network is defined as category B".
 
 era-rsf-rinf:30 a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
-    skos:prefLabel "None"@en ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
+    skos:altLabel "None"@en ;
+    skos:prefLabel "none"@en ;
     skos:note "Value retrieved from the RINF database";
-    skos:definition "None of rolling stock fire categories A or B shall be applied on a tunnel"@en .
+    skos:definition "None of rolling stock fire categories A or B shall be applied on a tunnel" .
 
 # ERATV values
 era-rsf-eratv:a a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:prefLabel "A" ;
     skos:exactMatch era-rsf-rinf:10;
     skos:note "Value retrieved from the ERATV database".
     
 era-rsf-eratv:b a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:prefLabel "B" ;
     skos:exactMatch era-rsf-rinf:20;
     skos:note "Value retrieved from the ERATV database".
@@ -80,24 +82,24 @@ era-rsf-eratv:b a skos:Concept ;
 
 
 era-rsf-eratv:otm a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "OTM"@en.
     
 
 
 era-rsf-eratv:srt-tsi a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "SRT TSI Freight Locomotive"@en .
 
 era-rsf-eratv:no-category-acceptable-in-unnels-shorter-then-1km a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "no category, acceptable in tunnels shorter then 1km"@en .
 
 era-rsf-eratv:not-applicable a skos:Concept ;
-    skos:inScheme era-rsf:Categories ;
+    skos:inScheme era-rsf:Categories ; skos:topConceptOf era-rsf:Categories ;
     skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Not applicable"@en .
 

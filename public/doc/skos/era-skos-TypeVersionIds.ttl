@@ -23,6 +23,7 @@ era-version-ids:TypeVersionIds a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Vehicle Type Version Ids"@en ;
+    skos:prefLabel "Vehicle Type Version Ids"@en ;
     dct:title "Concept scheme grouping vehicle type version ids indicating registration versions"@en .
 
 
@@ -38,22 +39,22 @@ era-version-ids:TypeVersionIds a skos:ConceptScheme ;
 ########## Vehicle categories ##########
 
 era-version-ids-eratv:10 a skos:Concept ;
-    skos:inScheme era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-version-ids:TypeVersionIds ; skos:topConceptOf era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Before 2010"@en .
 
 era-version-ids-eratv:20 a skos:Concept ;
-    skos:inScheme era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-version-ids:TypeVersionIds ; skos:topConceptOf era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Directive 2008/57/EC"@en .
 
 era-version-ids-eratv:30 a skos:Concept ;
-    skos:inScheme era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-version-ids:TypeVersionIds ; skos:topConceptOf era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Directive 2008/57/EC - Exceptional Mode"@en .
 
 era-version-ids-eratv:40 a skos:Concept ;
-    skos:inScheme era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-version-ids:TypeVersionIds ; skos:topConceptOf era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Directive (EU) 2016/797"@en .
 
 era-version-ids-eratv:50 a skos:Concept ;
-    skos:inScheme era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-version-ids:TypeVersionIds ; skos:topConceptOf era-version-ids:TypeVersionIds ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Directive (EU) 2016/797 - Exceptional Mode"@en .
 
