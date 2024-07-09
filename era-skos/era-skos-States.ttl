@@ -21,11 +21,11 @@
   
 era-states:States a skos:ConceptScheme ;
     dct:issued "2020-09-01"^^xsd:date ;
-    dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2022-09-09"^^xsd:date , "2024-06-26"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "States"@en ;
-    dct:title "Concept scheme grouping certificate states"@en .
+    dct:title "Concept scheme grouping certificate and vehicle (type) authorisation states"@en .
 
 
 #################################################################
@@ -42,14 +42,30 @@ era-states-eratv:new a skos:Concept ;
     skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "New"@en .
 
-era-states-eratv:ammended a skos:Concept ;
+era-states-eratv:valid a skos:Concept ;
+    skos:inScheme era-states:States ; skos:note "Value for Authorisation Status";
+    era:eratvIndex "3.1.2.1" ;
+    skos:prefLabel "Valid"@en .
+
+era-states-eratv:amended a skos:Concept ;
     skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Amended"@en .
 
 era-states-eratv:suspended a skos:Concept ;
-    skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-states:States ; skos:note "Value for Certificate and Authorisation Status";
+    era:eratvIndex "3.1.2.1" ;
     skos:prefLabel "Suspended"@en .
+
+era-states-eratv:revoked a skos:Concept ;
+    skos:inScheme era-states:States ; skos:note "Value for Authorisation Status";
+    era:eratvIndex "3.1.2.1" ;
+    skos:prefLabel "Revoked"@en .
 
 era-states-eratv:withdrawn a skos:Concept ;
     skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Withdrawn"@en .
+
+era-states-eratv:toberenewed a skos:Concept ;
+    skos:inScheme era-states:States ; skos:note "Value for Authorisation Status";
+    era:eratvIndex "3.1.2.1" ;
+    skos:prefLabel "To Be Renewed"@en .

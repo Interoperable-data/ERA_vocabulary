@@ -29,6 +29,7 @@
 era-etcslevel:ETCSLevels a skos:ConceptScheme ; 
     dct:issued "2020-09-01"^^xsd:date ;
     dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "ETCS Levels"@en ;
@@ -58,11 +59,13 @@ era-etcslevel-rinf:30 a skos:Concept;
   skos:prefLabel "2" .
 
 era-etcslevel-rinf:40 a skos:Concept;
-  skos:inScheme era-etcslevel:ETCSLevels; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-etcslevel:ETCSLevels; skos:note "(Deprecated) Value retrieved from the RINF database";
+  owl:deprecated "true"^^xsd:boolean ;
   skos:prefLabel "3" .
 
 era-etcslevel-rinf:10 a skos:Concept;
-  skos:inScheme era-etcslevel:ETCSLevels; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-etcslevel:ETCSLevels; skos:note "(Deprecated) Value retrieved from the RINF database";
+  owl:deprecated "true"^^xsd:boolean ;
   skos:prefLabel "N" .
 
 era-etcslevel-rinf:60 a skos:Concept;

@@ -25,6 +25,7 @@
 era-rscv:RadioSystemCompatibilitiesVoice a skos:ConceptScheme ; 
     dct:issued "2020-09-01"^^xsd:date ;
     dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Radio System Compatibilities Voice"@en ;
@@ -41,11 +42,26 @@ era-rscv:RadioSystemCompatibilitiesVoice a skos:ConceptScheme ;
 
 
 ########## Radio System Compatibilities Voice ##########
-#Values from RINF
+
+# Special Values
+
 era-rscv-rinf:10 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "Not Defined" .
+
+era-rscv-rinf:20 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "RSC-EU-0" .
+
+era-rscv-eratv:rsc-eu-0 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value retrieved from the ERATV database";
+  skos:exactMatch era-rscv-rinf:20;
+  skos:prefLabel "RSC-EU-0" .
+
+# Values from RINF
 
 era-rscv-rinf:100 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
@@ -57,17 +73,13 @@ era-rscv-rinf:110 a skos:Concept;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-BE-01-V" .
 
-era-rscv-rinf:20 a skos:Concept;
-  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
-  skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "RSC-EU-0" .
-
 era-rscv-rinf:80 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-FR-01-V" .
 
 # added concepts in lookup table ##
+
 era-rscv-rinf:30 a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
   skos:note "Value retrieved from the RINF database";
@@ -108,6 +120,26 @@ era-rscv-rinf:140 a skos:Concept;
   skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-DE-01-V" .
 
+era-rscv-rinf:150 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-LU-01-V" .
+
+era-rscv-rinf:160 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-CH-01-V" .
+
+era-rscv-rinf:170 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-PT-01-V" .
+
+era-rscv-rinf:171 a skos:Concept;
+  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
+  skos:note "Value added following update TWG CCS RINF";
+  skos:prefLabel "RSC-PT-02-V" .
+
 # values from ERATV #
 
 era-rscv-eratv:RSC-NP-CCS7-4a a skos:Concept;
@@ -131,12 +163,6 @@ era-rscv-eratv:rsc-fr-01-v a skos:Concept;
   skos:exactMatch era-rscv-rinf:80;
   skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "RSC-FR-01-V" .
-
-era-rscv-eratv:rsc-eu-0 a skos:Concept;
-  skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;
-  skos:note "Value retrieved from the ERATV database";
-  skos:exactMatch era-rscv-rinf:20;
-  skos:prefLabel "RSC-EU-0" .
 
 era-rscv-eratv:rsc-be-01-v a skos:Concept;
   skos:inScheme era-rscv:RadioSystemCompatibilitiesVoice;

@@ -10,10 +10,8 @@
 
 
 
-@prefix era-tsi: <http://data.europa.eu/949/concepts/tsi-compliances/> .
-@prefix era-tsi-rinf: <http://data.europa.eu/949/concepts/tsi-compliances/rinf/> .
-
-
+@prefix era-atoversion: <http://data.europa.eu/949/concepts/ato-s-versions/> .
+@prefix era-atoversion-rinf: <http://data.europa.eu/949/concepts/ato-s-versions/rinf/> .
 
 
 
@@ -24,16 +22,14 @@
 #################################################################
 
 
-era-tsi:TSICompliances a skos:ConceptScheme ;
-    dct:issued "2020-09-01"^^xsd:date ;
-    dct:modified "2022-09-09"^^xsd:date ;
-    dct:modified "2024-04-18"^^xsd:date ;
+
+
+era-atoversion:ATOSystemVersions a skos:ConceptScheme ; 
+    dct:issued "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
-    rdfs:label "TSI compliances"@en ;
-    owl:deprecated "true"^^xsd:boolean ;
-    dct:title "Concept scheme grouping TSI compliance status. Deprecated as the value is a boolean."@en .
-
+    rdfs:label "ATO System Versions"@en ;
+    dct:title "Concept scheme grouping ATO System Versions"@en .
 
 
 #################################################################
@@ -44,18 +40,13 @@ era-tsi:TSICompliances a skos:ConceptScheme ;
 
 
 
+########## ATO System Versions ##########
 
-########## TSI compliances ##########
+era-atoversion-rinf:0 a skos:Concept;
+  skos:inScheme era-atoversion:ATOSystemVersions;  skos:note "Value introduced in TWG RINF 2024";
+  skos:prefLabel "Non-harmonised" .
 
-era-tsi-rinf:TSI_compliant a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "TSI compliant" .
-
-era-tsi-rinf:not_TSI_compliant a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "not TSI compliant" .
-
-era-tsi-rinf:none a skos:Concept;
-  skos:inScheme era-tsi:TSICompliances; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "none" .
+era-atoversion-rinf:1 a skos:Concept;
+  skos:inScheme era-atoversion:ATOSystemVersions;  skos:note "Value introduced in TWG RINF 2024";
+  skos:prefLabel "1.0" .
 

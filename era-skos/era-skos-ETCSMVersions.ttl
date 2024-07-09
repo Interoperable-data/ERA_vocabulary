@@ -27,6 +27,7 @@
 era-etcsmvers:ETCSMVersions a skos:ConceptScheme ; 
     dct:issued "2020-09-01"^^xsd:date ;
     dct:modified "2022-09-09"^^xsd:date ;
+    dct:modified "2024-04-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "ETCS M Versions"@en ;
@@ -59,3 +60,10 @@ era-etcsmvers-rinf:21 a skos:Concept;
   skos:inScheme era-etcsmvers:ETCSMVersions;  skos:note "Value retrieved from the RINF database";
   skos:prefLabel "2.1" .
 
+era-etcsmvers-rinf:22 a skos:Concept;
+  skos:inScheme era-etcsmvers:ETCSMVersions;  skos:note "Value added by TWG RINF CCS 2024";
+  skos:prefLabel "2.2" .
+
+era-etcsmvers-rinf:23 a skos:Concept;
+  skos:inScheme era-etcsmvers:ETCSMVersions;  skos:note "Value added by TWG RINF CCS 2024";
+  skos:prefLabel "2.3" .
