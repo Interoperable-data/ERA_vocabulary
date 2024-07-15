@@ -1,4 +1,4 @@
-<h2 id="overv" class="list">ERA vocabulary: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="overv" class="list">ERA Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -6,24 +6,35 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#Border" title="http://data.europa.eu/949/Border">Border</a>
-   </li>
-   <li>
       <a href="#Certificate" title="http://data.europa.eu/949/Certificate">Certificate</a>
    </li>
    <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">
+         <span>collection</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+   </li>
+   <li>
       <a href="#ContactLineSystem" title="http://data.europa.eu/949/ContactLineSystem">Contact Line System</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/CreativeWork" title="http://schema.org/CreativeWork">
+         <span>creative work</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Document" title="http://xmlns.com/foaf/0.1/Document">Document</a>
+   </li>
+   <li>
+      <a href="#Document" title="http://data.europa.eu/949/Document">ERA Document</a>
    </li>
    <li>
       <a href="#Feature" title="http://data.europa.eu/949/Feature">ERA Feature</a>
    </li>
    <li>
       <a href="#ETCSLevel" title="http://data.europa.eu/949/ETCSLevel">ETCS Level</a>
-   </li>
-   <li>
-      <a href="#RaisedPantographsDistanceAndSpeed"
-         title="http://data.europa.eu/949/RaisedPantographsDistanceAndSpeed">Indication of maximum number of raised pantographs per train allowed and minimum spacing centre line to centre line of adjacent pantograph heads, expressed in metres, at the given speed.
-Each track can have several raised pantographs per train allowed (structured) values, and each one has values for number of pantographs, minimum distance between pantographs, in metres, and speed considered in km/h.</a>
    </li>
    <li>
       <a href="#InfrastructureManager"
@@ -62,16 +73,23 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#OperationalPoint" title="http://data.europa.eu/949/OperationalPoint">Operational Point</a>
    </li>
    <li>
+      <a href="#http://www.w3.org/ns/org#Organization" title="http://www.w3.org/ns/org#Organization">Organization</a>
+   </li>
+   <li>
       <a href="#PhaseInfo" title="http://data.europa.eu/949/PhaseInfo">Phase info</a>
    </li>
    <li>
-      <a href="#Platform" title="http://data.europa.eu/949/Platform">Platform</a>
+      <a href="#PlatformEdge" title="http://data.europa.eu/949/PlatformEdge">Platform edge</a>
    </li>
    <li>
       <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#Point" title="http://www.w3.org/2003/01/geo/wgs84_pos#Point">Point</a>
    </li>
    <li>
       <a href="#LineReference" title="http://data.europa.eu/949/LineReference">Railway location</a>
+   </li>
+   <li>
+      <a href="#RaisedPantographsDistanceAndSpeed"
+         title="http://data.europa.eu/949/RaisedPantographsDistanceAndSpeed">Raised pantographs distance and speed</a>
    </li>
    <li>
       <a href="#SectionOfLine" title="http://data.europa.eu/949/SectionOfLine">Section Of Line</a>
@@ -134,6 +152,9 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#tsiPantographHead" title="http://data.europa.eu/949/tsiPantographHead">Accepted TSI compliant pantograph heads</a>
    </li>
    <li>
+      <a href="#gsmRAdditionalInfo" title="http://data.europa.eu/949/gsmRAdditionalInfo">Additional information on network characteristics</a>
+   </li>
+   <li>
       <a href="#atoCommunicationSystem" title="http://data.europa.eu/949/atoCommunicationSystem">ATO communication system</a>
    </li>
    <li>
@@ -181,6 +202,41 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#definesSubset" title="http://data.europa.eu/949/definesSubset">Defines subset</a>
    </li>
    <li>
+      <a href="#hotAxleBoxDetectorDirection"
+         title="http://data.europa.eu/949/hotAxleBoxDetectorDirection">Direction of measurement of trackside HABD</a>
+   </li>
+   <li>
+      <a href="#tunnelDocRef" title="http://data.europa.eu/949/tunnelDocRef">Document available from the IM with precise description of the tunnel</a>
+   </li>
+   <li>
+      <a href="#eddyCurrentBrakingConditionsDocument"
+         title="http://data.europa.eu/949/eddyCurrentBrakingConditionsDocument">Document with the conditions for the use of eddy current brakes</a>
+   </li>
+   <li>
+      <a href="#magneticBrakingConditionsDocument"
+         title="http://data.europa.eu/949/magneticBrakingConditionsDocument">Document with the conditions for the use of magnetic brakes</a>
+   </li>
+   <li>
+      <a href="#compatibilityProcedureDocument"
+         title="http://data.europa.eu/949/compatibilityProcedureDocument">Document with the procedure(s) for static and dynamic route compatibility checks</a>
+   </li>
+   <li>
+      <a href="#trainDetectionSystemSpecificCheckDocument"
+         title="http://data.europa.eu/949/trainDetectionSystemSpecificCheckDocument">Document with the procedure(s) related to the type of train detection systems declared in 1.1.1.3.7.1.2 or 1.2.1.1.6.1</a>
+   </li>
+   <li>
+      <a href="#gaugingTransversalDocument"
+         title="http://data.europa.eu/949/gaugingTransversalDocument">Document with the transversal section of the particular points requiring specific checks</a>
+   </li>
+   <li>
+      <a href="#additionalBrakingInformationDocument"
+         title="http://data.europa.eu/949/additionalBrakingInformationDocument">Documents available by the IM relating to braking performance</a>
+   </li>
+   <li>
+      <a href="#localRulesOrRestrictionsDoc"
+         title="http://data.europa.eu/949/localRulesOrRestrictionsDoc">Documents regarding the rules or restrictions of a strictly local nature available by the IM</a>
+   </li>
+   <li>
       <a href="#elementA" title="http://data.europa.eu/949/elementA">Element A</a>
    </li>
    <li>
@@ -193,10 +249,14 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#endCouplingType" title="http://data.europa.eu/949/endCouplingType">End coupling type</a>
    </li>
    <li>
-      <a href="#endLocation" title="http://data.europa.eu/949/endLocation">End of tunnel</a>
+      <a href="#lineReferenceTunnelEnd"
+         title="http://data.europa.eu/949/lineReferenceTunnelEnd">End of tunnel kilometer</a>
    </li>
    <li>
-      <a href="#energySupplySystem" title="http://data.europa.eu/949/energySupplySystem">Energy supply system</a>
+      <a href="#endLocation" title="http://data.europa.eu/949/endLocation">End of tunnel location</a>
+   </li>
+   <li>
+      <a href="#energySupplySystem" title="http://data.europa.eu/949/energySupplySystem">Energy supply system (Voltage and frequency)</a>
    </li>
    <li>
       <a href="#etcsBaseline" title="http://data.europa.eu/949/etcsBaseline">ETCS baseline</a>
@@ -206,16 +266,10 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/etcsEquipmentOnBoardLevel">ETCS equipment level</a>
    </li>
    <li>
-      <a href="#etcsInfill" title="http://data.europa.eu/949/etcsInfill">ETCS infill installed lineside</a>
-   </li>
-   <li>
-      <a href="#etcsLevel" title="http://data.europa.eu/949/etcsLevel">Etcs level</a>
+      <a href="#etcsInfill" title="http://data.europa.eu/949/etcsInfill">ETCS infill installed line-side</a>
    </li>
    <li>
       <a href="#etcsDegradedSituation" title="http://data.europa.eu/949/etcsDegradedSituation">ETCS level for degraded situation</a>
-   </li>
-   <li>
-      <a href="#etcsLevelType" title="http://data.europa.eu/949/etcsLevelType">ETCS level type</a>
    </li>
    <li>
       <a href="#etcsMVersion" title="http://data.europa.eu/949/etcsMVersion">ETCS M_version</a>
@@ -223,6 +277,12 @@ Each track can have several raised pantographs per train allowed (structured) va
    <li>
       <a href="#etcsSystemCompatibility"
          title="http://data.europa.eu/949/etcsSystemCompatibility">ETCS system compatibility</a>
+   </li>
+   <li>
+      <a href="#etcsLevel" title="http://data.europa.eu/949/etcsLevel">European Train Control System (ETCS) level</a>
+   </li>
+   <li>
+      <a href="#etcsLevelType" title="http://data.europa.eu/949/etcsLevelType">European Train Control System (ETCS) level</a>
    </li>
    <li>
       <a href="#TSITractionHarmonics" title="http://data.europa.eu/949/TSITractionHarmonics">Existence and TSI compliance of limits in harmonics in the traction current of vehicles</a>
@@ -258,23 +318,14 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#hasAbstraction" title="http://data.europa.eu/949/hasAbstraction">Has abstraction</a>
    </li>
    <li>
-      <a href="#http://www.opengis.net/ont/geosparql#hasGeometry"
-         title="http://www.opengis.net/ont/geosparql#hasGeometry">
-         <span>has geometry</span>
-      </a>
-   </li>
-   <li>
       <a href="#hasImplementation" title="http://data.europa.eu/949/hasImplementation">Has implementation</a>
    </li>
    <li>
-      <a href="#hasSignal" title="http://data.europa.eu/949/hasSignal">Has signal</a>
+      <a href="#http://www.opengis.net/ont/geosparql#hasGeometry"
+         title="http://www.opengis.net/ont/geosparql#hasGeometry">hasGeometry hasGeometry</a>
    </li>
    <li>
       <a href="#platformHeight" title="http://data.europa.eu/949/platformHeight">Height of platform</a>
-   </li>
-   <li>
-      <a href="#hotAxleBoxDetectorDirection"
-         title="http://data.europa.eu/949/hotAxleBoxDetectorDirection">Hot axle box detector direction</a>
    </li>
    <li>
       <a href="#inCountry" title="http://data.europa.eu/949/inCountry">In country</a>
@@ -310,6 +361,10 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#maxSandingOutput" title="http://data.europa.eu/949/maxSandingOutput">Maximum amount of sand</a>
    </li>
    <li>
+      <a href="#tdsMaximumMagneticField"
+         title="http://data.europa.eu/949/tdsMaximumMagneticField">Maximum magnetic field</a>
+   </li>
+   <li>
       <a href="#minAxleLoadVehicleCategory"
          title="http://data.europa.eu/949/minAxleLoadVehicleCategory">Minimum axle load vehicle category</a>
    </li>
@@ -335,7 +390,7 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#notApplicable" title="http://data.europa.eu/949/notApplicable">Not applicable</a>
    </li>
    <li>
-      <a href="#notYetAvailable" title="http://data.europa.eu/949/notYetAvailable">Not yet available</a>
+      <a href="#notYetAvailable" title="http://data.europa.eu/949/notYetAvailable">Not provided</a>
    </li>
    <li>
       <a href="#gsmRActiveMobiles" title="http://data.europa.eu/949/gsmRActiveMobiles">Number of active GSM-R mobiles (EDOR) or simultaneous communication session on-board for ETCS Level 2 (or level 3) needed to perform radio block centre handovers without having an operational disruption</a>
@@ -347,13 +402,13 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#operatingLanguage" title="http://data.europa.eu/949/operatingLanguage">Operating language</a>
    </li>
    <li>
-      <a href="#opEnd" title="http://data.europa.eu/949/opEnd">Operational Point at end of Section of Line</a>
+      <a href="#opEnd" title="http://data.europa.eu/949/opEnd">Operational point at end of section of line</a>
    </li>
    <li>
-      <a href="#opStart" title="http://data.europa.eu/949/opStart">Operational Point at start of Section of Line</a>
+      <a href="#opStart" title="http://data.europa.eu/949/opStart">Operational point at start of section of line</a>
    </li>
    <li>
-      <a href="#operationalRegimeType" title="http://data.europa.eu/949/operationalRegimeType">Operational regime type</a>
+      <a href="#operationalRegimeType" title="http://data.europa.eu/949/operationalRegimeType">Operational regime</a>
    </li>
    <li>
       <a href="#operationalRestriction"
@@ -376,7 +431,7 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#parkingBrakeType" title="http://data.europa.eu/949/parkingBrakeType">Parking brake type</a>
    </li>
    <li>
-      <a href="#freightCorridor" title="http://data.europa.eu/949/freightCorridor">Part of a Railway freight corridor</a>
+      <a href="#freightCorridor" title="http://data.europa.eu/949/freightCorridor">Part of a Railway Freight Corridor</a>
    </li>
    <li>
       <a href="#passesThroughTunnel" title="http://data.europa.eu/949/passesThroughTunnel">Passes through tunnel</a>
@@ -385,7 +440,7 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#contactStripMaterial" title="http://data.europa.eu/949/contactStripMaterial">Permitted contact strip material</a>
    </li>
    <li>
-      <a href="#platform" title="http://data.europa.eu/949/platform">Platform</a>
+      <a href="#platformEdge" title="http://data.europa.eu/949/platformEdge">Platform edge</a>
    </li>
    <li>
       <a href="#positionOnA" title="http://data.europa.eu/949/positionOnA">Position on A</a>
@@ -416,7 +471,7 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#railInclination" title="http://data.europa.eu/949/railInclination">Rail inclination</a>
    </li>
    <li>
-      <a href="#lineReference" title="http://data.europa.eu/949/lineReference">Railway location of Operational point</a>
+      <a href="#lineReference" title="http://data.europa.eu/949/lineReference">Railway location of an infrastructure object</a>
    </li>
    <li>
       <a href="#reasonsEtcsRadioBlockCenterReject"
@@ -477,7 +532,11 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/profileNumberSwapBodies">Standard combined transport profile number for swap bodies</a>
    </li>
    <li>
-      <a href="#startLocation" title="http://data.europa.eu/949/startLocation">Start of tunnel</a>
+      <a href="#lineReferenceTunnelStart"
+         title="http://data.europa.eu/949/lineReferenceTunnelStart">Start of tunnel kilometer</a>
+   </li>
+   <li>
+      <a href="#startLocation" title="http://data.europa.eu/949/startLocation">Start of tunnel location</a>
    </li>
    <li>
       <a href="#state" title="http://data.europa.eu/949/state">State</a>
@@ -488,9 +547,6 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#temperatureRange" title="http://data.europa.eu/949/temperatureRange">Temperature range</a>
-   </li>
-   <li>
-      <a href="#tenClassification" title="http://data.europa.eu/949/tenClassification">TEN classification (of track, of platform, of siding)</a>
    </li>
    <li>
       <a href="#thermalCapacityTSIReference"
@@ -521,16 +577,15 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#trainDetectionSystem" title="http://data.europa.eu/949/trainDetectionSystem">Train detection system</a>
    </li>
    <li>
-      <a href="#tdsMaximumMagneticField"
-         title="http://data.europa.eu/949/tdsMaximumMagneticField">Train detection system maximum magnetic field</a>
-   </li>
-   <li>
       <a href="#tdsMinAxleLoadVehicleCategory"
          title="http://data.europa.eu/949/tdsMinAxleLoadVehicleCategory">Train detection system min axle load vehicle category</a>
    </li>
    <li>
       <a href="#protectionLegacySystem"
          title="http://data.europa.eu/949/protectionLegacySystem">Train protection legacy system</a>
+   </li>
+   <li>
+      <a href="#tenClassification" title="http://data.europa.eu/949/tenClassification">Trans-European Network (TEN) classification (of track, of platform, of siding)</a>
    </li>
    <li>
       <a href="#tsiCompliantFerromagneticWheel"
@@ -582,7 +637,7 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#trainDetectionSystemSpecificCheck"
-         title="http://data.europa.eu/949/trainDetectionSystemSpecificCheck">Type of track circuits to which specific checks are needed</a>
+         title="http://data.europa.eu/949/trainDetectionSystemSpecificCheck">Type of track circuits or axle counters to which specific checks are needed</a>
    </li>
    <li>
       <a href="#trainDetectionSystemType"
@@ -625,10 +680,7 @@ Each track can have several raised pantographs per train allowed (structured) va
     class="hlist">
    <li>
       <a href="#accelerationLevelCrossing"
-         title="http://data.europa.eu/949/accelerationLevelCrossing">Acceleration allowed at level crossing</a>
-   </li>
-   <li>
-      <a href="#gsmRAdditionalInfo" title="http://data.europa.eu/949/gsmRAdditionalInfo">Additional information on network characteristics</a>
+         title="http://data.europa.eu/949/accelerationLevelCrossing">Acceleration allowed near level crossing</a>
    </li>
    <li>
       <a href="#alternativeName" title="http://data.europa.eu/949/alternativeName">Alternative name</a>
@@ -642,6 +694,9 @@ Each track can have several raised pantographs per train allowed (structured) va
    <li>
       <a href="#gprsImplementationArea"
          title="http://data.europa.eu/949/gprsImplementationArea">Area of implementation of GPRS</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#asWKT" title="http://www.opengis.net/ont/geosparql#asWKT">asWKT asWKT</a>
    </li>
    <li>
       <a href="#atoErrorCorrectionsOnboard"
@@ -662,7 +717,7 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#isQuietRoute" title="http://data.europa.eu/949/isQuietRoute">Belonging to a quieter route</a>
    </li>
    <li>
-      <a href="#bigMetalMass" title="http://data.europa.eu/949/bigMetalMass">Big metal mass</a>
+      <a href="#bigMetalMass" title="http://data.europa.eu/949/bigMetalMass">Big Metal Mass</a>
    </li>
    <li>
       <a href="#boardingAids" title="http://data.europa.eu/949/boardingAids">Boarding aids</a>
@@ -682,10 +737,10 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#highSpeedLoadModelCompliance"
-         title="http://data.europa.eu/949/highSpeedLoadModelCompliance">Compliance of structures with the High Speed Load Model (HSLM) dynamic load model</a>
+         title="http://data.europa.eu/949/highSpeedLoadModelCompliance">Compliance of structures with the High Speed Load Model (HSLM)</a>
    </li>
    <li>
-      <a href="#complianceInfTsi" title="http://data.europa.eu/949/complianceInfTsi">Compliance of the tunnel with INF TSI</a>
+      <a href="#complianceInfTsi" title="http://data.europa.eu/949/complianceInfTsi">Compliance of the tunnel with TSI INF</a>
    </li>
    <li>
       <a href="#compositeBrakeBlockRetrofitted"
@@ -718,6 +773,9 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#currentlyValid" title="http://data.europa.eu/949/currentlyValid">Currently valid</a>
    </li>
    <li>
+      <a href="#hasPlatformCurvature" title="http://data.europa.eu/949/hasPlatformCurvature">Curvature of the platform</a>
+   </li>
+   <li>
       <a href="#dNvovtrp" title="http://data.europa.eu/949/dNvovtrp">D_NVOVTRP</a>
    </li>
    <li>
@@ -743,6 +801,10 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/designMassNormalPayload">Design mass under normal payload</a>
    </li>
    <li>
+      <a href="#publicNetworkRoamingDetails"
+         title="http://data.europa.eu/949/publicNetworkRoamingDetails">Details on GSM-R roaming to public networks</a>
+   </li>
+   <li>
       <a href="#dieselThermalAllowed" title="http://data.europa.eu/949/dieselThermalAllowed">Diesel or other thermal traction allowed</a>
    </li>
    <li>
@@ -753,6 +815,9 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#distSignToPhaseEnd" title="http://data.europa.eu/949/distSignToPhaseEnd">Distance between signboard and phase separation ending</a>
    </li>
    <li>
+      <a href="#documentUrl" title="http://data.europa.eu/949/documentUrl">Document URL</a>
+   </li>
+   <li>
       <a href="#documentRestrictionPowerConsumption"
          title="http://data.europa.eu/949/documentRestrictionPowerConsumption">Document with restriction related to power consumption of specific electric traction unit(s)</a>
    </li>
@@ -761,47 +826,19 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/documentRestrictionPositionContactLineSeparation">Document with restriction related to the position of Multiple Traction unit(s) to comply with contact line separation</a>
    </li>
    <li>
-      <a href="#eddyCurrentBrakingConditionsDocument"
-         title="http://data.europa.eu/949/eddyCurrentBrakingConditionsDocument">Document with the conditions for the use of eddy current brakes</a>
-   </li>
-   <li>
-      <a href="#magneticBrakingConditionsDocument"
-         title="http://data.europa.eu/949/magneticBrakingConditionsDocument">Document with the conditions for the use of magnetic brakes</a>
-   </li>
-   <li>
-      <a href="#compatibilityProcedureDocument"
-         title="http://data.europa.eu/949/compatibilityProcedureDocument">Document with the procedure(s) for static and dynamic route compatibility checks</a>
-   </li>
-   <li>
-      <a href="#trainDetectionSystemSpecificCheckDocument"
-         title="http://data.europa.eu/949/trainDetectionSystemSpecificCheckDocument">Document with the procedure(s) related to the type of train detection systems declared in 1.2.1.1.6.1</a>
-   </li>
-   <li>
-      <a href="#gaugingTransversalDocument"
-         title="http://data.europa.eu/949/gaugingTransversalDocument">Document with the transversal section of the particular points requiring specific checks</a>
-   </li>
-   <li>
-      <a href="#additionalBrakingInformationDocument"
-         title="http://data.europa.eu/949/additionalBrakingInformationDocument">Documents available by the IM relating to braking performance</a>
-   </li>
-   <li>
-      <a href="#localRulesOrRestrictionsDoc"
-         title="http://data.europa.eu/949/localRulesOrRestrictionsDoc">Documents regarding the rules or restrictions of a strictly local nature available by the IM</a>
-   </li>
-   <li>
       <a href="#drivingCabs" title="http://data.europa.eu/949/drivingCabs">Driving cabs</a>
    </li>
    <li>
-      <a href="#verificationCCS" title="http://data.europa.eu/949/verificationCCS">EC declaration of verification for track (CCS)</a>
+      <a href="#verificationCCS" title="http://data.europa.eu/949/verificationCCS">EC declaration of verification for track relating to compliance with the requirements from TSIs applicable to control, command signalling subsystem</a>
    </li>
    <li>
-      <a href="#verificationENE" title="http://data.europa.eu/949/verificationENE">EC declaration of verification for track (ENE)</a>
+      <a href="#verificationENE" title="http://data.europa.eu/949/verificationENE">EC declaration of verification for track relating to compliance with the requirements from TSIs applicable to energy subsystem</a>
    </li>
    <li>
-      <a href="#verificationINF" title="http://data.europa.eu/949/verificationINF">EC declaration of verification for track/siding [INF]</a>
+      <a href="#verificationINF" title="http://data.europa.eu/949/verificationINF">EC declaration of verification for track relating to compliance with the requirements from TSIs applicable to infrastructure subsystem</a>
    </li>
    <li>
-      <a href="#verificationSRT" title="http://data.europa.eu/949/verificationSRT">EC declaration of verification for tunnel (SRT)</a>
+      <a href="#verificationSRT" title="http://data.europa.eu/949/verificationSRT">EC declaration of verification relating to compliance with the requirements from TSIs applicable to railway tunnel</a>
    </li>
    <li>
       <a href="#eddyCurrentBrakePrevention"
@@ -812,13 +849,13 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/eddyCurrentBrakingFitted">Eddy current braking fitted</a>
    </li>
    <li>
-      <a href="#demonstrationENE" title="http://data.europa.eu/949/demonstrationENE">EI declaration of demonstration for track (ENE)</a>
+      <a href="#demonstrationINF" title="http://data.europa.eu/949/demonstrationINF">EI declaration of demonstration (as defined Commission 2014/881/EU) for track relating to compliance with the requirements from TSIs applicable to infrastructure subsystem</a>
    </li>
    <li>
-      <a href="#demonstrationINF" title="http://data.europa.eu/949/demonstrationINF">EI declaration of demonstration for track/siding [INF]</a>
+      <a href="#demonstrationSRT" title="http://data.europa.eu/949/demonstrationSRT">EI declaration of demonstration (as defined in Recommendation 2014/881/EU) relating to compliance with the requirements from TSIs applicable to railway tunnel</a>
    </li>
    <li>
-      <a href="#demonstrationSRT" title="http://data.europa.eu/949/demonstrationSRT">EI declaration of demonstration for tunnel (SRT)</a>
+      <a href="#demonstrationENE" title="http://data.europa.eu/949/demonstrationENE">EI declaration of demonstration (as defined Recommendation 2014/881/EU) for track relating to compliance with the requirements from TSIs applicable to energy subsystem</a>
    </li>
    <li>
       <a href="#emergencyBrake" title="http://data.europa.eu/949/emergencyBrake">Emergency braking</a>
@@ -826,6 +863,9 @@ Each track can have several raised pantographs per train allowed (structured) va
    <li>
       <a href="#endIntrinsicCoordinate"
          title="http://data.europa.eu/949/endIntrinsicCoordinate">End intrinsic coordinate</a>
+   </li>
+   <li>
+      <a href="#tunnelKilometerEnd" title="http://data.europa.eu/949/tunnelKilometerEnd">End of tunnel kilometer</a>
    </li>
    <li>
       <a href="#energyMeterInstalled" title="http://data.europa.eu/949/energyMeterInstalled">Energy meter installed</a>
@@ -836,6 +876,10 @@ Each track can have several raised pantographs per train allowed (structured) va
    <li>
       <a href="#energySupplySystemTSICompliant"
          title="http://data.europa.eu/949/energySupplySystemTSICompliant">Energy supply system TSI compliant</a>
+   </li>
+   <li>
+      <a href="#ertmsErrorCorrectionsOnBoard"
+         title="http://data.europa.eu/949/ertmsErrorCorrectionsOnBoard">ERTMS error corrections required for the on-board</a>
    </li>
    <li>
       <a href="#etcsDataCommApp" title="http://data.europa.eu/949/etcsDataCommApp">ETCS data communication application</a>
@@ -870,9 +914,6 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/etcsImplementsLevelCrossingProcedure">ETCS trackside implements level crossing procedure or an equivalent solution</a>
    </li>
    <li>
-      <a href="#hasPlatformCurvature" title="http://data.europa.eu/949/hasPlatformCurvature">Existence of  platform curvature</a>
-   </li>
-   <li>
       <a href="#hasBallast" title="http://data.europa.eu/949/hasBallast">Existence of ballast</a>
    </li>
    <li>
@@ -888,6 +929,9 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#hasExternalCleaning" title="http://data.europa.eu/949/hasExternalCleaning">Existence of external cleaning facilities</a>
+   </li>
+   <li>
+      <a href="#publicNetworkRoaming" title="http://data.europa.eu/949/publicNetworkRoaming">Existence of GSM-R roaming to public networks</a>
    </li>
    <li>
       <a href="#hasLevelCrossings" title="http://data.europa.eu/949/hasLevelCrossings">Existence of level crossings</a>
@@ -909,7 +953,7 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#localRulesOrRestrictions"
-         title="http://data.europa.eu/949/localRulesOrRestrictions">Existence of rules and restrictions of a strictly local nature.</a>
+         title="http://data.europa.eu/949/localRulesOrRestrictions">Existence of rules and restrictions of a strictly local nature</a>
    </li>
    <li>
       <a href="#flangeLubeRules" title="http://data.europa.eu/949/flangeLubeRules">Existence of rules on on-board flange lubrication</a>
@@ -932,7 +976,8 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#hasToiletDischarge" title="http://data.europa.eu/949/hasToiletDischarge">Existence of toilet discharge</a>
    </li>
    <li>
-      <a href="#hasHotAxleBoxDetector" title="http://data.europa.eu/949/hasHotAxleBoxDetector">Existence of trackside hot axle box detector (HABD)</a>
+      <a href="#hasHotAxleBoxDetector"
+         title="http://data.europa.eu/949/hasHotAxleBoxDetector">Existence of trackside hot axle box detector (HABD)</a>
    </li>
    <li>
       <a href="#hasTSITrainDetection" title="http://data.europa.eu/949/hasTSITrainDetection">Existence of train detection system fully compliant with the TSI</a>
@@ -968,15 +1013,8 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#gradientProfile" title="http://data.europa.eu/949/gradientProfile">Gradient profile</a>
    </li>
    <li>
-      <a href="#publicNetworkRoamingDetails"
-         title="http://data.europa.eu/949/publicNetworkRoamingDetails">GSM-R details on roaming to public networks</a>
-   </li>
-   <li>
       <a href="#gsmrErrorCorrectionsOnboard"
          title="http://data.europa.eu/949/gsmrErrorCorrectionsOnboard">GSM-R error corrections required for the on-board</a>
-   </li>
-   <li>
-      <a href="#publicNetworkRoaming" title="http://data.europa.eu/949/publicNetworkRoaming">GSM-R existence of roaming to public networks</a>
    </li>
    <li>
       <a href="#gsmrForcedDeregistrationFunctionalNumber"
@@ -1010,10 +1048,6 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#hasSandingPrevention" title="http://data.europa.eu/949/hasSandingPrevention">Has sanding prevention</a>
    </li>
    <li>
-      <a href="#hasSchematicOverviewOPDigitalForm"
-         title="http://data.europa.eu/949/hasSchematicOverviewOPDigitalForm">Has schematic overview in digital form</a>
-   </li>
-   <li>
       <a href="#hasShuntingRestrictions"
          title="http://data.europa.eu/949/hasShuntingRestrictions">Has shunting restrictions</a>
    </li>
@@ -1030,6 +1064,9 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/IdPhoneErtmsRadioBlockCenter">ID and phone number of ERTMS/ETCS Radio Block Center</a>
    </li>
    <li>
+      <a href="#platformId" title="http://data.europa.eu/949/platformId">Identification of platform</a>
+   </li>
+   <li>
       <a href="#sidingId" title="http://data.europa.eu/949/sidingId">Identification of siding</a>
    </li>
    <li>
@@ -1040,19 +1077,22 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/hotAxleBoxDetectorIdentification">Identification of trackside HABD</a>
    </li>
    <li>
-      <a href="#imCode" title="http://data.europa.eu/949/imCode">IM's code</a>
+      <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">Identifier</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/org#identifier" title="http://www.w3.org/ns/org#identifier">identifier</a>
    </li>
    <li>
       <a href="#tiltingSupported" title="http://data.europa.eu/949/tiltingSupported">Indication whether tilting functions are supported by ETCS</a>
-   </li>
-   <li>
-      <a href="#areaBoardingAid" title="http://data.europa.eu/949/areaBoardingAid">Information of the train access level for which the boarding aid can be used.</a>
    </li>
    <li>
       <a href="#phaseInfo" title="http://data.europa.eu/949/phaseInfo">Information on phase separation</a>
    </li>
    <li>
       <a href="#systemSeparationInfo" title="http://data.europa.eu/949/systemSeparationInfo">Information on system separation</a>
+   </li>
+   <li>
+      <a href="#imCode" title="http://data.europa.eu/949/imCode">Infrastructure manager (IM)'s code</a>
    </li>
    <li>
       <a href="#bridge" title="http://data.europa.eu/949/bridge">Is bridge</a>
@@ -1066,6 +1106,13 @@ Each track can have several raised pantographs per train allowed (structured) va
    </li>
    <li>
       <a href="#length" title="http://data.europa.eu/949/length">Length</a>
+   </li>
+   <li>
+      <a href="#lengthOfSectionOfLine"
+         title="http://data.europa.eu/949/lengthOfSectionOfLine">Length of section of line</a>
+   </li>
+   <li>
+      <a href="#lengthOfTunnel" title="http://data.europa.eu/949/lengthOfTunnel">Length of tunnel</a>
    </li>
    <li>
       <a href="#letterMarking" title="http://data.europa.eu/949/letterMarking">Letter marking</a>
@@ -1248,10 +1295,13 @@ Each track can have several raised pantographs per train allowed (structured) va
       <a href="#minimumWheelDiameter" title="http://data.europa.eu/949/minimumWheelDiameter">Minimum wheel diameter for fixed obtuse crossings</a>
    </li>
    <li>
+      <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">name</a>
+   </li>
+   <li>
       <a href="#subsetName" title="http://data.europa.eu/949/subsetName">Name of a subset with common characteristics</a>
    </li>
    <li>
-      <a href="#opName" title="http://data.europa.eu/949/opName">Name of Operational point</a>
+      <a href="#opName" title="http://data.europa.eu/949/opName">Name of operational point</a>
    </li>
    <li>
       <a href="#signalId" title="http://data.europa.eu/949/signalId">Name of signal</a>
@@ -1273,7 +1323,10 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/multipleTrainProtectionRequired">Need for more than one train protection, control and warning system required on board</a>
    </li>
    <li>
-      <a href="#gsmRNoCoverage" title="http://data.europa.eu/949/gsmRNoCoverage">No GSM-R coverage</a>
+      <a href="#http://xmlns.com/foaf/0.1/nick" title="http://xmlns.com/foaf/0.1/nick">nickname</a>
+   </li>
+   <li>
+      <a href="#gsmRNoCoverage" title="http://data.europa.eu/949/gsmRNoCoverage">No GSMR coverage</a>
    </li>
    <li>
       <a href="#nonCodedRestrictions" title="http://data.europa.eu/949/nonCodedRestrictions">Non coded restrictions</a>
@@ -1287,10 +1340,17 @@ Each track can have several raised pantographs per train allowed (structured) va
          title="http://data.europa.eu/949/numberOfPantographsInContactWithOCL">Number of pantographs in contact with OCL</a>
    </li>
    <li>
+      <a href="#raisedPantographsNumber"
+         title="http://data.europa.eu/949/raisedPantographsNumber">Number of pantographs.</a>
+   </li>
+   <li>
       <a href="#numberOfToilets" title="http://data.europa.eu/949/numberOfToilets">Number of toilets</a>
    </li>
    <li>
       <a href="#oclType" title="http://data.europa.eu/949/oclType">Ocl type</a>
+   </li>
+   <li>
+      <a href="#tafTAPCode" title="http://data.europa.eu/949/tafTAPCode">OP primary location code</a>
    </li>
    <li>
       <a href="#parkingBrake" title="http://data.europa.eu/949/parkingBrake">Parking brake</a>
@@ -1302,11 +1362,6 @@ Each track can have several raised pantographs per train allowed (structured) va
    <li>
       <a href="#parkingBrakeMaximumGradient"
          title="http://data.europa.eu/949/parkingBrakeMaximumGradient">Parking brake maximum gradient</a>
-   </li>
-   <li>
-      <a href="#raisedPantographsNumber"
-         title="http://data.europa.eu/949/raisedPantographsNumber">Part of the raised pantographs distance and speed of a track that corresponds to the number of pantographs. 
-The raised pantographs distance and speed is  the indication of maximum number of raised pantographs per train allowed and minimum spacing centre line to centre line of adjacent pantograph heads, expressed in metres, at the given speed</a>
    </li>
    <li>
       <a href="#passByNoiseLevel" title="http://data.europa.eu/949/passByNoiseLevel">Pass-by noise level</a>
@@ -1334,6 +1389,14 @@ The raised pantographs distance and speed is  the indication of maximum number o
          title="http://data.europa.eu/949/conditionsChargingElectricEnergyStorage">Permitted conditions for charging electric energy storage for traction purposes at standstill</a>
    </li>
    <li>
+      <a href="#phaseInfoChangeSupplySystem"
+         title="http://data.europa.eu/949/phaseInfoChangeSupplySystem">Phase info change supply system</a>
+   </li>
+   <li>
+      <a href="#phaseInfoDistanceType"
+         title="http://data.europa.eu/949/phaseInfoDistanceType">Phase info distance type</a>
+   </li>
+   <li>
       <a href="#phaseInfoKm" title="http://data.europa.eu/949/phaseInfoKm">Phase info Km</a>
    </li>
    <li>
@@ -1351,17 +1414,11 @@ The raised pantographs distance and speed is  the indication of maximum number o
       <a href="#phaseSeparation" title="http://data.europa.eu/949/phaseSeparation">Phase separation</a>
    </li>
    <li>
-      <a href="#platformId" title="http://data.europa.eu/949/platformId">Platform id</a>
-   </li>
-   <li>
       <a href="#portableBoardingAids" title="http://data.europa.eu/949/portableBoardingAids">Portable boarding aids</a>
    </li>
    <li>
       <a href="#preventRegenerativeBrakeUse"
          title="http://data.europa.eu/949/preventRegenerativeBrakeUse">Prevent regenerative brake use</a>
-   </li>
-   <li>
-      <a href="#tafTAPCode" title="http://data.europa.eu/949/tafTAPCode">Primary location code developed for information exchange in accordance with the TSIs relating to telematics applications.</a>
    </li>
    <li>
       <a href="#prioritySeats" title="http://data.europa.eu/949/prioritySeats">Priority seats</a>
@@ -1382,10 +1439,6 @@ The raised pantographs distance and speed is  the indication of maximum number o
    <li>
       <a href="#radioSwitchOverSpecialConditions"
          title="http://data.europa.eu/949/radioSwitchOverSpecialConditions">Radio switch over special conditions</a>
-   </li>
-   <li>
-      <a href="#railInclinationMeasurement"
-         title="http://data.europa.eu/949/railInclinationMeasurement">Rail inclination measurement</a>
    </li>
    <li>
       <a href="#railSystemType" title="http://data.europa.eu/949/railSystemType">Rail system type</a>
@@ -1410,11 +1463,11 @@ The raised pantographs distance and speed is  the indication of maximum number o
          title="http://data.europa.eu/949/raisedPantographsSpeed">Raised pantographs speed</a>
    </li>
    <li>
-      <a href="#referencePassByNoiseLevel"
-         title="http://data.europa.eu/949/referencePassByNoiseLevel">Reference pass-by noise level</a>
+      <a href="#areaBoardingAid" title="http://data.europa.eu/949/areaBoardingAid">Range of use of the platform boarding aid</a>
    </li>
    <li>
-      <a href="#tunnelDocRef" title="http://data.europa.eu/949/tunnelDocRef">Reference to a document available from the IM with precise description of the tunnel</a>
+      <a href="#referencePassByNoiseLevel"
+         title="http://data.europa.eu/949/referencePassByNoiseLevel">Reference pass-by noise level</a>
    </li>
    <li>
       <a href="#relativeDistanceDangerPoint"
@@ -1435,8 +1488,12 @@ The raised pantographs distance and speed is  the indication of maximum number o
       <a href="#schematicOverviewOP" title="http://data.europa.eu/949/schematicOverviewOP">Schematic overview of the operational point</a>
    </li>
    <li>
+      <a href="#hasSchematicOverviewOPDigitalForm"
+         title="http://data.europa.eu/949/hasSchematicOverviewOPDigitalForm">Schematic overview of the operational point in digital form</a>
+   </li>
+   <li>
       <a href="#frenchTrainDetectionSystemLimitationApplicable"
-         title="http://data.europa.eu/949/frenchTrainDetectionSystemLimitationApplicable">Section with train detection limitation is applicable, only for the French network</a>
+         title="http://data.europa.eu/949/frenchTrainDetectionSystemLimitationApplicable">Section with train detection limitation</a>
    </li>
    <li>
       <a href="#shortestDistanceBetweenPantographsInContactWithOCL"
@@ -1463,6 +1520,9 @@ The raised pantographs distance and speed is  the indication of maximum number o
    <li>
       <a href="#startIntrinsicCoordinate"
          title="http://data.europa.eu/949/startIntrinsicCoordinate">Start intrinsic coordinate</a>
+   </li>
+   <li>
+      <a href="#tunnelKilometerStart" title="http://data.europa.eu/949/tunnelKilometerStart">Start of tunnel kilometer</a>
    </li>
    <li>
       <a href="#startingNoiseLevel" title="http://data.europa.eu/949/startingNoiseLevel">Starting noise level</a>
@@ -1524,7 +1584,7 @@ The raised pantographs distance and speed is  the indication of maximum number o
       <a href="#minimumTemperature" title="http://data.europa.eu/949/minimumTemperature">Temperature range (minimum)</a>
    </li>
    <li>
-      <a href="#tenGISId" title="http://data.europa.eu/949/tenGISId">TEN GIS identity</a>
+      <a href="#tenGISId" title="http://data.europa.eu/949/tenGISId">TEN geographic information system identity (GIS ID)</a>
    </li>
    <li>
       <a href="#thermalCapacityDistance"
@@ -1568,12 +1628,6 @@ The raised pantographs distance and speed is  the indication of maximum number o
       <a href="#tunnelIdentification" title="http://data.europa.eu/949/tunnelIdentification">Tunnel identification</a>
    </li>
    <li>
-      <a href="#tunnelKilometerEnd" title="http://data.europa.eu/949/tunnelKilometerEnd">Tunnel kilometer end</a>
-   </li>
-   <li>
-      <a href="#tunnelKilometerStart" title="http://data.europa.eu/949/tunnelKilometerStart">Tunnel kilometer start</a>
-   </li>
-   <li>
       <a href="#opTypeGaugeChangeover"
          title="http://data.europa.eu/949/opTypeGaugeChangeover">Type of track gauge changeover facility</a>
    </li>
@@ -1581,10 +1635,19 @@ The raised pantographs distance and speed is  the indication of maximum number o
       <a href="#typeVersionNumber" title="http://data.europa.eu/949/typeVersionNumber">Type version number</a>
    </li>
    <li>
-      <a href="#umax2" title="http://data.europa.eu/949/umax2">Umax2 for lines referred to in sections 7.4.2.2.1 and 7.4.2.11.1 of Regulation (EU)1301/2014.</a>
+      <a href="#umax2" title="http://data.europa.eu/949/umax2">Umax2 for the French network</a>
    </li>
    <li>
       <a href="#uopid" title="http://data.europa.eu/949/uopid">Unique OP ID</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/url" title="http://schema.org/url">url</a>
+   </li>
+   <li>
+      <a href="#lengthOfPlatform" title="http://data.europa.eu/949/lengthOfPlatform">Usable length of platform</a>
+   </li>
+   <li>
+      <a href="#lengthOfSiding" title="http://data.europa.eu/949/lengthOfSiding">Usable length of siding</a>
    </li>
    <li>
       <a href="#flangeLubeForbidden" title="http://data.europa.eu/949/flangeLubeForbidden">Use of flange lubrication forbidden</a>

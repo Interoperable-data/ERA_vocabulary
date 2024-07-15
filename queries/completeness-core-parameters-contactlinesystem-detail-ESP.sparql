@@ -2,7 +2,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?track ?cls ?p #?rinfIndex  
 WHERE {
-  GRAPH <http://data.europa.eu/949/graph/rinf> {
+  GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
   VALUES ?p {era:energySupplySystem era:contactLineSystemType}
   ?track a era:Track .  

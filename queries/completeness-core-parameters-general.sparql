@@ -6,7 +6,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
 WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
 VALUES ?p {era:temperatureRange era:trackLoadCapability era:maximumPermittedSpeed era:hasSevereWeatherConditions era:gaugingProfile era:gradientProfile era:minimumHorizontalRadius era:wheelSetGauge era:cantDeficiency era:railInclination era:minimumWheelDiameter era:maximumTrainDeceleration era:eddyCurrentBraking era:magneticBraking era:hasHotAxleBoxDetector era:rollingStockFireCategory era:contactLineSystemType era:energySupplySystem}
 # To be added to other things that are not tracks: era:protectionLegacySystem era:legacyRadioSystem era:trainDetectionSystemType era:maximumBrakingDistance era:hasAdditionalBrakingInformation era:lineReference era:gaugingProfile era:length era:platformHeight}
 #missing (not in the ontology)  era:geographicalLocationOperationalPoint (1.2.0.0.0.5), 

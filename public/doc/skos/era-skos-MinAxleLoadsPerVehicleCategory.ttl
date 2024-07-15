@@ -28,6 +28,7 @@ era-malvc:MinAxleLoadsPerVehicleCategory a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Minimum Axle Loads per Vehicle Category"@en ;
+    skos:prefLabel "Minimum Axle Loads per Vehicle Category"@en ;
     dct:title "Concept scheme grouping minimum axle loads per vehicle category"@en .
 
 
@@ -42,42 +43,42 @@ era-malvc:MinAxleLoadsPerVehicleCategory a skos:ConceptScheme ;
 ########## Min axle load per vehicle category ##########
 
 era-malvc-rinf:0-0_40 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "0.0 40" .
 
 era-malvc-rinf:00-0_50 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "00.0 50" .
 
 era-malvc-rinf:03-5_40 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "03.5 40" .
 
 era-malvc-rinf:04-0_50 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "04.0 50" .
 
 era-malvc-rinf:05-0_60 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "05.0 60" .
 
 era-malvc-rinf:22-5_30 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "22.5 30" .
 
 era-malvc-rinf:22-5_40 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "22.5 40" .
 
 era-malvc-rinf:4-0_50 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "4.0 50" .
 
 era-malvc-rinf:5-0_60 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "5.0 60" .
 
 era-malvc-rinf:5-60 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadsPerVehicleCategory; skos:topConceptOf era-malvc:MinAxleLoadsPerVehicleCategory; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "5 60" .
 

@@ -2,11 +2,11 @@ PREFIX era: <http://data.europa.eu/949/>
 PREFIX era-dir: <http://data.europa.eu/949/concepts/track-running-directions/rinf/>
 
 SELECT DISTINCT ?op ?uopid ?country WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
     # Main OP to be analized
     ?op era:inCountry ?country;
         era:uopid ?uopid.
-    
+        
     # Main SoL to be analized with tracks only departing from the main OP
     ?sol a era:SectionOfLine;
          era:track [ era:trackDirection era-dir:10 ];

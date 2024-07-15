@@ -35,6 +35,7 @@ era-linecat:LineCategories a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Line Categories"@en ;
+    skos:prefLabel "Line Categories"@en ;
     dct:title "Concept scheme grouping line categories"@en .
 
 
@@ -52,58 +53,58 @@ era-linecat:LineCategories a skos:ConceptScheme ;
 ########## Line Categories ##########
 
 era-linecat-rinf:90 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F1" .
 
 era-linecat-rinf:130 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F1520" .
 
 era-linecat-rinf:140 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F1600" .
 
 era-linecat-rinf:100 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F2" .
 
 era-linecat-rinf:110 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F3" .
 
 era-linecat-rinf:120 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "F4" .
 
 era-linecat-rinf:10 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P1" .
 
 era-linecat-rinf:70 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P1520" .
 
 era-linecat-rinf:80 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P1600" .
 
 era-linecat-rinf:20 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P2" .
 
 era-linecat-rinf:30 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P3" .
 
 era-linecat-rinf:40 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P4" .
 
 era-linecat-rinf:50 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P5" .
 
 era-linecat-rinf:60 a skos:Concept;
-  skos:inScheme era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-linecat:LineCategories; skos:topConceptOf era-linecat:LineCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "P6" .
 

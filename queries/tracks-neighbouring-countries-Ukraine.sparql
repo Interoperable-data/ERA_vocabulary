@@ -3,7 +3,7 @@ PREFIX country: <http://publications.europa.eu/resource/authority/country/>
 
 SELECT DISTINCT ?country ?gprofile
 WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?country {country:HUN country:ROU country:SVK country:POL}
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?country .

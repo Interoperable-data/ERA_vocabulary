@@ -93,6 +93,7 @@ Changes in the vocabulary involve considerations on the types of changes and com
 This aspect is based on the following assumptions:
 * Knowledge graphs and applications MUST be aligned with the latest (deployed) release of the vocabulary. 
 * Users SHOULD have access to previous releases of the vocabulary in the git system where the vocabulary is being maintained, by using the tag of the vocabulary version.
+* In case that the git system is not available for non-authenticated users,the major ontology releases will be also archived in Zenodo, at PID https://zenodo.org/record/7775344
 
 The following vocabulary changes represent some of the vocabulary modifications that have lowest impact on mappings, queries and applications: 
 * add a class or a property
@@ -275,12 +276,26 @@ Further discussion on this decision is available at https://git.fpfis.tech.ec.eu
 
 **All the resources published in the triple store MUST be stored in their corresponding named graph, so as to faicilitate their management.**
 
-The named graph for each type of resources is as follows:
+The named graph for each type of resource and environment is as follows:
 * ERA ontology
-http://data.europa.eu/949/graph/ontology
+    * http://data.europa.eu/949/graph/dev/ontology
+    * http://data.europa.eu/949/graph/uat/ontology
+    * http://data.europa.eu/949/graph/prod/ontology
 * SKOS concept schemes:
-http://data.europa.eu/949/graph/skos
+    * http://data.europa.eu/949/graph/dev/skos
+    * http://data.europa.eu/949/graph/uat/skos
+    * http://data.europa.eu/949/graph/prod/skos
 * Data transformed from RINF XML files:
-http://data.europa.eu/949/graph/rinf
+    * http://data.europa.eu/949/graph/dev/rinf
+    * http://data.europa.eu/949/graph/uat/rinf
+    * http://data.europa.eu/949/graph/prod/rinf
+* SHACL shapes:
+    * http://data.europa.eu/949/graph/dev/shacl
+    * http://data.europa.eu/949/graph/uat/shacl
+    * http://data.europa.eu/949/graph/prod/shacl
 * Data transformed from the ERATV database:
-http://data.europa.eu/949/graph/eratv
+    * http://data.europa.eu/949/graph/eratv
+* Data about infrastructure managers:
+    * http://data.europa.eu/949/graph/im
+* Data about countries that are available in CELLAR:
+    * http://data.europa.eu/949/graph/countries

@@ -41,16 +41,29 @@ All the resources published in the triple store MUST be stored in their correspo
 
 The named graph for each type of resources is as follows:
 
-* ERA ontology http://data.europa.eu/949/graph/ontology
-
-* SKOS concept schemes: http://data.europa.eu/949/graph/skos
-
-* Data transformed from RINF XML files: http://data.europa.eu/949/graph/rinf
-
-* Data transformed from the ERATV database: http://data.europa.eu/949/graph/eratv
-
-* Data about infrastructure managers: http://data.europa.eu/949/graph/im
-
+* ERA ontology
+    * http://data.europa.eu/949/graph/dev/ontology
+    * http://data.europa.eu/949/graph/uat/ontology
+    * http://data.europa.eu/949/graph/prod/ontology
+* SKOS concept schemes:
+    * http://data.europa.eu/949/graph/dev/skos
+    * http://data.europa.eu/949/graph/uat/skos
+    * http://data.europa.eu/949/graph/prod/skos
+* Data transformed from RINF XML files:
+    * http://data.europa.eu/949/graph/dev/rinf
+    * http://data.europa.eu/949/graph/uat/rinf
+    * http://data.europa.eu/949/graph/prod/rinf
+* SHACL shapes:
+    * http://data.europa.eu/949/graph/dev/shacl
+    * http://data.europa.eu/949/graph/uat/shacl
+    * http://data.europa.eu/949/graph/prod/shacl
+* Data transformed from the ERATV database:
+    * http://data.europa.eu/949/graph/eratv
+* Data about infrastructure managers:
+    * http://data.europa.eu/949/graph/im
+* Data about countries that are available in CELLAR:
+    * http://data.europa.eu/949/graph/countries
+    
 #### Using Graphs
 In SPARQL, graphs can be used to organize and segment RDF data into named sets of triples that can be queried independently. Graphs are identified by URIs and can be queried using the GRAPH keyword in a SPARQL query.
 
@@ -70,7 +83,7 @@ PREFIX era: <http://data.europa.eu/949/>
 ​
 SELECT ?opName
 WHERE { 
-    GRAPH <http://data.europa.eu/949/graph/rinf> {
+    GRAPH <http://data.europa.eu/949/graph/uat/rinf> {
         ?op a era:OperationalPoint;
         era:opName ?opName.
     }

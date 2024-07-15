@@ -1,0 +1,42 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix era: <http://data.europa.eu/949/> .
+#############################
+# Rules for meso-net-relations
+#############################
+
+#
+# meso-net-relations: Meso NetRelations from Operational Points and from Sections of Line
+#
+sh:mesonetrelationShape
+	a sh:NodeShape ;
+	sh:targetClass era:NetRelation .    # Applies to all NetRelation
+	
+sh:mesonetrelationShape sh:property sh:elementA. 
+sh:elementA
+		sh:path era:elementA ; 
+        era:affectedProperty era:elementA;
+        era:affectedClass era:NetRelation;
+        era:scope "local";
+        era:validationAfterXML "true"^^xsd:boolean;
+		sh:minCount 1 ;
+        sh:maxCount 1 ;
+		sh:nodeKind sh:IRI ;
+		sh:message "This error is due to the net relation instance not having a value or having more than one value for the property element A"@en .
+
+sh:mesonetrelationShape sh:property sh:elementB.
+sh:elementB
+		sh:path era:elementB ; 
+        era:affectedProperty era:elementB;
+        era:affectedClass era:NetRelation;
+        era:scope "local";
+        era:validationAfterXML "true"^^xsd:boolean;
+		sh:minCount 1 ;
+        sh:maxCount 1 ;
+		sh:nodeKind sh:IRI ;
+		sh:message "This error is due to the net relation instance or having more than one value for the property element B"@en .
+	
+	

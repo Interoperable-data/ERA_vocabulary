@@ -29,6 +29,7 @@ era-nv:Navigabilities a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Navigabilities"@en ;
+    skos:prefLabel "Navigabilities"@en ;
     dct:title "Concept scheme grouping types of navigability"@en .
 
 
@@ -44,22 +45,22 @@ era-nv:Navigabilities a skos:ConceptScheme ;
 ########## Navigabilities ##########
 
 era-nv-rinf:AB a skos:Concept;
-  skos:inScheme era-nv:Navigabilities;
+  skos:inScheme era-nv:Navigabilities; skos:topConceptOf era-nv:Navigabilities;
   skos:prefLabel "AB"@en; skos:note "Value retrieved from the RINF database";
   skos:definition "Navigation is only possible from element A to element B"@en.
 
 era-nv-rinf:BA a skos:Concept;
-  skos:inScheme era-nv:Navigabilities;
+  skos:inScheme era-nv:Navigabilities; skos:topConceptOf era-nv:Navigabilities;
   skos:prefLabel "BA"@en;skos:note "Value retrieved from the RINF database";
   skos:definition "Navigation is only possible from element B to element A"@en.
 
 era-nv-rinf:Both a skos:Concept;
-  skos:inScheme era-nv:Navigabilities;
+  skos:inScheme era-nv:Navigabilities; skos:topConceptOf era-nv:Navigabilities;
   skos:prefLabel "Both"@en; skos:note "Value retrieved from the RINF database";
   skos:definition "Navigation between elements A and B is possible in both directions"@en.
 
 era-nv-rinf:None a skos:Concept;
-  skos:inScheme era-nv:Navigabilities;
+  skos:inScheme era-nv:Navigabilities; skos:topConceptOf era-nv:Navigabilities;
   skos:prefLabel "None"@en; skos:note "Value retrieved from the RINF database";
   skos:definition "No navigation possible between elements A and B"@en.
 
