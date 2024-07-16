@@ -11041,7 +11041,16 @@ era-tenclass-rinf:20 a skos:Concept;
 
 era-tenclass-rinf:30 a skos:Concept;
   skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
-  skos:prefLabel "Part of the TEN-T Core Passenger Network" .@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+  skos:prefLabel "Part of the TEN-T Core Passenger Network" .
+
+era-tenclass-rinf:50 a skos:Concept;
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "Part of the TEN-T Extended Core Freight Network" .
+
+era-tenclass-rinf:60 a skos:Concept;
+  skos:inScheme era-tenclass:TENClassifications; skos:topConceptOf era-tenclass:TENClassifications; skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "Part of the TEN-T Extended Core Passenger Network" .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
