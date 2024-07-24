@@ -38,9 +38,37 @@ Currently, this Ontology covers the European railway infrastructure and the vehi
 
 The Ontology also includes the routebook concepts described in appendix D2 &quot;Elements the infrastructure manager has to provide to the railway undertaking for the Route Book&quot; as presented in the Commission Implementing Regulation (EU) [to be updated after publication] 2019/773 of 16 May 2019 on the technical specification for interoperability relating to the operation and traffic management subsystem of the rail system within the European Union and [to be updated after publication] and the Appendix D3 [to be updated after publication].</rdfs:comment>
         <rdfs:label xml:lang="en">ERA Ontology</rdfs:label>
-        <owl:priorVersion rdf:resource="https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.0"/>
+        <owl:priorVersion rdf:resource="https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.0"/>
         <owl:versionInfo xml:lang="en">v3.0.1</owl:versionInfo>
-        <owl:versionURI rdf:resource="https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.1"/>
+        <owl:versionURI rdf:resource="https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.1"/>
+        <skos:changeNote xml:lang="en">Following changes in this release:
+1. Added four subproperties of length: lengthOfSectionOfLine, lengthOfPlatform, lengthOfSiding, lengthOfTunnel
+2. Added unit of measure annotation property, annotate corresponding parameters
+3. Changed in all of the documentation, &quot;Vocabulary&quot; to &quot;Ontology:
+4. Added TSI existence and compliances SKOS (instead of a single TSI compliances
+SKOS). For properties TSIMagneticFields 1.1.1.3.9.1 and TSITractionHarmonics
+1.1.1.3.9.2.
+5. Updated all data properties that point to reference documents (properties are
+now object properties that point to the class Document).
+6. Thorough review of latest legal text. Updated labels and definitions in order to
+be aligned with legal text
+7. Refactored properties that are comprised of several parts into a Class and its
+properties: PhaseInfo 1.1.1.2.4.1.2, SystemSeparationInfo 1.1.1.2.4.2.2,
+8. Changed definition canonical URI. Add annotation property hashSource for
+canonical URIs. Modify properties hasAbstraction and hasImplementation no
+more inverses.
+9. Updated data properties 1.1.1.1.8.3 and 1.1.1.1.8.4., tunnel Start and tunnel
+End. Changed to object properties that point to the class LineReference
+(kilometer with respect to line)
+10. Renamed class and property Platform to PlatformEdge to correctly denote the
+concept, i.e. now a plaform with two edges will have two instances instead of
+one, each one with its own length.
+11. Changed label and definition of property Not yet available to Not provided
+12. Added RINF indexes to classes according to RINF hierarchy
+13. Added annotation property isUsedInRCCCalculations, annotated corresponding
+parameters
+14. Refactored properties that are comprised of several parts into a Class and its properties: 1.1.1.3.7.1.4 French train detection system limitation, 1.2.2.0.3.3 minimum radius of vertical curve, ERATV property maximum speed and cant deficiency.
+15. Included company properties: schema:url, foaf:name, foaf:nick, companyCodeCategory, org:identifier</skos:changeNote>
     </owl:Ontology>
     
 

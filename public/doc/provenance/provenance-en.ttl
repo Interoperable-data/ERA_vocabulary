@@ -17,8 +17,9 @@
 	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo :agent5;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <https:https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.1>;
-	 prov:wasGeneratedAt "2024--6-18";
+	 prov:specializationOf <https:https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.1>;
+	 prov:wasRevisionOf <https://zenodo.org/records/12205825>;
+	 prov:wasGeneratedAt "2024-06-18";
 .
 :agent0 a prov:Agent; foaf:name "Edna Ruckhaus".
 :agent1 a prov:Agent; foaf:name "Oscar Corcho".
