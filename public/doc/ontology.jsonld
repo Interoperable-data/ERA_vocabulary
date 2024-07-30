@@ -1956,14 +1956,18 @@
     "@id" : "http://www.opengis.net/ont/geosparql#"
   } ],
   "http://www.w3.org/2002/07/owl#priorVersion" : [ {
-    "@id" : "https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.0"
+    "@id" : "https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
     "@value" : "v3.0.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionURI" : [ {
-    "@id" : "https://git.fpfis.tech.ec.europa.eu/datateam/ERA/era-vocabulary/-/releases/v3.0.1"
+    "@id" : "https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.1"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#changeNote" : [ {
+    "@language" : "en",
+    "@value" : "Following changes in this release:\n1. Added four subproperties of length: lengthOfSectionOfLine, lengthOfPlatform, lengthOfSiding, lengthOfTunnel\n2. Added unit of measure annotation property, annotate corresponding parameters\n3. Changed in all of the documentation, \"Vocabulary\" to \"Ontology:\n4. Added TSI existence and compliances SKOS (instead of a single TSI compliances\nSKOS). For properties TSIMagneticFields 1.1.1.3.9.1 and TSITractionHarmonics\n1.1.1.3.9.2.\n5. Updated all data properties that point to reference documents (properties are\nnow object properties that point to the class Document).\n6. Thorough review of latest legal text. Updated labels and definitions in order to\nbe aligned with legal text\n7. Refactored properties that are comprised of several parts into a Class and its\nproperties: PhaseInfo 1.1.1.2.4.1.2, SystemSeparationInfo 1.1.1.2.4.2.2,\n8. Changed definition canonical URI. Add annotation property hashSource for\ncanonical URIs. Modify properties hasAbstraction and hasImplementation no\nmore inverses.\n9. Updated data properties 1.1.1.1.8.3 and 1.1.1.1.8.4., tunnel Start and tunnel\nEnd. Changed to object properties that point to the class LineReference\n(kilometer with respect to line)\n10. Renamed class and property Platform to PlatformEdge to correctly denote the\nconcept, i.e. now a plaform with two edges will have two instances instead of\none, each one with its own length.\n11. Changed label and definition of property Not yet available to Not provided\n12. Added RINF indexes to classes according to RINF hierarchy\n13. Added annotation property isUsedInRCCCalculations, annotated corresponding\nparameters\n14. Refactored properties that are comprised of several parts into a Class and its properties: 1.1.1.3.7.1.4 French train detection system limitation, 1.2.2.0.3.3 minimum radius of vertical curve, ERATV property maximum speed and cant deficiency.\n15. Included company properties: schema:url, foaf:name, foaf:nick, companyCodeCategory, org:identifier"
   } ]
 }, {
   "@id" : "http://data.europa.eu/949/Certificate",
