@@ -36,6 +36,7 @@ era-gsmrev:GSMREquipmentVersion a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "GSM-R Equipment Versions"@en ;
+    skos:prefLabel "GSM-R Equipment Versions"@en ;
     dct:title "Concept scheme grouping GSM-R equipment versions"@en .
 
 
@@ -50,166 +51,166 @@ era-gsmrev:GSMREquipmentVersion a skos:ConceptScheme ;
 ########## GSM-R equipment versions ##########
 
 era-gsmrv-eratv:6-14 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "6/14" .
 
 era-gsmrv-eratv:7-15 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "7/15" .
 
 era-gsmrv-eratv:7-3-0-15-3-0_Decision_2012-696-EU_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "7.3.0/15.3.0 (Decision 2012/696/EU Set_1)" .
 
 era-gsmrv-eratv:7-3-0-15-3-0_Decision_2012-696-EU_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "7.3.0/15.3.0 (Decision 2012/696/EU Set_2)" .
 
 era-gsmrv-eratv:7-4-0-15-4-0_Decision_2015-14_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "7.4.0/15.4.0 (Decision 2015/14 Set_1)" .
 
 era-gsmrv-eratv:7-4-0-15.4.0_Decision_2015-14_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "7.4.0/15.4.0 (Decision 2015/14 Set_2)" .
 
 era-gsmrv-eratv:8-0-0-16-0-0_Regulation_2016-919_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "8.0.0/16.0.0 (Regulation 2016/919 Set_1)" .
 
 era-gsmrv-eratv:8-0-0-16-0-0_Regulation_2016-919_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "8.0.0/16.0.0 (Regulation 2016/919 Set_2)" .
 
 era-gsmrv-eratv:8-0-0-16-0-0_Regulation_2016-919_Set_3 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "8.0.0/16.0.0 (Regulation 2016/919 Set_3)" .
 
 era-gsmrv-eratv:Decision_2006-860-EC_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2006/860/EC Set 1" .
 
 era-gsmrv-eratv:Decision_2008-386-EC_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2008/386/EC Set_1" .
 
 era-gsmrv-eratv:Decision_2012-696-EU_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2012/696/EU Set_1" .
 
 era-gsmrv-eratv:Decision_2012-696-EU_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion;skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion;skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2012/696/EU Set_2" .
 
 era-gsmrv-eratv:Decision_2012-88-EU_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2012/88/EU Set_1" .
 
 era-gsmrv-eratv:Decision_2015-14_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2015/14 Set_1" .
 
 era-gsmrv-eratv:Decision_2015-14_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Decision 2015/14 Set_2" .
 
 era-gsmrv-eratv:GSM-R_A_Austria a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R A (Austria)" .
 
 era-gsmrv-eratv:GSM-R_B_Belgium a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R B (Belgium)" .
 
 era-gsmrv-eratv:GSM-R_CH_Switzerland a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R CH (Switzerland)" .
 
 era-gsmrv-eratv:GSM-R_CZ_Czech_Rep a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R CZ (Czech Rep.)" .
 
 era-gsmrv-eratv:GSM-R_DK_Denmark a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R DK (Denmark)" .
 
 era-gsmrv-eratv:GSM-R_D_Germany a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R D (Germany)" .
 
 era-gsmrv-eratv:GSM-R_E_Spain a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R E (Spain)" .
 
 era-gsmrv-eratv:GSM-R_F_France a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R F (France)" .
 
 era-gsmrv-eratv:GSM-R_GB_UK_Great_Britain a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R GB (UK (Great Britain))" .
 
 era-gsmrv-eratv:GSM-R_HU_Hungary a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R HU (Hungary)" .
 
 era-gsmrv-eratv:GSM-R_I_Italy a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R I (Italy)" .
 
 era-gsmrv-eratv:GSM-R_L_Luxembourg a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R L (Luxembourg)" .
 
 era-gsmrv-eratv:GSM-R_NL_Netherlands a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R NL (Netherlands)" .
 
 era-gsmrv-eratv:GSM-R_N_Norway a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R N (Norway)" .
 
 era-gsmrv-eratv:GSM-R_SI_Slovenia a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R SI (Slovenia)" .
 
 era-gsmrv-eratv:GSM-R_S_Sweden a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "GSM-R S (Sweden)" .
 
 era-gsmrv-eratv:Implementing_Regulation_EU_2019-776_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Implementing Regulation (EU) 2019/776 Set_1" .
 
 era-gsmrv-eratv:Implementing_Regulation_EU_2019-776_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Implementing Regulation (EU) 2019/776 Set_2" .
 
 era-gsmrv-eratv:Implementing_Regulation_EU_2019-776_Set_3 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Implementing Regulation (EU) 2019/776 Set_3" .
 
 era-gsmrv-eratv:Implementing_Regulation_EU_2020-387_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Implementing Regulation (EU) 2020/387 Set_1" .
 
 era-gsmrv-eratv:Implementing_Regulation_EU_2020-420_Only_German_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Implementing Regulation (EU) 2020/420 (Only German) Set_1" .
 
 era-gsmrv-eratv:None a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "None" .
 
 era-gsmrv-eratv:Regulation_2016-919_Set_1 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Regulation 2016/919 Set_1" .
 
 era-gsmrv-eratv:Regulation_2016-919_Set_2 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Regulation 2016/919 Set_2" .
 
 era-gsmrev:Regulation_2016-919_Set_3 a skos:Concept;
-  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-gsmrev:GSMREquipmentVersion; skos:topConceptOf era-gsmrev:GSMREquipmentVersion; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Regulation 2016/919 Set_3" .
 

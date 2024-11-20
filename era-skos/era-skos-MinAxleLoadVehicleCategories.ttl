@@ -28,6 +28,7 @@ era-malvc:MinAxleLoadVehicleCategories a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Minimum Axle Load Vehicle Categories"@en ;
+    skos:prefLabel "Minimum Axle Load Vehicle Categories"@en ;
     dct:title "Concept scheme grouping vehicle categories for min axle loads"@en .
 
 
@@ -42,13 +43,13 @@ era-malvc:MinAxleLoadVehicleCategories a skos:ConceptScheme ;
 ########## Min axle load vehicle category ##########
 
 era-malvc-rinf:40 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:topConceptOf era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "at least 3,5 t for vehicles with more than 4 axles and wheel tread brakes" .
 
 era-malvc-rinf:50 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:topConceptOf era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "at least 4 t for vehicles with 4 axles and wheel tread brakes" .
 
 era-malvc-rinf:60 a skos:Concept;
-  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
+  skos:inScheme era-malvc:MinAxleLoadVehicleCategories; skos:topConceptOf era-malvc:MinAxleLoadVehicleCategories; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "at least 5 t for other vehicles (that is, vehicles that do not fall into categories 1 or 2)" .

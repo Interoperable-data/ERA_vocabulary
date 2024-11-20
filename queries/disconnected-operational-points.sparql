@@ -3,7 +3,7 @@ PREFIX era-dir: <http://data.europa.eu/949/concepts/track-running-directions/>
 PREFIX era-op-types: <http://data.europa.eu/949/concepts/op-types/rinf/>
 
 SELECT DISTINCT ?op ?uopid ?country WHERE {
-    GRAPH <http://data.europa.eu/949/graph/rinf> {
+    GRAPH <${{NAMED_KG_RINF}}> {
     # Main OP to be analyzed
     ?op era:inCountry ?country;
         era:uopid ?uopid .

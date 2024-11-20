@@ -3,9 +3,9 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
 SELECT DISTINCT ?id ?inCountry ?count
 WHERE{
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
 {SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?OP) AS ?count)
-FROM <http://data.europa.eu/949/graph/rinf>
+FROM <${{NAMED_KG_RINF}}>
 WHERE {
       ?OP a era:OperationalPoint.
       ?OP era:canonicalURI ?OP .

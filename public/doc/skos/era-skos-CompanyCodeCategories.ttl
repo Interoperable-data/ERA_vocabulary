@@ -22,6 +22,7 @@ era-company-code-categories:CompanyCodeCategories a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Company Code Categories"@en ;
+    skos:prefLabel "Company Code Categories"@en ;
     dct:title "Concept scheme grouping company code categories"@en .
 
 
@@ -37,14 +38,14 @@ era-company-code-categories:CompanyCodeCategories a skos:ConceptScheme ;
 ########## Company code categories ##########
 
 era-company-code-categories:infrastructure a skos:Concept ;
-    skos:inScheme era-company-code-categories:CompanyCodeCategories ; 
+    skos:inScheme era-company-code-categories:CompanyCodeCategories ;  skos:topConceptOf era-company-code-categories:CompanyCodeCategories ; 
     skos:prefLabel "Infrastructure"@en .
 
 era-company-code-categories:passenger a skos:Concept ;
-    skos:inScheme era-company-code-categories:CompanyCodeCategories ; 
+    skos:inScheme era-company-code-categories:CompanyCodeCategories ;  skos:topConceptOf era-company-code-categories:CompanyCodeCategories ; 
     skos:prefLabel "Passenger"@en .
 
 era-company-code-categories:freight a skos:Concept ;
-    skos:inScheme era-company-code-categories:CompanyCodeCategories ; 
+    skos:inScheme era-company-code-categories:CompanyCodeCategories ;  skos:topConceptOf era-company-code-categories:CompanyCodeCategories ; 
     skos:prefLabel "Freight"@en .
 

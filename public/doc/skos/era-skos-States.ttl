@@ -25,6 +25,7 @@ era-states:States a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "States"@en ;
+    skos:prefLabel "States"@en ;
     dct:title "Concept scheme grouping certificate states"@en .
 
 
@@ -39,17 +40,17 @@ era-states:States a skos:ConceptScheme ;
 ########## Certificate states ##########
 
 era-states-eratv:new a skos:Concept ;
-    skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-states:States ; skos:topConceptOf  era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "New"@en .
 
 era-states-eratv:ammended a skos:Concept ;
-    skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-states:States ; skos:topConceptOf  era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Amended"@en .
 
 era-states-eratv:suspended a skos:Concept ;
-    skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-states:States ; skos:topConceptOf  era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Suspended"@en .
 
 era-states-eratv:withdrawn a skos:Concept ;
-    skos:inScheme era-states:States ; skos:note "Value retrieved from the ERATV database";
+    skos:inScheme era-states:States ; skos:topConceptOf  era-states:States ; skos:note "Value retrieved from the ERATV database";
     skos:prefLabel "Withdrawn"@en .

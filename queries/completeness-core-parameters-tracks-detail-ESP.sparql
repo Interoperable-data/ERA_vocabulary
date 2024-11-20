@@ -2,7 +2,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?track ?p #?rinfIndex  
 WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
   VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
   ?track a era:Track .  

@@ -29,6 +29,7 @@ era-bpt:BrakeParkingType a skos:ConceptScheme ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
     rdfs:label "Brake Parking Type"@en ;
+    skos:prefLabel "Brake Parking Type"@en ;
     dct:title "Concept scheme grouping brake parking types"@en .
 
 
@@ -45,18 +46,18 @@ era-bpt:BrakeParkingType a skos:ConceptScheme ;
 ########## Brake parking types ##########
 
 era-bpt-eratv:Automatic a skos:Concept;
-  skos:inScheme era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-bpt:BrakeParkingType;  skos:topConceptOf era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Automatic" .
 
 era-bpt-eratv:Manual_operated_from_the_ground a skos:Concept;
-  skos:inScheme era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-bpt:BrakeParkingType;  skos:topConceptOf era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Manual operated from the ground" .
 
 era-bpt-eratv:Manual_operated_from_the_vehicle a skos:Concept;
-  skos:inScheme era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-bpt:BrakeParkingType;  skos:topConceptOf era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "Manual operated from the vehicle" .
 
 era-bpt-eratv:None a skos:Concept;
-  skos:inScheme era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
+  skos:inScheme era-bpt:BrakeParkingType;  skos:topConceptOf era-bpt:BrakeParkingType; skos:note "Value retrieved from the ERATV database";
   skos:prefLabel "None" .
 

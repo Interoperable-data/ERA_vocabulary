@@ -2,7 +2,7 @@ PREFIX era: <http://data.europa.eu/949/>
 
 SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
 WHERE {
-GRAPH <http://data.europa.eu/949/graph/rinf> {
+GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
