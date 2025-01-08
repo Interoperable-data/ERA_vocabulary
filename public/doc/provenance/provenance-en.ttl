@@ -6,16 +6,11 @@
 	 dc:title "ERA Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
-	 prov:wasAttributedTo <https://julianrojas.org/#me>;
-	 dc:contributor <https://julianrojas.org/#me>;
-	 prov:wasAttributedTo <https://dylanvanassche.be/#me>;
-	 dc:contributor <https://dylanvanassche.be/#me>;
 	 prov:wasAttributedTo :agent2;
 	 prov:wasAttributedTo :agent3;
-	 prov:wasAttributedTo <https://pietercolpaert.be/#me>;
-	 dc:contributor <https://pietercolpaert.be/#me>;
 	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo :agent5;
+	 prov:wasAttributedTo :agent6;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <https:https://github.com/Interoperable-data/ERA_vocabulary/releases/tag/v3.0.1>;
 	 prov:wasRevisionOf <https://zenodo.org/records/12205825>;
@@ -23,7 +18,8 @@
 .
 :agent0 a prov:Agent; foaf:name "Edna Ruckhaus".
 :agent1 a prov:Agent; foaf:name "Oscar Corcho".
-:agent2 a prov:Agent; foaf:name "Ivo Velitchkov".
-:agent3 a prov:Agent; foaf:name "Marina Aguado".
-:agent4 a prov:Agent; foaf:name "Polymnia Vasilopoulou".
-:agent5 a prov:Agent; foaf:name "Wouter Beek".
+:agent2 a prov:Agent; foaf:name "Marina Aguado".
+:agent3 a prov:Agent; foaf:name "Polymnia Vasilopoulou".
+:agent4 a prov:Agent; foaf:name "Ghislain Atemezing".
+:agent5 a prov:Agent; foaf:name " Maarten Duhoux".
+:agent6 a prov:Agent; foaf:name " Dragos Patru".

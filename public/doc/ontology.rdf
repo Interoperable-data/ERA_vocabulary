@@ -19,15 +19,13 @@
     <owl:Ontology rdf:about="http://data.europa.eu/949/">
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
         <ns1:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dc:contributor rdf:resource="https://dylanvanassche.be/#me"/>
-        <dc:contributor rdf:resource="https://julianrojas.org/#me"/>
-        <dc:contributor rdf:resource="https://pietercolpaert.be/#me"/>
-        <dc:contributor>Ivo Velitchkov</dc:contributor>
-        <dc:contributor>Marina Aguado</dc:contributor>
-        <dc:contributor>Polymnia Vasilopoulou</dc:contributor>
-        <dc:contributor>Wouter Beek</dc:contributor>
-        <dc:creator>Edna Ruckhaus</dc:creator>
-        <dc:creator>Oscar Corcho</dc:creator>
+        <dc:contributor>Dragos Patru, (ERA)</dc:contributor>
+        <dc:contributor>Ghislain Atemezing, (ERA)</dc:contributor>
+        <dc:contributor>Maarten Duhoux, (ERA)</dc:contributor>
+        <dc:contributor>Marina Aguado, (ERA)</dc:contributor>
+        <dc:contributor>Polymnia Vasilopoulou, (ERA)</dc:contributor>
+        <dc:creator>Edna Ruckhaus, (UPM)</dc:creator>
+        <dc:creator>Oscar Corcho, (UPM)</dc:creator>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-29</terms:issued>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-18</terms:modified>
         <terms:publisher>European Union Agency for Railways</terms:publisher>
@@ -537,6 +535,33 @@ above the local reference ellipsoid).</rdfs:comment>
         <rdfs:comment xml:lang="en">Indication whether rules exist and are compliant with the TSI.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/949/"/>
         <rdfs:label xml:lang="en">Existence and TSI compliance of limits in harmonics in the traction current of vehicles</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/949/accelerationLevelCrossing -->
+
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/949/accelerationLevelCrossing">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.europa.eu/949/SubsetWithCommonCharacteristics"/>
+                    <rdf:Description rdf:about="http://data.europa.eu/949/Track"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://data.europa.eu/949/Document"/>
+        <XMLName>IHS_AccelerationLevelCrossing</XMLName>
+        <rinfIndex>1.1.1.1.7.3</rinfIndex>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-03</terms:created>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-08</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-13</terms:modified>
+        <rdfs:comment xml:lang="en">Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/949/"/>
+        <rdfs:label xml:lang="en">Acceleration allowed near level crossing</rdfs:label>
         <ns:term_status>stable</ns:term_status>
     </owl:ObjectProperty>
     
@@ -4126,32 +4151,6 @@ The allowed values for this property belong to the SKOS Concept Scheme http://da
         <rdfs:comment xml:lang="en">Unique RBC identification (NID_C+NID_RBC) and calling number (NID_RADIO) as defined in the specification referenced in Appendix A-1, index [C].</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/949/"/>
         <rdfs:label xml:lang="en">ID and phone number of ERTMS/ETCS Radio Block Center</rdfs:label>
-        <ns:term_status>stable</ns:term_status>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://data.europa.eu/949/accelerationLevelCrossing -->
-
-
-    <owl:DatatypeProperty rdf:about="http://data.europa.eu/949/accelerationLevelCrossing">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://data.europa.eu/949/SubsetWithCommonCharacteristics"/>
-                    <rdf:Description rdf:about="http://data.europa.eu/949/Track"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <XMLName>IHS_AccelerationLevelCrossing</XMLName>
-        <rinfIndex>1.1.1.1.7.3</rinfIndex>
-        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-08-03</terms:created>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-08</terms:modified>
-        <rdfs:comment xml:lang="en">Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/949/"/>
-        <rdfs:label xml:lang="en">Acceleration allowed near level crossing</rdfs:label>
         <ns:term_status>stable</ns:term_status>
     </owl:DatatypeProperty>
     

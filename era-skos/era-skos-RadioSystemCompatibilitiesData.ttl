@@ -182,15 +182,15 @@ era-rscd-rinf:112 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
   skos:prefLabel "RSC-ES-05.PEDORE-D" .
 
-#deprecated
-#era-rscd-rinf:30 a skos:Concept;
-#  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-#rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
-  #skos:prefLabel "RSC-ES-01-D" .
+era-rscd-rinf:30 a skos:Concept;
+  owl:deprecated "true"^^xsd:boolean ;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "RSC-ES-01-D" .
 
-#deprecated
-#era-rscd-rinf:40 a skos:Concept;
-  #skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
-  #skos:prefLabel "RSC-ES-02-D" .
+era-rscd-rinf:40 a skos:Concept;
+  owl:deprecated "true"^^xsd:boolean ;
+  skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";
+  skos:prefLabel "RSC-ES-02-D" .
 
 era-rscd-rinf:50 a skos:Concept;
   skos:inScheme era-rscd:RadioSystemCompatibilitiesData; skos:topConceptOf era-rscd:RadioSystemCompatibilitiesData; skos:note "Value retrieved from the RINF database";

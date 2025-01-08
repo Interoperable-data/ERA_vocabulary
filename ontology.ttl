@@ -21,15 +21,13 @@
 <http://data.europa.eu/949/> rdf:type owl:Ontology ;
                               owl:imports gsp: ;
                               cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-                              <http://purl.org/dc/elements/1.1/contributor> <https://dylanvanassche.be/#me> ,
-                                                                            <https://julianrojas.org/#me> ,
-                                                                            <https://pietercolpaert.be/#me> ,
-                                                                            "Ivo Velitchkov" ,
-                                                                            "Marina Aguado" ,
-                                                                            "Polymnia Vasilopoulou" ,
-                                                                            "Wouter Beek" ;
-                              <http://purl.org/dc/elements/1.1/creator> "Edna Ruckhaus" ,
-                                                                        "Oscar Corcho" ;
+                              <http://purl.org/dc/elements/1.1/contributor> "Dragos Patru, (ERA)" ,
+                                                                            "Ghislain Atemezing, (ERA)" ,
+                                                                            "Maarten Duhoux, (ERA)" ,
+                                                                            "Marina Aguado, (ERA)" ,
+                                                                            "Polymnia Vasilopoulou, (ERA)" ;
+                              <http://purl.org/dc/elements/1.1/creator> "Edna Ruckhaus, (UPM)" ,
+                                                                        "Oscar Corcho, (UPM)" ;
                               dct:issued "2020-07-29"^^xsd:date ;
                               dct:modified "2024-06-18"^^xsd:date ;
                               dct:publisher "European Union Agency for Railways" ;
@@ -361,6 +359,26 @@ era:TSITractionHarmonics rdf:type owl:ObjectProperty ,
                          rdfs:isDefinedBy <http://data.europa.eu/949/> ;
                          rdfs:label "Existence and TSI compliance of limits in harmonics in the traction current of vehicles"@en ;
                          vs:term_status "stable" .
+
+
+###  http://data.europa.eu/949/accelerationLevelCrossing
+era:accelerationLevelCrossing rdf:type owl:ObjectProperty ,
+                                       owl:FunctionalProperty ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( era:SubsetWithCommonCharacteristics
+                                                          era:Track
+                                                        )
+                                          ] ;
+                              rdfs:range era:Document ;
+                              era:XMLName "IHS_AccelerationLevelCrossing" ;
+                              era:rinfIndex "1.1.1.1.7.3" ;
+                              dct:created "2021-08-03"^^xsd:date ;
+                              dct:modified "2024-01-08"^^xsd:date ,
+                                           "2024-11-13"^^xsd:date ;
+                              rdfs:comment "Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve."@en ;
+                              rdfs:isDefinedBy <http://data.europa.eu/949/> ;
+                              rdfs:label "Acceleration allowed near level crossing"@en ;
+                              vs:term_status "stable" .
 
 
 ###  http://data.europa.eu/949/additionalBrakingInformationDocument
@@ -3095,25 +3113,6 @@ era:IdPhoneErtmsRadioBlockCenter rdf:type owl:DatatypeProperty ;
                                  rdfs:isDefinedBy <http://data.europa.eu/949/> ;
                                  rdfs:label "ID and phone number of ERTMS/ETCS Radio Block Center"@en ;
                                  vs:term_status "stable" .
-
-
-###  http://data.europa.eu/949/accelerationLevelCrossing
-era:accelerationLevelCrossing rdf:type owl:DatatypeProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain [ rdf:type owl:Class ;
-                                            owl:unionOf ( era:SubsetWithCommonCharacteristics
-                                                          era:Track
-                                                        )
-                                          ] ;
-                              rdfs:range xsd:string ;
-                              era:XMLName "IHS_AccelerationLevelCrossing" ;
-                              era:rinfIndex "1.1.1.1.7.3" ;
-                              dct:created "2021-08-03"^^xsd:date ;
-                              dct:modified "2024-01-08"^^xsd:date ;
-                              rdfs:comment "Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve."@en ;
-                              rdfs:isDefinedBy <http://data.europa.eu/949/> ;
-                              rdfs:label "Acceleration allowed near level crossing"@en ;
-                              vs:term_status "stable" .
 
 
 ###  http://data.europa.eu/949/alternativeName
