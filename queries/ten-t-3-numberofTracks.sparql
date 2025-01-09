@@ -3,14 +3,34 @@ PREFIX era: <http://data.europa.eu/949/>
 SELECT (COUNT(DISTINCT ?track) AS ?tracks)
 {
     GRAPH <${{NAMED_KG_RINF}}> {
-    ?sol a era:SectionOfLine. 
-    ?sol era:opStart ?op_start.
+    ?sol a era:SectionOfLine . 
+    ?sol era:opStart ?op_startCanonUri . 
+	?op_start era:canonicalURI ?op_startCanonUri .
     ?op_start era:opName ?op_startName .
-    ?sol era:opEnd ?op_end.
+    ?sol era:opEnd ?op_endCanonUri .
+	?op_end era:canonicalURI ?op_endCanonUri .
     ?op_end era:opName ?op_endName .
     FILTER (regex(?op_startName,"Dendermonde")) .
     FILTER (regex(?op_endName,"Zele")).
     ?sol era:track ?track .
+	OPTIONAL{
+			?track <http://data.europa.eu/949/validityStartDate> ?validityStartDate.
+			?track <http://data.europa.eu/949/validityEndDate> ?validityEndDate.
+	}
+		
+	BIND (
+	  COALESCE(
+		IF(!BOUND(?validityStartDate) && !BOUND(?validityEndDate), 'case1-novaliditydates', 
+		IF(!BOUND(?validityStartDate) && ?validityEndDate >= NOW(), 'case2-noStart-ValidEnd',
+		IF(?validityStartDate <= NOW() && !BOUND(?validityEndDate), 'case3-start-NoEnd', 
+		IF(?validityStartDate <= NOW() && ?validityEndDate>= NOW(), 'case4-insideStartEnd', 
+		IF(?validityEndDate<NOW(), 'case5-notValid-past', 
+		IF(?validityStartDate>NOW(), 'case6-notValid-future',
+		'case7-notValid'))))))
+	  ) AS ?validityDateType_root
+	)
+
+	FILTER (?validityDateType_root IN ('case1-novaliditydates','case2-noStart-ValidEnd','case3-start-NoEnd','case4-insideStartEnd'))
 }
 }
 

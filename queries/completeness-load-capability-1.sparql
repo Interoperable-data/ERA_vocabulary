@@ -1,36 +1,29 @@
 PREFIX era: <http://data.europa.eu/949/>
 
-SELECT DISTINCT ?inCountry ?numTotalTracks ?numTracksWithLoadCapability ?numTracksWithoutLoadCapability
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter
 WHERE {
-GRAPH <${{NAMED_KG_RINF}}> {
+GRAPH <${{NAMED_KG_RINF}}>  {
+  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
 WHERE {
-  ?track a era:Track .  
+  ?track a era:Track .
   ?sectionOfLine era:track ?track .
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry
-} 
+}
 } OPTIONAL
 {
-SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithLoadCapability)
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
 WHERE {
-  ?track a era:Track .  
-  ?track era:trackLoadCapability ?loadCapability .
+  VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
+  ?track a era:Track .
+  ?track ?p ?propertyValue .
   ?sectionOfLine era:track ?track .
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry.
-} 
-} OPTIONAL
-{
-SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithoutLoadCapability) 
-WHERE {
-  ?track a era:Track .  
-  ?sectionOfLine era:track ?track .
-  ?sectionOfLine a era:SectionOfLine .
-  ?sectionOfLine era:inCountry ?inCountry.
-  FILTER NOT EXISTS {?track era:trackLoadCapability ?loadCapability .}
-} 
 }
+    }
+
 }
-}
+} ORDER BY ?p ?inCountry

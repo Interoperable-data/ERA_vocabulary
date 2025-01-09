@@ -3,13 +3,13 @@ PREFIX era: <http://data.europa.eu/949/>
 SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
 WHERE {
 GRAPH <${{NAMED_KG_RINF}}> {
-  VALUES ?p {era:platformId era:length era:platformHeight}
+  VALUES ?p {era:platformId era:lengthOfPlatform era:platformHeight}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
 WHERE {
-  ?entity a era:Platform .
+  ?entity a era:PlatformEdge .
   ?track a era:Track.
-  ?track era:platform ?entity .
+  ?track era:platformEdge ?entity .
   ?sectionOfLine era:track ?track .
   ?sectionOfLine era:inCountry ?inCountry  
 } 
@@ -17,10 +17,10 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
 WHERE {
-  VALUES ?p {era:platformId era:length era:platformHeight}
-  ?entity a era:Platform .
+  VALUES ?p {era:platformId era:lengthOfPlatform era:platformHeight}
+  ?entity a era:PlatformEdge .
   ?track a era:Track.
-  ?track era:platform ?entity .
+  ?track era:platformEdge ?entity .
   ?sectionOfLine era:track ?track .
   ?sectionOfLine era:inCountry ?inCountry  .
   ?entity ?p ?propertyValue .
@@ -29,10 +29,10 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter) 
 WHERE {
-  VALUES ?p {era:platformId era:length era:platformHeight}
-  ?entity a era:Platform .
+  VALUES ?p {era:platformId era:lengthOfPlatform era:platformHeight}
+  ?entity a era:PlatformEdge .
   ?track a era:Track.
-  ?track era:platform ?entity .
+  ?track era:platformEdge ?entity .
   ?sectionOfLine era:track ?track .
   ?sectionOfLine era:inCountry ?inCountry  
   FILTER NOT EXISTS {?entity ?p ?propertyValue .}

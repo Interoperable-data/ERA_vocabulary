@@ -3,7 +3,7 @@ PREFIX era: <http://data.europa.eu/949/>
 SELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter
 WHERE {
 GRAPH <${{NAMED_KG_RINF}}> {
-  VALUES ?p {era:length era:minimumHorizontalRadius}
+  VALUES ?p {era:lengthOfSiding era:minimumHorizontalRadius}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)
 WHERE {
@@ -16,7 +16,7 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)
 WHERE {
-  VALUES ?p {era:length era:minimumHorizontalRadius}
+  VALUES ?p {era:lengthOfSiding era:minimumHorizontalRadius}
   ?entity a era:Siding .
   ?entity ?p ?propertyValue .
   ?op a era:OperationalPoint .
@@ -27,7 +27,7 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) 
 WHERE {
-  VALUES ?p {era:length era:minimumHorizontalRadius}
+  VALUES ?p {era:lengthOfSiding era:minimumHorizontalRadius}
   ?entity a era:Siding .
   ?op a era:OperationalPoint .
   ?op era:siding ?entity .

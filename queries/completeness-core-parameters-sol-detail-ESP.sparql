@@ -4,10 +4,10 @@ SELECT DISTINCT ?sectionOfLine ?p ?rinfIndex
 WHERE {
   GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
-  VALUES ?p {era:length}
+  VALUES ?p {era:lengthOfSectionOfLine}
   ?sectionOfLine a era:SectionOfLine .  
   ?sectionOfLine era:inCountry ?inCountry.
-  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex}
+  GRAPH <${{NAMED_KG_ERA_VOCABULARY}}> {?p era:rinfIndex ?rinfIndex}
   FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue }
   }
 } ORDER BY ?sectionOfLine LIMIT 1000 

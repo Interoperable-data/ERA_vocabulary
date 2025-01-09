@@ -7,7 +7,7 @@ GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?p {era:lineReference}
   ?entity a era:OperationalPoint .
   ?entity era:inCountry ?inCountry .
-  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .
+  GRAPH <${{NAMED_KG_ERA_VOCABULARY}}> {?p era:rinfIndex ?rinfIndex} .
   FILTER NOT EXISTS {?entity ?p ?propertyValue}
   }
 } ORDER BY ?entity LIMIT 1000 

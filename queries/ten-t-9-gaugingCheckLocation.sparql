@@ -4,14 +4,19 @@ SELECT DISTINCT *
 {
 GRAPH <${{NAMED_KG_RINF}}> {
     ?sol a era:SectionOfLine. 
-    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .
-    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).
+    ?sol era:opStart ?op_startCanonUri .
+	?op_start era:canonicalURI ?op_startCanonUri .
+	?op_start era:opName ?op_startName .      
+	FILTER (regex(?op_startName,"Hintergasse")) .
+    ?sol era:opEnd ?op_endCanonUri . 
+	?op_end era:canonicalURI ?op_endCanonUri .
+	?op_end era:opName ?op_endName .          
+	FILTER (regex(?op_endName,"Braz")).
     ?sol era:track ?track .
     ?track era:trackId ?trackId .
-    OPTIONAL {?track era:gaugingCheckLocation ?location .}
+    OPTIONAL {?track era:gaugingCheckLocation ?location}
     }
 }
-
 
 
 

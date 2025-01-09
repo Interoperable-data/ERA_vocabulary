@@ -1,6 +1,6 @@
 PREFIX era: <http://data.europa.eu/949/>
 
-SELECT DISTINCT ?track ?cls ?p #?rinfIndex  
+SELECT DISTINCT ?track ?cls ?p ?rinfIndex  
 WHERE {
   GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?inCountry {<http://publications.europa.eu/resource/authority/country/ESP>} .
@@ -10,7 +10,7 @@ WHERE {
   ?sectionOfLine era:track ?track .
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry.
-  GRAPH <http://data.europa.eu/949/graph/ontology> {?p era:rinfIndex ?rinfIndex} .
+  GRAPH <${{NAMED_KG_ERA_VOCABULARY}}> {?p era:rinfIndex ?rinfIndex} .
   FILTER NOT EXISTS {?cls ?p ?propertyValue .}
   }
 } ORDER BY ?track ?cls LIMIT 1000 

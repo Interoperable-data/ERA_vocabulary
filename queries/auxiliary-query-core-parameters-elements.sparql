@@ -5,7 +5,7 @@ SELECT DISTINCT ?Class ?p
 FROM <${{NAMED_KG_RINF}}>
 FROM <${{NAMED_KG_ERATV}}>
 WHERE {
-  VALUES ?p {era:trackLoadCapability era:loadCapabilityLineCategory era:loadCapabilitySpeed era:maximumPermittedSpeed era:hasSevereWeatherConditions era:gaugingProfile era:gradientProfile era:minimumHorizontalRadius era:wheelSetGauge era:railInclination era:minimumWheelDiameter era:maximumTrainDeceleration era:eddyCurrentBraking era:magneticBraking era:hasHotAxleBoxDetector era:cantDeficiency era:contactLineSystemType era:energySupplySystem era:rollingStockFireCategory era:protectionLegacySystem era:legacyRadioSystem era:trainDetectionSystemType era:maximumBrakingDistance era:hasAdditionalBrakingInformation era:lineReference  era:length era:platformHeight era:temperatureRange geosparql:hasGeometry } 
+  VALUES ?p {era:trackLoadCapability era:loadCapabilityLineCategory era:loadCapabilitySpeed era:maximumPermittedSpeed era:hasSevereWeatherConditions era:gaugingProfile era:gradientProfile era:minimumHorizontalRadius era:wheelSetGauge era:railInclination era:minimumWheelDiameter era:maximumTrainDeceleration era:eddyCurrentBraking era:magneticBraking era:hasHotAxleBoxDetector era:cantDeficiency era:contactLineSystemType era:energySupplySystem era:rollingStockFireCategory era:protectionLegacySystem era:legacyRadioSystem era:trainDetectionSystemType era:maximumBrakingDistance era:hasAdditionalBrakingInformation era:lineReference  era:lengthOfSectionOfLine era:lengthOfTunnel era:lengthOfPlatform era:lengthOfSiding era:platformHeight era:temperatureRange geosparql:hasGeometry } 
   ?xx a ?Class .  
   ?xx ?p ?value
 } ORDER BY ?Class

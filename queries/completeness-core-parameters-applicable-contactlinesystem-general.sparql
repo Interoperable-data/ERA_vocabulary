@@ -1,12 +1,13 @@
 PREFIX era: <http://data.europa.eu/949/>
 
-SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter ?numTracksWithoutPropertyAsCoreParameter ?numTracksWithoutContactLineSystem
 WHERE {
   GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?p {era:energySupplySystem era:contactLineSystemType}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
 WHERE {
+  VALUES ?p {era:energySupplySystem era:contactLineSystemType}
   ?track a era:Track .  
   ?sectionOfLine era:track ?track .
   ?sectionOfLine a era:SectionOfLine .
@@ -36,6 +37,16 @@ WHERE {
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry.
   FILTER NOT EXISTS {?cls ?p ?propertyValue .}
+} 
+} OPTIONAL
+{
+SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTracksWithoutContactLineSystem) 
+WHERE {
+  ?track a era:Track .  
+  FILTER NOT EXISTS {?track era:contactLineSystem ?cls .}
+  ?sectionOfLine era:track ?track .
+  ?sectionOfLine a era:SectionOfLine .
+  ?sectionOfLine era:inCountry ?inCountry.
 } 
 }
 }
