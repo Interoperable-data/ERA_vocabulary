@@ -4,23 +4,25 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT *
 FROM <${{NAMED_KG_RINF}}>
-FROM <http://data.europa.eu/949/graph/skos>
+FROM <${{NAMED_KG_ERA_SKOS}}>
 {
 
-    ?sol a era:SectionOfLine. 
-    ?sol era:opStart ?op_start.   ?op_start era:opName ?op_startName .      FILTER (regex(?op_startName,"Dendermonde")) .
-    ?sol era:opEnd ?op_end.       ?op_end era:opName ?op_endName .          FILTER (regex(?op_endName,"Zele")).
+     ?sol a era:SectionOfLine. 
+    ?sol era:opStart ?op_startCanonuri .  
+	?op_start era:canonicalURI ?op_startCanonuri .
+	?op_start era:opName ?op_startName .      
+	FILTER (regex(?op_startName,"Paris-Montparnasse")) .
+    ?sol era:opEnd ?op_endCanonUri .
+	?op_end era:canonicalURI ?op_endCanonUri .
+	?op_end era:opName ?op_endName .
+	FILTER (regex(?op_endName,"Bif 420000/553000")).
     ?sol era:track ?track .
     ?track era:trackId ?trackId .
     OPTIONAL {?track era:highSpeedLoadModelCompliance "true"^^xsd:boolean} .
 
-  OPTIONAL {?track era:etcsLevel ?etcsLevel .} 
-  OPTIONAL {?etcsLevelURI era:etcsBaseline [skos:prefLabel ?etcsBaseline] .
-      FILTER(uri(?etcsLevel)=?etcsLevelURI) .}
-
-  OPTIONAL{?etcsLevelURI era:etcsLevelType [skos:prefLabel ?etcsLevelType] .
-    FILTER(uri(?etcsLevel)=?etcsLevelURI) }
-
-
-
+    OPTIONAL {?track era:etcsLevel ?etcsLevel .} 
+    OPTIONAL {?etcsLevel era:etcsBaseline [skos:prefLabel ?etcsBaseline] .
+      }
+    OPTIONAL{?etcsLevel era:etcsLevelType [skos:prefLabel ?etcsLevelType] .
+    }
 }

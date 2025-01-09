@@ -502,7 +502,9 @@ This section provides details for each class and property defined by ERA Ontolog
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#gsmRAdditionalInfo" title="http://data.europa.eu/949/gsmRAdditionalInfo">Additional information on network characteristics</a>
+            <a href="#accelerationLevelCrossing"
+               title="http://data.europa.eu/949/accelerationLevelCrossing">Acceleration allowed near level crossing</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#gsmRAdditionalInfo" title="http://data.europa.eu/949/gsmRAdditionalInfo">Additional information on network characteristics</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#tunnelDocRef" title="http://data.europa.eu/949/tunnelDocRef">Document available from the IM with precise description of the tunnel</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#eddyCurrentBrakingConditionsDocument"
                title="http://data.europa.eu/949/eddyCurrentBrakingConditionsDocument">Document with the conditions for the use of eddy current brakes</a>
@@ -2124,6 +2126,10 @@ Definition RSM: Apparatus by means of which a conventional visual or acoustic in
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#accelerationLevelCrossing"
+            title="http://data.europa.eu/949/accelerationLevelCrossing">Acceleration allowed near level crossing</a>
+      </li>
+      <li>
          <a href="#otherPantographHead" title="http://data.europa.eu/949/otherPantographHead">Accepted other pantograph heads</a>
       </li>
       <li>
@@ -2654,6 +2660,52 @@ Definition RSM: Apparatus by means of which a conventional visual or acoustic in
             title="http://data.europa.eu/949/wheelSetGaugeChangeoverFacility">Wheelset gauge changeover facility</a>
       </li>
    </ul>
+   <div class="entity" id="accelerationLevelCrossing">
+      <h3>Acceleration allowed near level crossing<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://data.europa.eu/949/accelerationLevelCrossing</p>
+      <div class="comment">
+         <span class="markdown">Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://data.europa.eu/949/">http://data.europa.eu/949/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Rinf index</dt>
+         <dd>1.1.1.1.7.3</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#SubsetWithCommonCharacteristics"
+                  title="http://data.europa.eu/949/SubsetWithCommonCharacteristics">Subset with common characteristics</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Track" title="http://data.europa.eu/949/Track">Track</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Document" title="http://data.europa.eu/949/Document">ERA Document</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="otherPantographHead">
       <h3>Accepted other pantograph heads<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -9505,10 +9557,6 @@ The allowed values for this property belong to the SKOS Concept Scheme http://da
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#accelerationLevelCrossing"
-            title="http://data.europa.eu/949/accelerationLevelCrossing">Acceleration allowed near level crossing</a>
-      </li>
-      <li>
          <a href="#alternativeName" title="http://data.europa.eu/949/alternativeName">Alternative name</a>
       </li>
       <li>
@@ -10542,53 +10590,6 @@ The allowed values for this property belong to the SKOS Concept Scheme http://da
          <a href="#wheelchairSpaces" title="http://data.europa.eu/949/wheelchairSpaces">Wheelchair spaces</a>
       </li>
    </ul>
-   <div class="entity" id="accelerationLevelCrossing">
-      <h3>Acceleration allowed near level crossing<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://data.europa.eu/949/accelerationLevelCrossing</p>
-      <div class="comment">
-         <span class="markdown">Existence of limit for acceleration of train if stopping or recovering speed close to a level crossing expressed in a specific reference acceleration curve.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://data.europa.eu/949/">http://data.europa.eu/949/</a>
-         </dd>
-      </dl>
-      <dl>
-         <dt>Term status</dt>
-         <dd>stable</dd>
-      </dl>
-      <dl>
-         <dt>Rinf index</dt>
-         <dd>1.1.1.1.7.3</dd>
-      </dl>
-      <div class="description">
-         <p>
-            <strong>has characteristics:
-                </strong> functional</p>
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#SubsetWithCommonCharacteristics"
-                  title="http://data.europa.eu/949/SubsetWithCommonCharacteristics">Subset with common characteristics</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#Track" title="http://data.europa.eu/949/Track">Track</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="alternativeName">
       <h3>Alternative name<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>

@@ -1,8 +1,8 @@
 PREFIX era: <http://data.europa.eu/949/>
 
-SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithPropertyAsCoreParameter
+SELECT DISTINCT ?p ?inCountry ?numTotalTracks ?numTracksWithoutPropertyAsCoreParameter
 WHERE {
-GRAPH <${{NAMED_KG_RINF}}>  {
+GRAPH <${{NAMED_KG_RINF}}>{
   VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?track) AS ?numTotalTracks)
@@ -14,11 +14,11 @@ WHERE {
 }
 } OPTIONAL
 {
-SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithPropertyAsCoreParameter)
+SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?track) AS ?numTracksWithoutPropertyAsCoreParameter)
 WHERE {
   VALUES ?p {era:wheelSetGauge era:gaugingProfile era:railInclination era:eddyCurrentBraking era:magneticBraking era:minimumWheelDiameter era:minimumHorizontalRadius era:protectionLegacySystem era:legacyRadioSystem era:maximumTrainDeceleration era:gradientProfile era:hasHotAxleBoxDetector era:hasSevereWeatherConditions era:trackLoadCapability era:maximumBrakingDistance era:maximumPermittedSpeed era:hasAdditionalBrakingInformation era:temperatureRange era:cantDeficiency}
   ?track a era:Track .
-  ?track ?p ?propertyValue .
+  FILTER NOT EXISTS {?track ?p ?propertyValue .}
   ?sectionOfLine era:track ?track .
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry.

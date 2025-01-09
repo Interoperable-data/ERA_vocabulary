@@ -1,21 +1,20 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
-(function(mod) {
+(function (mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
     mod(require("resources/codemirror"));
   else if (typeof define == "function" && define.amd) // AMD
     define(["resources/codemirror"], mod);
-    define(["resources/codemirror"], mod);
   else // Plain browser env
     mod(CodeMirror);
-})(function(CodeMirror) {
+})(function (CodeMirror) {
   var ie_lt8 = /MSIE \d/.test(navigator.userAgent) &&
     (document.documentMode == null || document.documentMode < 8);
 
   var Pos = CodeMirror.Pos;
 
-  var matching = {"(": ")>", ")": "(<", "[": "]>", "]": "[<", "{": "}>", "}": "{<", "<": ">>", ">": "<<"};
+  var matching = { "(": ")>", ")": "(<", "[": "]>", "]": "[<", "{": "}>", "}": "{<", "<": ">>", ">": "<<" };
 
   function bracketRegex(config) {
     return config && config.bracketRegex || /[(){}[\]]/
@@ -33,7 +32,7 @@
     // highlighted box on top of the 2nd character. Otherwise, we allow matches
     // from before or after the cursor.
     var match = (!afterCursor && pos >= 0 && re.test(line.text.charAt(pos)) && matching[line.text.charAt(pos)]) ||
-        re.test(line.text.charAt(pos + 1)) && matching[line.text.charAt(++pos)];
+      re.test(line.text.charAt(pos + 1)) && matching[line.text.charAt(++pos)];
     if (!match) return null;
     var dir = match.charAt(1) == ">" ? 1 : -1;
     if (config && config.strict && (dir > 0) != (pos == where.ch)) return null;
@@ -41,8 +40,10 @@
 
     var found = scanForBracket(cm, Pos(where.line, pos + (dir > 0 ? 1 : 0)), dir, style, config);
     if (found == null) return null;
-    return {from: Pos(where.line, pos), to: found && found.pos,
-            match: found && found.ch == match.charAt(0), forward: dir > 0};
+    return {
+      from: Pos(where.line, pos), to: found && found.pos,
+      match: found && found.ch == match.charAt(0), forward: dir > 0
+    };
   }
 
   // bracketRegex is used to specify which type of bracket to scan
@@ -59,7 +60,7 @@
     var stack = [];
     var re = bracketRegex(config)
     var lineEnd = dir > 0 ? Math.min(where.line + maxScanLines, cm.lastLine() + 1)
-                          : Math.max(cm.firstLine() - 1, where.line - maxScanLines);
+      : Math.max(cm.firstLine() - 1, where.line - maxScanLines);
     for (var lineNo = where.line; lineNo != lineEnd; lineNo += dir) {
       var line = cm.getLine(lineNo);
       if (!line) continue;
@@ -69,10 +70,10 @@
       for (; pos != end; pos += dir) {
         var ch = line.charAt(pos);
         if (re.test(ch) && (style === undefined ||
-                            (cm.getTokenTypeAt(Pos(lineNo, pos + 1)) || "") == (style || ""))) {
+          (cm.getTokenTypeAt(Pos(lineNo, pos + 1)) || "") == (style || ""))) {
           var match = matching[ch];
           if (match && (match.charAt(1) == ">") == (dir > 0)) stack.push(ch);
-          else if (!stack.length) return {pos: Pos(lineNo, pos), ch: ch};
+          else if (!stack.length) return { pos: Pos(lineNo, pos), ch: ch };
           else stack.pop();
         }
       }
@@ -89,9 +90,9 @@
       var match = ranges[i].empty() && findMatchingBracket(cm, ranges[i].head, config);
       if (match && (match.match || highlightNonMatching !== false) && cm.getLine(match.from.line).length <= maxHighlightLen) {
         var style = match.match ? "CodeMirror-matchingbracket" : "CodeMirror-nonmatchingbracket";
-        marks.push(cm.markText(match.from, Pos(match.from.line, match.from.ch + 1), {className: style}));
+        marks.push(cm.markText(match.from, Pos(match.from.line, match.from.ch + 1), { className: style }));
         if (match.to && cm.getLine(match.to.line).length <= maxHighlightLen)
-          marks.push(cm.markText(match.to, Pos(match.to.line, match.to.ch + 1), {className: style}));
+          marks.push(cm.markText(match.to, Pos(match.to.line, match.to.ch + 1), { className: style }));
       }
     }
 
@@ -100,8 +101,8 @@
       // input stops going to the textarea whenever this fires.
       if (ie_lt8 && cm.state.focused) cm.focus();
 
-      var clear = function() {
-        cm.operation(function() {
+      var clear = function () {
+        cm.operation(function () {
           for (var i = 0; i < marks.length; i++) marks[i].clear();
         });
       };
@@ -111,7 +112,7 @@
   }
 
   function doMatchBrackets(cm) {
-    cm.operation(function() {
+    cm.operation(function () {
       if (cm.state.matchBrackets.currentlyHighlighted) {
         cm.state.matchBrackets.currentlyHighlighted();
         cm.state.matchBrackets.currentlyHighlighted = null;
@@ -127,7 +128,7 @@
     }
   }
 
-  CodeMirror.defineOption("matchBrackets", false, function(cm, val, old) {
+  CodeMirror.defineOption("matchBrackets", false, function (cm, val, old) {
     if (old && old != CodeMirror.Init) {
       cm.off("cursorActivity", doMatchBrackets);
       cm.off("focus", doMatchBrackets)
@@ -142,12 +143,12 @@
     }
   });
 
-  CodeMirror.defineExtension("matchBrackets", function() {matchBrackets(this, true);});
-  CodeMirror.defineExtension("findMatchingBracket", function(pos, config, oldConfig){
+  CodeMirror.defineExtension("matchBrackets", function () { matchBrackets(this, true); });
+  CodeMirror.defineExtension("findMatchingBracket", function (pos, config, oldConfig) {
     // Backwards-compatibility kludge
     if (oldConfig || typeof config == "boolean") {
       if (!oldConfig) {
-        config = config ? {strict: true} : null
+        config = config ? { strict: true } : null
       } else {
         oldConfig.strict = config
         config = oldConfig
@@ -155,7 +156,7 @@
     }
     return findMatchingBracket(this, pos, config)
   });
-  CodeMirror.defineExtension("scanForBracket", function(pos, dir, style, config){
+  CodeMirror.defineExtension("scanForBracket", function (pos, dir, style, config) {
     return scanForBracket(this, pos, dir, style, config);
   });
 });

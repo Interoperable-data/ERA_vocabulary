@@ -13,11 +13,11 @@ SELECT DISTINCT ?op ?uopid ?country WHERE {
      ?op era:opType era-op-types:90 } #border point
 # Condition: There are no other SoLs reaching the OP
   FILTER NOT EXISTS {
-        ?sol era:opEnd ?op
+        ?sol era:opEnd ?opCanonURI . ?op era:canonicalURI ?opCanonURI
     }
 # Condition: There are no other SoLs leaving from the OP
   FILTER NOT EXISTS {
-       ?sol era:opStart ?op
+       ?sol era:opStart ?opCanonURI . ?op era:canonicalURI ?opCanonURI
 }
 }
 }

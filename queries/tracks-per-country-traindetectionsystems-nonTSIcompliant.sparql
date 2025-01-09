@@ -10,6 +10,6 @@ GRAPH <${{NAMED_KG_RINF}}> {
   ?track era:trainDetectionSystem ?tds .
   ?tds a era:TrainDetectionSystem .
   VALUES ?p {era:tsiCompliantCompositeBrakeBlocks era:tsiCompliantFerromagneticWheel era:tsiCompliantMaxImpedanceWheelset era:tsiCompliantMetalConstruction era:tsiCompliantMetalFreeSpace era:tsiCompliantRSTShuntImpedance era:tsiCompliantSandCharacteristics era:tsiCompliantSanding era:tsiCompliantShuntDevices } 
-  ?tds ?p <http://data.europa.eu/949/concepts/tsi-compliances/rinf/not_TSI_compliant>
+  ?tds ?p <http://data.europa.eu/949/concepts/tsi-compliances/rinf/20>
   }
 }  ORDER BY ?country ?p

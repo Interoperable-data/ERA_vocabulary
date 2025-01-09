@@ -1,17 +1,40 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX era: <http://data.europa.eu/949/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?id ?inCountry ?totalLengthKm {
-GRAPH <${{NAMED_KG_RINF}}> {
-{SELECT DISTINCT ?inCountry (round(xsd:decimal(SUM(?length)/1000)) AS ?totalLengthKm)
+SELECT DISTINCT ?inCountry (round(xsd:decimal(SUM(?avglength)/1000)) AS ?totalLengthKm) 
+FROM <${{NAMED_KG_RINF}}> 
+FROM <http://data.europa.eu/949/graph/countries> 
+WHERE
+{
+  
+{SELECT DISTINCT ?inCountry ?label ?y (AVG(?length) AS ?avglength) 
 WHERE {
-  ?element a ?y .  # currently includes sections of line and tunnels
+  VALUES ?y {era:SectionOfLine era:Tunnel}
+  ?element a ?y .
+  ?element rdfs:label ?label .
   ?element era:length ?length .
   ?element era:inCountry ?inCountry.
-}}
-SERVICE <http://publications.europa.eu/webapi/rdf/sparql>{
-      ?inCountry dc:identifier ?id}
-      }
-}
+  OPTIONAL{
+			?element <http://data.europa.eu/949/validityStartDate> ?validityStartDate.
+			?element <http://data.europa.eu/949/validityEndDate> ?validityEndDate.
+	}
+		
+	BIND (
+	  COALESCE(
+		IF(!BOUND(?validityStartDate) && !BOUND(?validityEndDate), 'case1-novaliditydates', 
+		IF(!BOUND(?validityStartDate) && ?validityEndDate >= NOW(), 'case2-noStart-ValidEnd',
+		IF(?validityStartDate <= NOW() && !BOUND(?validityEndDate), 'case3-start-NoEnd', 
+		IF(?validityStartDate <= NOW() && ?validityEndDate>= NOW(), 'case4-insideStartEnd', 
+		IF(?validityEndDate<NOW(), 'case5-notValid-past', 
+		IF(?validityStartDate>NOW(), 'case6-notValid-future',
+		'case7-notValid'))))))
+	  ) AS ?validityDateType_root
+	)
 
+	FILTER (?validityDateType_root IN ('case1-novaliditydates','case2-noStart-ValidEnd','case3-start-NoEnd','case4-insideStartEnd'))
+  }
+  }
+    
+} 

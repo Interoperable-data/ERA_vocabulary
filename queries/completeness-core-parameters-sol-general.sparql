@@ -3,7 +3,7 @@ PREFIX era: <http://data.europa.eu/949/>
 SELECT DISTINCT ?p ?inCountry ?numTotalSOLs ?numSOLsWithPropertyAsCoreParameter ?numSOLsWithoutPropertyAsCoreParameter
 WHERE {
   GRAPH <${{NAMED_KG_RINF}}> {
-  VALUES ?p {era:length}
+  VALUES ?p {era:lengthOfSectionOfLine}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?sectionOfLine) AS ?numTotalSOLs)
 WHERE {
@@ -14,7 +14,7 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?sectionOfLine) AS ?numSOLsWithPropertyAsCoreParameter)
 WHERE {
-  VALUES ?p {era:length}
+  VALUES ?p {era:lengthOfSectionOfLine}
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine ?p ?propertyValue .
   ?sectionOfLine era:inCountry ?inCountry.
@@ -23,10 +23,10 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?sectionOfLine) AS ?numSOLsWithoutPropertyAsCoreParameter) 
 WHERE {
-  VALUES ?p {era:length}
+  VALUES ?p {era:lengthOfSectionOfLine}
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?inCountry.
-  FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue . VALUES ?p {era:length}}
+  FILTER NOT EXISTS {?sectionOfLine ?p ?propertyValue . VALUES ?p {era:lengthOfSectionOfLine}}
 } 
 }
 }

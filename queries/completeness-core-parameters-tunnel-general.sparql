@@ -3,7 +3,7 @@ PREFIX era: <http://data.europa.eu/949/>
 SELECT DISTINCT ?p ?inCountry ?numTotalEntities ?numEntitiesWithPropertyAsCoreParameter ?numEntitiesWithoutPropertyAsCoreParameter
 WHERE {
   GRAPH <${{NAMED_KG_RINF}}> {
-  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  VALUES ?p {era:lengthOfTunnel era:rollingStockFireCategory era:tunnelIdentification}
 {
 SELECT DISTINCT ?inCountry (COUNT(DISTINCT ?entity) AS ?numTotalEntities)
 WHERE {
@@ -14,7 +14,7 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithPropertyAsCoreParameter)
 WHERE {
-  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  VALUES ?p {era:lengthOfTunnel era:rollingStockFireCategory era:tunnelIdentification}
   ?entity a era:Tunnel .
   ?entity ?p ?propertyValue .
   ?entity era:inCountry ?inCountry.
@@ -23,7 +23,7 @@ WHERE {
 {
 SELECT DISTINCT ?inCountry ?p (COUNT(DISTINCT ?entity) AS ?numEntitiesWithoutPropertyAsCoreParameter) 
 WHERE {
-  VALUES ?p {era:length era:rollingStockFireCategory era:tunnelIdentification}
+  VALUES ?p {era:lengthOfTunnel era:rollingStockFireCategory era:tunnelIdentification}
   ?entity a era:Tunnel .
   ?entity era:inCountry ?inCountry.
   FILTER NOT EXISTS {?entity ?p ?propertyValue }

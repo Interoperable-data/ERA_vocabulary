@@ -3,13 +3,15 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT *
 FROM <${{NAMED_KG_RINF}}>
-FROM <http://data.europa.eu/949/graph/skos>
+FROM <${{NAMED_KG_ERA_SKOS}}>
 {
 
     ?sol a era:SectionOfLine. 
-    ?sol era:opStart ?op_start.
+    ?sol era:opStart ?op_startCanonUri.
+	?op_start era:canonicalURI ?op_startCanonUri .
     ?op_start era:opName ?op_startName .
-    ?sol era:opEnd ?op_end.
+    ?sol era:opEnd ?op_endCanonUri .
+	?op_end era:canonicalURI ?op_endCanonUri .
     ?op_end era:opName ?op_endName .
     FILTER (regex(?op_startName,"Dendermonde")) .
     FILTER (regex(?op_endName,"Zele")).

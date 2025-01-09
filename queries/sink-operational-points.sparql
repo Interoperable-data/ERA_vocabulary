@@ -2,41 +2,42 @@ PREFIX era: <http://data.europa.eu/949/>
 PREFIX era-dir: <http://data.europa.eu/949/concepts/track-running-directions/rinf/>
 
 SELECT DISTINCT ?op ?uopid ?country WHERE {
-    GRAPH <${{NAMED_KG_RINF}}> {  
-    # Main OP to be analyzed
+GRAPH <${{NAMED_KG_RINF}}> {
+    # Main OP to be analized
+	?op era:canonicalURI ?opCanonUri .
     ?op era:inCountry ?country;
         era:uopid ?uopid.
-    
-    # Main SoL to be analyzed with tracks only arriving to the main OP
+        
+    # Main SoL to be analized with tracks only arriving to the end OP
     ?sol a era:SectionOfLine;
          era:track [ era:trackDirection era-dir:10 ];
-         era:opEnd ?op.
-	
-    # Condition: There are no other tracks in the main SoL with departing directions
+         era:opEnd ?opCanonUri .
+    # Condition: There are no other tracks in the main SoL with arriving directions
     FILTER NOT EXISTS {
         ?sol era:track [ era:trackDirection era-dir:20 ]
     }
     FILTER NOT EXISTS {
         ?sol era:track [ era:trackDirection era-dir:30 ]
     }
-    # Condition: There are no SoLs also arriving on the main OP with tracks having departing directions
+    # Condition: There are no SoLs also departing on the main OP with tracks having departing directions
     FILTER NOT EXISTS {
-        ?sol1 era:opEnd ?op;
-              era:track [ era:trackDirection era-dir:20 ]
-    }
-    FILTER NOT EXISTS {
-        ?sol1 era:opEnd ?op;
-              era:track [ era:trackDirection era-dir:30 ]
-    }
-    # Condition: There are no other SoLs departing on the main OP with tracks having departing directions
-    FILTER NOT EXISTS {
-        ?sol2 era:opStart ?op;
+        ?sol1 era:opStart ?opCanonUri;
               era:track [ era:trackDirection era-dir:10 ]
     }
     FILTER NOT EXISTS {
-        ?sol2 era:opStart ?op;
+        ?sol1 era:opStart ?opCanonUri;
               era:track [ era:trackDirection era-dir:30 ]
     }
+    # Condition: There are no other SoLs arriving on the main OP with tracks having departing directions
+    FILTER NOT EXISTS {
+        ?sol2 era:opEnd ?opCanonUri;
+              era:track [ era:trackDirection era-dir:20 ]
     }
+    FILTER NOT EXISTS {
+        ?sol2 era:opEnd ?opCanonUri;
+              era:track [ era:trackDirection era-dir:30 ]
+    }
+  }
 }
-ORDER BY ?op ?country
+ORDER BY ?op ?country 
+

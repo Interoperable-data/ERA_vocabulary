@@ -1,14 +1,19 @@
 PREFIX era: <http://data.europa.eu/949/>
 PREFIX country: <http://publications.europa.eu/resource/authority/country/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?country ?gprofile
+SELECT DISTINCT ?country ?gprofile ?label
+FROM <${{NAMED_KG_RINF}}> 
+FROM <${{NAMED_KG_ERA_SKOS}}>
 WHERE {
-GRAPH <${{NAMED_KG_RINF}}> {
   VALUES ?country {country:HUN country:ROU country:SVK country:POL}
   ?sectionOfLine a era:SectionOfLine .
   ?sectionOfLine era:inCountry ?country .
   ?sectionOfLine era:track ?track .
   ?track a era:Track . 
   ?track era:gaugingProfile ?gprofile .
+  ?gprofile skos:prefLabel ?label
  }
-}  ORDER BY ?country
+ORDER BY ?country
+
+
