@@ -9,6 +9,7 @@ The repository is organised as in the following folders:
 * era-shacl. This folder contains all the SHACL shapes derived from the ERA vocabulary and from the validation rules described in the RINF application guide, which allow validating the ERA Knowledge Graph.
 * queries. This folder contains several SPARQL queries that can be used to query the ERA knowledge graph.
 * public. This folder contains the HTML version of the ERA vocabulary, which is published in the following URL: ttps://data-interop.era.europa.eu/era-vocabulary/
+* era-kg: This folder gives the reference to Zenodo on how to download ERA KG dumps when they are available.
 
 ## Issues
 
