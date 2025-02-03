@@ -1,5 +1,7 @@
 # era-vocabulary
-
+> [!CAUTION]  
+> **We are in the process of migrating this repository in a new Gitlab instance. We will archive this repository in the next days. A link to the new repository will be provided when available. Sorry for the inconvenience**. 
+> 
 This is the repository where the vocabulary (ontology) for the European Union Agency for Railways is being developed and released. The online documentation for this vocabulary is available at https://data-interop.era.europa.eu/era-vocabulary/, and its URI is http://data.europa.eu/949/. All ontology components (classes, properties) use this base URI and are dereferenceable (e.g., http://data.europa.eu/949/Track).
 
 The repository is organised as in the following folders:
